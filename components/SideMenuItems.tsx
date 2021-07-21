@@ -1,5 +1,9 @@
-type ListItem = string | JSX.Element;
+import { ReactNode } from "react";
 
-export default function SideMenuItems({ children }: { children: ListItem }) {
-  return <li>{children}</li>;
+type Props = {
+  children: ReactNode;
+};
+
+export default function SideMenuItems({ children }: Props) {
+  return <li className="">{children}</li>;
 }
