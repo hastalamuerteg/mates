@@ -1,3 +1,9 @@
+import SideMenu from "../../components/SideMenu";
+
 export default function ChangePassword() {
-  return <div>ChangePassword</div>;
+  return (
+    <>
+      <SideMenu>ChangePassword</SideMenu>
+    </>
+  );
 }

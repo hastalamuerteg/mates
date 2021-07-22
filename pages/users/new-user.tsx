@@ -1,3 +1,9 @@
+import SideMenu from "../../components/SideMenu";
+
 export default function NewUser() {
-  return <div>newUser</div>;
+  return (
+    <>
+      <SideMenu>NewUser</SideMenu>
+    </>
+  );
 }

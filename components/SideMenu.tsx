@@ -1,58 +1,86 @@
 import Link from "next/link";
-import SideMenuItems from "./SideMenuItems";
+
+//Components
+import SideMenuItems from "../components/SideMenuItems";
+
+//Types
+import { ILayout } from "../types/types";
+
+//Helpers
+import { basicGlobalStyles } from "../helpers/helpers.styles";
+
+//Assets
 import {
-  HiOutlineHome as HomeIcon,
-  HiUserAdd as NewUserIcon,
-  HiUsers as AllUsers,
-} from "react-icons/hi";
+  HomeIcon,
+  NewUserIcon,
+  AllUsers,
+  ChangePassword,
+} from "../icons/icons";
 
-import { RiLockPasswordLine as ChangePassword } from "react-icons/ri";
+const { iconsSize, sideMenuLinks, sideMenuIcons } = basicGlobalStyles;
 
-export const basicGlobalStyles = {
-  flexColumnContainer: "flex flex-col text-center items-center",
-  iconsSize: "28",
-  iconsColor: "text-gray-700",
-};
-
-const { iconsColor, iconsSize } = basicGlobalStyles;
-
-export default function SideMenu() {
+export default function SideMenu({ children }: ILayout) {
   return (
-    <nav
-      className={`${basicGlobalStyles.flexColumnContainer} bg-yellow-200 p-4 w-20 h-screen shadow-xxl`}
-    >
-      <ul className={`${basicGlobalStyles.flexColumnContainer} space-y-10`}>
-        <Link href="/">
-          <a>
-            <SideMenuItems>
-              <HomeIcon size={iconsSize} className={`${iconsColor} `} />
-            </SideMenuItems>
-          </a>
-        </Link>
-        <Link href="./users/new-user">
-          <a>
-            <SideMenuItems>
-              <NewUserIcon size={iconsSize} className={`${iconsColor} `} />
-            </SideMenuItems>
-          </a>
-        </Link>
+    <header className="flex items-center h-screen w-screen py-4 pr-4 bg-gradient-to-t from-blue-800 via-blue-600 to-blue-500">
+      <nav
+        className={`${basicGlobalStyles.flexColumnContainer} justify-center  w-1/5 h-screen`}
+      >
+        <ul
+          className={`${basicGlobalStyles.flexColumnContainer}  space-y-10 w-full`}
+        >
+          <Link href="/">
+            <a className={`${sideMenuLinks}`}>
+              {
+                <SideMenuItems>
+                  <HomeIcon size={iconsSize} className={`${sideMenuIcons}`} />
+                </SideMenuItems>
+              }
+              Home
+            </a>
+          </Link>
+          <Link href="/users/new-user">
+            <a className={`${sideMenuLinks}`}>
+              {
+                <SideMenuItems>
+                  <NewUserIcon
+                    size={iconsSize}
+                    className={`${sideMenuIcons}`}
+                  />
+                </SideMenuItems>
+              }
+              New
+            </a>
+          </Link>
 
-        <Link href="./users/all-users">
-          <a>
-            <SideMenuItems>
-              <AllUsers size={iconsSize} className={`${iconsColor} `} />
-            </SideMenuItems>
-          </a>
-        </Link>
+          <Link href="/users/all-users">
+            <a className={`${sideMenuLinks}`}>
+              {
+                <SideMenuItems>
+                  <AllUsers size={iconsSize} className={`${sideMenuIcons}`} />
+                </SideMenuItems>
+              }
+              Friends
+            </a>
+          </Link>
 
-        <Link href="./actions/change-password">
-          <a>
-            <SideMenuItems>
-              <ChangePassword size={iconsSize} className={`${iconsColor} `} />
-            </SideMenuItems>
-          </a>
-        </Link>
-      </ul>
-    </nav>
+          <Link href="/actions/change-password">
+            <a className={`${sideMenuLinks}`}>
+              {
+                <SideMenuItems>
+                  <ChangePassword
+                    size={iconsSize}
+                    className={`${sideMenuIcons}`}
+                  />
+                </SideMenuItems>
+              }
+              Security
+            </a>
+          </Link>
+        </ul>
+      </nav>
+      <main className="flex flex-col items-center h-full w-full rounded-3xl bg-white">
+        {children}
+      </main>
+    </header>
   );
 }

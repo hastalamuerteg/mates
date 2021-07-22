@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function SideMenuItems({ children }: Props) {
-  return <li className="">{children}</li>;
+  return <li className="block w-full">{children}</li>;
 }
