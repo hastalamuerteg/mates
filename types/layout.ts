@@ -3,8 +3,4 @@ export interface ILayout {
   home?: boolean;
 }
 
-export type UrlRequest = string;
-
-export interface IUsers {
-  results: [];
-}
+export type message = string;

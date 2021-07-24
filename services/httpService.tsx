@@ -1,5 +1,5 @@
 import axios from "axios";
-import { UrlRequest } from "../types/types";
+import { UrlRequest } from "../types/apiTypes";
 
 export const BASE_URL = "https://randomuser.me/api/?results=200";
 

@@ -1,9 +1,19 @@
 import {
-  HiOutlineHome as HomeIcon,
-  HiUserAdd as NewUserIcon,
-  HiUsers as AllUsers,
-} from "react-icons/hi";
+  HomeOutlined as HomeIcon,
+  UserAddOutlined as NewUserIcon,
+  TeamOutlined as AllUsersIcon,
+  LockOutlined as ChangePassword,
+  MessageOutlined as MessageIcon,
+  SettingOutlined as SettingsIcon,
+  LogoutOutlined as LogoutIcon,
+} from "@ant-design/icons";
 
-import { RiLockPasswordLine as ChangePassword } from "react-icons/ri";
-
-export { HomeIcon, NewUserIcon, AllUsers, ChangePassword };
+export {
+  HomeIcon,
+  NewUserIcon,
+  AllUsersIcon,
+  ChangePassword,
+  MessageIcon,
+  SettingsIcon,
+  LogoutIcon,
+};
