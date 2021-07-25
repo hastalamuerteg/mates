@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-export type TUserContainer = ReactNode;
-
 export interface IUsers {
   login: {
     uuid: string;
@@ -19,3 +17,4 @@ export interface IUsers {
     medium: string;
   };
 }
+[];

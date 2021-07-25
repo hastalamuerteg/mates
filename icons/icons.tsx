@@ -6,6 +6,7 @@ import {
   MessageOutlined as MessageIcon,
   SettingOutlined as SettingsIcon,
   LogoutOutlined as LogoutIcon,
+  SearchOutlined as SearchIcon,
 } from "@ant-design/icons";
 
 export {
@@ -16,4 +17,5 @@ export {
   MessageIcon,
   SettingsIcon,
   LogoutIcon,
+  SearchIcon,
 };

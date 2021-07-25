@@ -1,23 +1,24 @@
-import SideMenu from "../../components/SideMenu";
-import { apiGetAllUsers } from "../../services/apiService";
-import { IUsersApi } from "../../types/apiTypes";
-import UserCard from "../../components/UserCard";
+//Next Components
 import { GetStaticProps } from "next";
+
+//React
 import { useState } from "react";
-import { IUsers } from "../../types/users";
-import TopMessages from "../../components/TopMessages";
+
+//Components
+import SideMenu from "../../components/SideMenu";
+import UserCard from "../../components/UserCard";
+import TopHeading from "../../components/TopHeading";
 import UserCardContainer from "../../components/UserCardContainer";
 import Main from "../../components/Main";
 import TopMenu from "../../components/TopMenu";
-import MenuItems from "../../components/MenuItems";
-import Link from "next/link";
-import {
-  AllUsersIcon,
-  MessageIcon,
-  SettingsIcon,
-  LogoutIcon,
-} from "../../icons/icons";
-import { basicGlobalStyles } from "../../helpers/helpers.styles";
+
+//Services
+import { apiGetAllUsers } from "../../services/apiService";
+
+//Types
+import { IUsersApi } from "../../types/apiTypes";
+import { IUsers } from "../../types/users";
+import SearchInput from "../../components/SearchInput";
 
 export const getStaticProps: GetStaticProps = async () => {
   const { results } = await apiGetAllUsers();
@@ -26,81 +27,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function AllUsers(results: IUsersApi) {
   const [users, setUsers] = useState(results.results);
+
+  function handleFriendSearchInput() {}
+
   return (
     <>
       <header className="flex w-full">
         <SideMenu />
         <Main>
-          {
-            <TopMenu>
-              {
-                <ul className="flex justify-around m-2 w-96 h-auto items-center">
-                  {
-                    <MenuItems>
-                      <Link href="/">
-                        <a>
-                          {
-                            <AllUsersIcon
-                              style={{
-                                fontSize: `${basicGlobalStyles.iconsSize}`,
-                              }}
-                            />
-                          }
-                        </a>
-                      </Link>
-                    </MenuItems>
-                  }
-                  {
-                    <MenuItems>
-                      <Link href="/">
-                        <a>
-                          {
-                            <MessageIcon
-                              style={{
-                                fontSize: `${basicGlobalStyles.iconsSize}`,
-                              }}
-                            />
-                          }
-                        </a>
-                      </Link>
-                    </MenuItems>
-                  }
-
-                  {
-                    <MenuItems>
-                      <Link href="/">
-                        <a>
-                          {
-                            <SettingsIcon
-                              style={{
-                                fontSize: `${basicGlobalStyles.iconsSize}`,
-                              }}
-                            />
-                          }
-                        </a>
-                      </Link>
-                    </MenuItems>
-                  }
-                  {
-                    <MenuItems>
-                      <Link href="/">
-                        <a>
-                          {
-                            <LogoutIcon
-                              style={{
-                                fontSize: `${basicGlobalStyles.iconsSize}`,
-                              }}
-                            />
-                          }
-                        </a>
-                      </Link>
-                    </MenuItems>
-                  }
-                </ul>
-              }
-            </TopMenu>
-          }
-          <TopMessages message="People you may know" />
+          <TopMenu />
+          <div className="flex justify-between items-center px-6 py-4 my-14 w-full">
+            <TopHeading message="Get in touch with your mates" />
+            <SearchInput onInputChange={handleFriendSearchInput} />
+          </div>
           <UserCardContainer>
             {users.map((user: IUsers) => (
               <UserCard key={user.login.uuid} user={user} />
