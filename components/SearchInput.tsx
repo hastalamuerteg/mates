@@ -9,9 +9,9 @@ type Props = {
 
 export default function SearchInput({ onInputChange }: Props) {
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-    const searchedFriend = e.target.value;
+    const inputValue = e.target.value;
     if (onInputChange) {
-      onInputChange(searchedFriend);
+      onInputChange(inputValue);
     }
   }
 

@@ -2,7 +2,7 @@
 import { GetStaticProps } from "next";
 
 //React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Components
 import SideMenu from "../../components/SideMenu";
@@ -25,10 +25,18 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { results } };
 };
 
-export default function AllUsers(results: IUsersApi) {
-  const [users, setUsers] = useState(results.results);
+type UsersState = any;
 
-  function handleFriendSearchInput() {}
+export default function AllUsers(results: IUsersApi) {
+  const [users, setUsers] = useState<UsersState>(results.results);
+  const [searchedUsers, setSearchedUsers] = useState<UsersState>(users);
+
+  function handleFriendSearchInput(searchedUser: string): void {
+    const searchedFriends = searchedUsers.filter((user: IUsers) =>
+      user.name.first.includes(searchedUser)
+    );
+    setSearchedUsers(searchedFriends);
+  }
 
   return (
     <>
@@ -41,7 +49,7 @@ export default function AllUsers(results: IUsersApi) {
             <SearchInput onInputChange={handleFriendSearchInput} />
           </div>
           <UserCardContainer>
-            {users.map((user: IUsers) => (
+            {searchedUsers.map((user: IUsers) => (
               <UserCard key={user.login.uuid} user={user} />
             ))}
           </UserCardContainer>
