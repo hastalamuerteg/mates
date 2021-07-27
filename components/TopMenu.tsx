@@ -15,15 +15,18 @@ import {
 //Helpers
 import { basicGlobalStyles } from "../helpers/helpers.styles";
 
+const topMenuHoverLink =
+  "flex justify-center items-center p-4 transition-all hover:bg-gray-100 h-full";
+
 export default function TopMenu() {
   return (
-    <header className="flex justify-center items-center py-2 w-full bg-white border h-10 fixed z-20">
+    <header className="flex justify-end items-center py-4 w-full bg-white shadow-sm border h-12 fixed z-10">
       {
-        <ul className="flex justify-around m-2 w-96 h-auto items-center">
+        <ul className="flex justify-between m-2 w-96 h-12 items-center">
           {
             <MenuItems>
               <Link href="/">
-                <a>
+                <a className={topMenuHoverLink}>
                   {
                     <AllUsersIcon
                       style={{
@@ -38,7 +41,7 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/">
-                <a>
+                <a className={topMenuHoverLink}>
                   {
                     <MessageIcon
                       style={{
@@ -54,7 +57,7 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/">
-                <a>
+                <a className={topMenuHoverLink}>
                   {
                     <SettingsIcon
                       style={{
@@ -69,7 +72,7 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/">
-                <a>
+                <a className={topMenuHoverLink}>
                   {
                     <LogoutIcon
                       style={{

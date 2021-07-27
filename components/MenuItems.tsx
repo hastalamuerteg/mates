@@ -5,5 +5,7 @@ interface Props {
 }
 
 export default function MenuItems({ children }: Props) {
-  return <li>{children}</li>;
+  return (
+    <li className="flex justify-center items-center  h-full ">{children}</li>
+  );
 }

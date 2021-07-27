@@ -19,7 +19,7 @@ const { iconsSize, sideMenuLinks, sideMenuIcons } = basicGlobalStyles;
 
 export default function SideMenu() {
   return (
-    <nav className="flex justify-center items-center h-screen w-48 bg-gradient-to-t from-blue-700 via-indigo-700 to-purple-700">
+    <nav className="flex justify-center items-center h-screen w-28 z-20 bg-gradient-to-t from-blue-700 via-blue-500 to-blue-500 ">
       <ul
         className={`${basicGlobalStyles.flexColumnContainer} justify-center my-auto  w-full`}
       >

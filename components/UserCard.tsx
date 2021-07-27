@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function UserCard({ user }: { user: IUsers }) {
   return (
     <div
-      className={`${basicGlobalStyles.flexColumnContainer} justify-around text-center p-2 shadow-lg rounded-md m-2 cursor-pointer transition-all group hover:bg-gray-200 md:flex md:flex-row md:justify-around md:text-left md:w-96`}
+      className={`${basicGlobalStyles.flexColumnContainer} justify-around text-center p-2 shadow-lg rounded-md m-2 cursor-pointer transition-all group hover:bg-gray-100 md:flex md:flex-row md:justify-around md:text-left md:w-96`}
     >
       <picture>
         <Image
