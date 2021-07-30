@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@auth0/auth0-react": "^1.6.0",
     "axios": "^0.21.1",
     "next": "11.0.1",
     "react": "17.0.2",

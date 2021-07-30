@@ -1,8 +1,8 @@
 //Next Components
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 //React
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 //Components
 import UserCard from "../../components/UserCard";
@@ -16,8 +16,9 @@ import { apiGetAllUsers } from "../../services/apiService";
 import { IUsersApi } from "../../types/apiTypes";
 import { IUsers } from "../../types/users";
 import SearchInput from "../../components/SearchInput";
+import Layout from "../../components/Layout";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { results } = await apiGetAllUsers();
   return { props: { results } };
 };
@@ -53,3 +54,7 @@ export default function AllUsers(results: IUsersApi) {
     </>
   );
 }
+
+AllUsers.getLayout = (page: ReactNode) => {
+  return <Layout>{page}</Layout>;
+};

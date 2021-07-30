@@ -14,11 +14,17 @@ import {
 
 //Helpers
 import { basicGlobalStyles } from "../helpers/helpers.styles";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const topMenuHoverLink =
   "flex justify-center items-center p-4 transition-all hover:bg-gray-100 h-full";
 
 export default function TopMenu() {
+  const { logout } = useAuth0();
+  function handleLogoutSession() {
+    logout({ returnTo: window.location.origin });
+  }
+
   return (
     <header className="flex justify-end items-center py-4 w-full bg-white shadow-sm border h-12 fixed z-10">
       {
@@ -75,6 +81,7 @@ export default function TopMenu() {
                 <a className={topMenuHoverLink}>
                   {
                     <LogoutIcon
+                      onClick={handleLogoutSession}
                       style={{
                         fontSize: `${basicGlobalStyles.iconsSize}`,
                       }}

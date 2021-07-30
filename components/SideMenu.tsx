@@ -23,7 +23,7 @@ export default function SideMenu() {
       <ul
         className={`${basicGlobalStyles.flexColumnContainer} justify-center my-auto  w-full`}
       >
-        <Link href="/">
+        <Link href="/home">
           <a className={`${sideMenuLinks}`}>
             {
               <MenuItems>
