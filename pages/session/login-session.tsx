@@ -8,7 +8,7 @@ export default function LoginSession() {
   }
   return (
     <button
-      className="py-4 px-8 shadow-md rounded-lg bg-blue-500 text-white"
+      className=" py-2 px-8 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold transition-all hover:bg-blue-600 hover:text-white"
       onClick={handleUserLogin}
     >
       Log in

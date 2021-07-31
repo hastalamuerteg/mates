@@ -1,5 +1,5 @@
 //Next Components
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 //React
 import { ReactNode, useState } from "react";
@@ -17,8 +17,9 @@ import { IUsersApi } from "../../types/apiTypes";
 import { IUsers } from "../../types/users";
 import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
+import UserCardExpandDetails from "../../components/UserCardExpandDetails";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const { results } = await apiGetAllUsers();
   return { props: { results } };
 };
@@ -28,6 +29,12 @@ type UsersState = any;
 export default function AllUsers(results: IUsersApi) {
   const users = results.results;
   const [searchedUsers, setSearchedUsers] = useState<UsersState>(users);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  function handleOpenUserCardDetails(user: IUsers) {
+    console.log(user);
+  }
 
   function handleFriendSearchInput(searchedUser: string): void {
     if (searchedUser.length > 1) {
@@ -40,6 +47,14 @@ export default function AllUsers(results: IUsersApi) {
     }
   }
 
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen">
+  //       Loading your user information...
+  //     </div>
+  //   );
+  // }
+
   return (
     <>
       <div className="flex flex-col justify-between items-center text-center px-6 py-4 my-14 w-full md:flex md:flex-row">
@@ -48,13 +63,14 @@ export default function AllUsers(results: IUsersApi) {
       </div>
       <UserCardContainer>
         {searchedUsers.map((user: IUsers) => (
-          <UserCard key={user.login.uuid} user={user} />
+          <UserCard
+            key={user.login.uuid}
+            user={user}
+            onUserCardClick={handleOpenUserCardDetails}
+          />
         ))}
       </UserCardContainer>
     </>
   );
 }
-
-AllUsers.getLayout = (page: ReactNode) => {
-  return <Layout>{page}</Layout>;
-};
+AllUsers.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;

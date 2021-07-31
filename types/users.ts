@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
-
 export interface IUsers {
   login: {
     uuid: string;
+    username: string;
   };
   name: {
     first: string;
@@ -11,10 +10,17 @@ export interface IUsers {
   dob: {
     age: number;
   };
+  gender: string;
+  location: {
+    country: string;
+    state: string;
+    city: string;
+  };
   email: string;
   cell: string;
   picture: {
     medium: string;
+    large: string;
   };
 }
 [];

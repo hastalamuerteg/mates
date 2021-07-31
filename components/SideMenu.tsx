@@ -12,14 +12,30 @@ import {
   HomeIcon,
   NewUserIcon,
   AllUsersIcon,
-  ChangePassword,
+  SettingsIcon,
 } from "../icons/icons";
+import Image from "next/image";
+import logo from "../assets/logo.png";
 
 const { iconsSize, sideMenuLinks, sideMenuIcons } = basicGlobalStyles;
 
 export default function SideMenu() {
   return (
-    <nav className="flex justify-center items-center h-screen w-28 z-20 bg-gradient-to-t from-blue-700 via-blue-500 to-blue-500 ">
+    <nav className="flex flex-col justify-center items-center h-screen w-28 z-20 bg-gradient-to-t from-blue-700 via-blue-500 to-blue-500 ">
+      <div>
+        <Link href="/home">
+          <a>
+            <Image
+              className="rounded-full"
+              alt="mates logo"
+              src={logo}
+              height={100}
+              width={100}
+            />
+          </a>
+        </Link>
+      </div>
+
       <ul
         className={`${basicGlobalStyles.flexColumnContainer} justify-center my-auto  w-full`}
       >
@@ -64,17 +80,17 @@ export default function SideMenu() {
           </a>
         </Link>
 
-        <Link href="/actions/change-password">
+        <Link href="/actions/settings">
           <a className={`${sideMenuLinks}`}>
             {
               <MenuItems>
-                <ChangePassword
+                <SettingsIcon
                   style={{ fontSize: `${iconsSize}` }}
                   className={`${sideMenuIcons}`}
                 />
               </MenuItems>
             }
-            Security
+            Settings
           </a>
         </Link>
       </ul>
