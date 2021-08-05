@@ -1,5 +1,6 @@
 //Next Components
 import Link from "next/link";
+import Image from "next/image";
 
 //Components
 import MenuItems from "./MenuItems";
@@ -14,7 +15,6 @@ import {
   AllUsersIcon,
   SettingsIcon,
 } from "../icons/icons";
-import Image from "next/image";
 import logo from "../assets/logo.png";
 
 const { iconsSize, sideMenuLinks, sideMenuIcons } = basicGlobalStyles;

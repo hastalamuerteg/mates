@@ -1,45 +1,58 @@
-import { basicGlobalStyles } from "../helpers/helpers.styles";
-import { IUsers } from "../types/users";
+//Next components
 import Image from "next/image";
+
+//React
 import { useState } from "react";
 
-interface ISelectedUser {
-  user: IUsers;
-  prevState: null;
+//Helpers
+import { basicGlobalStyles } from "../helpers/helpers.styles";
+
+//Types
+import { IUsers } from "../types/users";
+
+//Components
+import UserCardExpandDetails from "./UserCardExpandDetails";
+
+interface Props {
+  children: IUsers;
 }
 
-export default function UserCard({ user }: { user: IUsers }) {
-  const [selectedUser, setSelectedUser] = useState<ISelectedUser | null>(null);
+export default function UserCard({ children: user }: Props) {
+  const [showUserDetails, setShowUserDetails] = useState(false);
+  const { name, picture, login, dob } = user;
 
   function handleUserCardClick() {
-    console.log(user);
-
-    // onUserCardClick(selectedUser);
-    // setSelectedUser(user);
+    setShowUserDetails(true);
   }
+
   return (
-    <div
-      onClick={handleUserCardClick}
-      className={`${basicGlobalStyles.flexColumnContainer} justify-around text-center p-2 shadow-lg rounded-md m-2 cursor-pointer transition-all group hover:bg-gray-100 md:flex md:flex-row md:justify-around md:text-left md:w-96`}
-    >
-      <picture>
-        <Image
-          alt={`${user.name.first}, ${user.name.last}`}
-          src={user.picture.medium}
-          width={75}
-          height={75}
-          className="rounded-full"
-        />
-      </picture>
+    <>
+      <UserCardExpandDetails
+        onUserCardClick={showUserDetails}
+        onUserCardClose={setShowUserDetails}
+        user={user}
+      />
       <div
-        className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start text-gray-500`}
+        onClick={handleUserCardClick}
+        className={`${basicGlobalStyles.flexColumnContainer} ${showUserDetails} justify-around text-center p-2 shadow-lg rounded-lg m-2 cursor-pointer relative transition-all group hover:bg-gray-100 md:flex md:flex-row md:justify-around md:text-left md:w-96`}
       >
-        <h3 className="text-lg text-blue-600 group-hover:text-gray-800">{`${user.name.first}, ${user.name.last}`}</h3>
-        <p className="text-sm group-hover:text-gray-800">
-          {user.login.username}
-        </p>
-        <p className="text-sm group-hover:text-gray-800">{`${user.dob.age} years old`}</p>
+        <picture>
+          <Image
+            alt={`${name.first}, ${name.last}`}
+            src={picture.medium}
+            width={75}
+            height={75}
+            className="rounded-full"
+          />
+        </picture>
+        <div
+          className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start text-gray-500`}
+        >
+          <h3 className="text-lg text-blue-600 group-hover:text-gray-800">{`${name.first}, ${name.last}`}</h3>
+          <p className="text-sm group-hover:text-gray-800">{login.username}</p>
+          <p className="text-sm group-hover:text-gray-800">{`${dob.age} years old`}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,13 +1,18 @@
-import { SearchIcon } from "../icons/icons";
-import { basicGlobalStyles } from "../helpers/helpers.styles";
+//React
 import React, { ChangeEvent } from "react";
-import { generateID } from "../services/idService";
+
+//Helpers
+import { basicGlobalStyles } from "../helpers/helpers.styles";
+
+//Assets
+import { SearchIcon } from "../icons/icons";
 
 type Props = {
   onInputChange: (args: string) => void;
+  id: string;
 };
 
-export default function SearchInput({ onInputChange }: Props) {
+export default function SearchInput({ onInputChange, id }: Props) {
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     if (onInputChange) {
@@ -17,8 +22,9 @@ export default function SearchInput({ onInputChange }: Props) {
 
   return (
     <div className="inline mr-6">
+      <label htmlFor={id}></label>
       <input
-        id={generateID()}
+        id={id}
         type="text"
         placeholder="Search"
         className="bg-gray-100 p-2 pl-3 rounded-full  border transition-all focus:outline-none focus:bg-white focus:placeholder-blue-700"

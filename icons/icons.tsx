@@ -6,6 +6,9 @@ import {
   SettingOutlined as SettingsIcon,
   LogoutOutlined as LogoutIcon,
   SearchOutlined as SearchIcon,
+  CloseCircleOutlined as CloseIcon,
+  PhoneOutlined as PhoneIcon,
+  MailOutlined as EmailIcon,
 } from "@ant-design/icons";
 
 export {
@@ -16,4 +19,7 @@ export {
   SettingsIcon,
   LogoutIcon,
   SearchIcon,
+  CloseIcon,
+  PhoneIcon,
+  EmailIcon,
 };

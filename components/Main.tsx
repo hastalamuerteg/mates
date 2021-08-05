@@ -1,3 +1,4 @@
+//Types
 import { ILayout } from "../types/layout";
 
 export default function Main({ children }: ILayout) {

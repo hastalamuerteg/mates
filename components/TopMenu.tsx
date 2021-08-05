@@ -4,6 +4,10 @@ import Link from "next/link";
 //Components
 import MenuItems from "../components/MenuItems";
 
+//Helpers
+import { basicGlobalStyles } from "../helpers/helpers.styles";
+import { useAuth0 } from "@auth0/auth0-react";
+
 //Assets
 import {
   AllUsersIcon,
@@ -11,10 +15,6 @@ import {
   SettingsIcon,
   LogoutIcon,
 } from "../icons/icons";
-
-//Helpers
-import { basicGlobalStyles } from "../helpers/helpers.styles";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const topMenuHoverLink =
   "flex justify-center items-center px-4 py-2 h-12 transition-all hover:bg-gray-100 ";
