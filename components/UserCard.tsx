@@ -5,7 +5,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 //Helpers
-import { basicGlobalStyles } from "../helpers/helpers.styles";
+import {
+  GLOBAL_THEME,
+  GLOBAL_CONTAINERS,
+  GLOBAL_TYPOGRAPHY,
+} from "../helpers/helpers.styles";
 
 //Types
 import { IUsers } from "../types/users";
@@ -34,7 +38,7 @@ export default function UserCard({ children: user }: Props) {
       />
       <div
         onClick={handleUserCardClick}
-        className={`${basicGlobalStyles.flexColumnContainer} ${showUserDetails} justify-around text-center p-2 shadow-lg rounded-lg m-2 cursor-pointer relative transition-all group hover:bg-gray-100 md:flex md:flex-row md:justify-around md:text-left md:w-96`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} ${showUserDetails} justify-around text-center p-2 shadow-lg rounded-lg m-2 cursor-pointer relative ${GLOBAL_THEME.userCardBackgroundColor} transition-all group hover:${GLOBAL_THEME.userCardBackgroundColorHover} md:flex md:flex-row md:justify-around md:text-left md:w-96`}
       >
         <picture>
           <Image
@@ -46,11 +50,19 @@ export default function UserCard({ children: user }: Props) {
           />
         </picture>
         <div
-          className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start text-gray-500`}
+          className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start ${GLOBAL_TYPOGRAPHY.userCardFontColor}`}
         >
-          <h3 className="text-lg text-blue-600 group-hover:text-gray-800">{`${name.first}, ${name.last}`}</h3>
-          <p className="text-sm group-hover:text-gray-800">{login.username}</p>
-          <p className="text-sm group-hover:text-gray-800">{`${dob.age} years old`}</p>
+          <h3
+            className={`text-lg ${GLOBAL_TYPOGRAPHY.userCardHeadingColor} transition-all group-hover:${GLOBAL_TYPOGRAPHY.userCardHeadingColorHover}`}
+          >{`${name.first}, ${name.last}`}</h3>
+          <p
+            className={`text-sm group-hover:${GLOBAL_THEME.userCardBackgroundColorGroupHover}`}
+          >
+            {login.username}
+          </p>
+          <p
+            className={`text-sm group-hover:${GLOBAL_THEME.userCardBackgroundColorGroupHover}`}
+          >{`${dob.age} years old`}</p>
         </div>
       </div>
     </>

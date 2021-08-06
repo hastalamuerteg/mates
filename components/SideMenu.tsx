@@ -6,7 +6,11 @@ import Image from "next/image";
 import MenuItems from "./MenuItems";
 
 //Helpers
-import { basicGlobalStyles } from "../helpers/helpers.styles";
+import {
+  GLOBAL_ICONOGRAPHY,
+  GLOBAL_CONTAINERS,
+  GLOBAL_THEME,
+} from "../helpers/helpers.styles";
 
 //Assets
 import {
@@ -17,80 +21,80 @@ import {
 } from "../icons/icons";
 import logo from "../assets/logo.png";
 
-const { iconsSize, sideMenuLinks, sideMenuIcons } = basicGlobalStyles;
-
 export default function SideMenu() {
   return (
-    <nav className="flex flex-col justify-center items-center h-screen w-28 z-20 bg-gradient-to-t from-blue-700 via-blue-500 to-blue-500 ">
-      <div>
+    <nav
+      className={`flex flex-col justify-center items-center h-screen w-auto z-20 ${GLOBAL_THEME.sideMenuBackgroundColor} md:w-20`}
+    >
+      <div className="mt-2">
         <Link href="/home">
           <a>
             <Image
-              className="rounded-full"
+              className="rounded-lg "
               alt="mates logo"
               src={logo}
-              height={100}
-              width={100}
+              height={70}
+              width={70}
             />
           </a>
         </Link>
       </div>
 
       <ul
-        className={`${basicGlobalStyles.flexColumnContainer} justify-center my-auto  w-full`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center my-auto  w-full`}
       >
         <Link href="/home">
-          <a className={`${sideMenuLinks}`}>
+          <a
+            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+          >
             {
               <MenuItems>
                 <HomeIcon
-                  style={{ fontSize: `${iconsSize}` }}
-                  className={`${sideMenuIcons}`}
+                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
             }
-            Home
           </a>
         </Link>
         <Link href="/users/new-user">
-          <a className={`${sideMenuLinks}`}>
+          <a
+            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+          >
             {
               <MenuItems>
                 <NewUserIcon
-                  style={{ fontSize: `${iconsSize}` }}
-                  className={`${sideMenuIcons}`}
+                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
             }
-            New
           </a>
         </Link>
 
         <Link href="/users/all-users">
-          <a className={`${sideMenuLinks}`}>
+          <a
+            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+          >
             {
               <MenuItems>
                 <AllUsersIcon
-                  style={{ fontSize: `${iconsSize}` }}
-                  className={`${sideMenuIcons}`}
+                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
             }
-            Friends
           </a>
         </Link>
 
         <Link href="/actions/settings">
-          <a className={`${sideMenuLinks}`}>
+          <a
+            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+          >
             {
               <MenuItems>
                 <SettingsIcon
-                  style={{ fontSize: `${iconsSize}` }}
-                  className={`${sideMenuIcons}`}
+                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
             }
-            Settings
           </a>
         </Link>
       </ul>

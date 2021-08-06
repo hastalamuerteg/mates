@@ -5,7 +5,7 @@ import Link from "next/link";
 import MenuItems from "../components/MenuItems";
 
 //Helpers
-import { basicGlobalStyles } from "../helpers/helpers.styles";
+import { GLOBAL_ICONOGRAPHY, GLOBAL_THEME } from "../helpers/helpers.styles";
 import { useAuth0 } from "@auth0/auth0-react";
 
 //Assets
@@ -16,9 +16,6 @@ import {
   LogoutIcon,
 } from "../icons/icons";
 
-const topMenuHoverLink =
-  "flex justify-center items-center px-4 py-2 h-12 transition-all hover:bg-gray-100 ";
-
 export default function TopMenu() {
   const { logout } = useAuth0();
   function handleLogoutSession() {
@@ -26,17 +23,22 @@ export default function TopMenu() {
   }
 
   return (
-    <header className="flex justify-end items-center py-4 w-full bg-white shadow-sm border h-12 fixed z-10">
+    <header
+      className={`flex justify-end items-center py-4 w-full ${GLOBAL_THEME.topMenuBackgroundColor} shadow-sm  h-12 fixed z-10`}
+    >
       {
         <ul className="flex justify-end space-x-16 mr-10 w-full h-12 items-center">
           {
             <MenuItems>
               <Link href="/users/all-users">
-                <a className={topMenuHoverLink}>
+                <a
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                >
                   {
                     <AllUsersIcon
                       style={{
-                        fontSize: `${basicGlobalStyles.iconsSize}`,
+                        fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
+                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
                       }}
                     />
                   }
@@ -47,11 +49,14 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/">
-                <a className={topMenuHoverLink}>
+                <a
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                >
                   {
                     <MessageIcon
                       style={{
-                        fontSize: `${basicGlobalStyles.iconsSize}`,
+                        fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
+                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
                       }}
                     />
                   }
@@ -63,11 +68,14 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/actions/settings">
-                <a className={topMenuHoverLink}>
+                <a
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                >
                   {
                     <SettingsIcon
                       style={{
-                        fontSize: `${basicGlobalStyles.iconsSize}`,
+                        fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
+                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
                       }}
                     />
                   }
@@ -78,12 +86,15 @@ export default function TopMenu() {
           {
             <MenuItems>
               <Link href="/">
-                <a className={topMenuHoverLink}>
+                <a
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                >
                   {
                     <LogoutIcon
                       onClick={handleLogoutSession}
                       style={{
-                        fontSize: `${basicGlobalStyles.iconsSize}`,
+                        fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
+                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
                       }}
                     />
                   }
