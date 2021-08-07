@@ -33,8 +33,8 @@ export default function SideMenu() {
               className="rounded-lg "
               alt="mates logo"
               src={logo}
-              height={70}
-              width={70}
+              height={85}
+              width={85}
             />
           </a>
         </Link>
@@ -45,11 +45,12 @@ export default function SideMenu() {
       >
         <Link href="/home">
           <a
-            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
           >
             {
               <MenuItems>
                 <HomeIcon
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -63,6 +64,7 @@ export default function SideMenu() {
             {
               <MenuItems>
                 <NewUserIcon
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -77,6 +79,7 @@ export default function SideMenu() {
             {
               <MenuItems>
                 <AllUsersIcon
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -91,6 +94,7 @@ export default function SideMenu() {
             {
               <MenuItems>
                 <SettingsIcon
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>

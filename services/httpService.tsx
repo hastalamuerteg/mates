@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://randomuser.me/api/?results=200";
+export const BASE_URL = "https://randomuser.me/api/?results=150";
 
 const axiosIstance = axios.create({
   baseURL: BASE_URL,

@@ -1,5 +1,6 @@
 //Next Components
 import { GetStaticProps } from "next";
+import useSWR from "swr";
 
 //React
 import { ReactNode, useState } from "react";
@@ -17,18 +18,22 @@ import TopHeading from "../../components/TopHeading";
 import UserCardContainer from "../../components/UserCardContainer";
 import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
+import { GLOBAL_CONTAINERS } from "../../helpers/helpers.styles";
+import { BASE_URL } from "../../services/httpService";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { results } = await apiGetAllUsers();
-  return { props: { results } };
+  const { results: users } = await apiGetAllUsers();
+  return { props: { users } };
 };
 
-interface IUsersAPI {
-  results: IUsers[];
+interface Props {
+  users: IUsers[];
 }
 
-export default function AllUsers(results: IUsersAPI) {
-  const users = results.results;
+export default function AllUsers({ users }: Props) {
+  const { data, error } = useSWR(BASE_URL, apiGetAllUsers, {
+    initialData: users,
+  });
   const [searchedUsers, setSearchedUsers] = useState<Array<IUsers>>(users);
 
   function handleFriendSearchInput(searchedUser: string): void {
@@ -41,6 +46,23 @@ export default function AllUsers(results: IUsersAPI) {
       setSearchedUsers(users);
     }
   }
+
+  if (!error && !data) {
+    <div
+      className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center h-screen`}
+    >
+      Carregando
+    </div>;
+  }
+
+  if (error)
+    return (
+      <div
+        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center h-screen`}
+      >
+        Erro
+      </div>
+    );
 
   return (
     <>
@@ -59,4 +81,5 @@ export default function AllUsers(results: IUsersAPI) {
     </>
   );
 }
+
 AllUsers.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;

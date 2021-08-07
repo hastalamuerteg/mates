@@ -1,8 +1,8 @@
 const GLOBAL_ICONOGRAPHY = {
   iconsSize: "24px",
   sideMenuLinks: "inline-block w-full my-2 py-6 rounded-r-lg",
+  menuIcons: "shadow-xl p-1 rounded-lg",
   topMenuLinks: "flex justify-center items-center px-4 py-2 h-12 rounded-b-lg",
-  topMenuBackgroundIconsHover: "bg-gray-400",
   userCardExpandDetailsIcons: "22px",
   userCardExpandDetailsCloseIcon: "26px",
 };
@@ -13,32 +13,48 @@ const GLOBAL_CONTAINERS = {
 };
 
 const GLOBAL_THEME = {
-  globalBackgroundColor: "bg-gray-50",
-  topMenuBackgroundColor: "bg-blue-600",
-  topMenuLinksColor: "#FFFFFF",
+  globalBackgroundColor: "bg-lightblue-light",
+  topMenuBackgroundColor: "bg-blue-light",
+  topMenuBackgroundIconsHover: "bg-blue-dark",
   sideMenuBackgroundColor: "bg-white",
+  topMenuLinksColor: "#FFFFFF",
+  sideMenuIconsHover: "bg-white",
+  sideMenuIconsColorHover: "text-blue-light",
   userCardBackgroundColor: "bg-white",
-  userCardBackgroundColorHover: "bg-blue-500",
+  userCardBackgroundColorHover: "bg-blue-light",
   userCardBackgroundColorGroupHover: "text-white",
   userCardExpandDetailsBackgroundColor: "bg-white",
-  userCardExpandDetailsIcons: "#2563EB",
-  sideMenuLinksColor: "text-blue-700",
+  userCardExpandDetailsIcons: "#5E6AC1",
+  userCardExpandDetailsAvatarMan:
+    "bg-gradient-to-t from-blue-light via-blue-medium to-blue-light",
+  userCardExpandDetailsAvatarWoman:
+    "bg-gradient-to-t from-gradient-from via-gradient-via to-gradient-from",
+  sideMenuLinksColor: "text-blue-medium",
   sideMenuLinksColorHover: "text-white",
-  sideMenuLinksBackgroundColorHover: "bg-blue-700",
+  sideMenuLinksBackgroundColorHover: "bg-blue-dark",
+  loginScreenWelcome:
+    "bg-gradient-to-t from-gradient-from via-gradient-via to-gradient-to",
+  loginScreenWelcomeContainer: "bg-white",
+  loginScreenFormText: "text-purple-light",
+  loginScreenWelcomeButton:
+    "bg-gradient-to-r from-gradient-from via-gradient-via to-gradient-to text-white",
+  loginScreenWelcomeInput: "border-purple-light",
+  loginScreenWelcomeLoginButton: "border-purple-light text-purple-light",
+  loginScreenWelcomeLoginButtonHover: "bg-purple-medium hover:text-white",
 };
 
 const GLOBAL_TYPOGRAPHY = {
-  topHeadingColor: "text-blue-700",
-  mainFontsColor: "text-blue-600",
-  userCardFontColor: "text-gray-600",
-  userCardHeadingColor: "text-blue-600",
+  topHeadingColor: "text-blue-light",
+  mainFontsColor: "text-blue-medium",
+  userCardFontColor: "text-gray-medium",
+  userCardHeadingColor: "text-blue-dark",
   userCardHeadingColorHover: "text-white",
 };
 
 const GLOBAL_INPUTS = {
-  searchInput: "bg-gray-300",
+  searchInput: "bg-gray-light",
   searchInputFocus: "bg-white",
-  searchInputFocusPlaceholder: "placeholder-blue-700",
+  searchInputFocusPlaceholder: "placeholder-blue-light",
 };
 
 export {

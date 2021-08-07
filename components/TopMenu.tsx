@@ -24,18 +24,19 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-end items-center py-4 w-full ${GLOBAL_THEME.topMenuBackgroundColor} shadow-sm  h-12 fixed z-10`}
+      className={`flex justify-end items-center ${GLOBAL_THEME.topMenuBackgroundColor} w-full  h-14 fixed z-50`}
     >
       {
-        <ul className="flex justify-end space-x-16 mr-10 w-full h-12 items-center">
+        <ul className="flex space-x-8 mr-20 h-12 items-center">
           {
             <MenuItems>
               <Link href="/users/all-users">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
                 >
                   {
                     <AllUsersIcon
+                      className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
                         color: `${GLOBAL_THEME.topMenuLinksColor}`,
@@ -50,10 +51,11 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
                 >
                   {
                     <MessageIcon
+                      className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
                         color: `${GLOBAL_THEME.topMenuLinksColor}`,
@@ -69,10 +71,11 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/actions/settings">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
                 >
                   {
                     <SettingsIcon
+                      className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
                         color: `${GLOBAL_THEME.topMenuLinksColor}`,
@@ -87,10 +90,11 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_ICONOGRAPHY.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
                 >
                   {
                     <LogoutIcon
+                      className={GLOBAL_ICONOGRAPHY.menuIcons}
                       onClick={handleLogoutSession}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,

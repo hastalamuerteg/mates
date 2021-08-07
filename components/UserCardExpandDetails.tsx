@@ -29,7 +29,10 @@ export default function UserCardExpandDetails({
     onUserCardClose(false);
   }
 
-  const userGender = user.gender === "female" ? "bg-pink-200" : "bg-blue-200";
+  const userGender =
+    user.gender === "female"
+      ? `${GLOBAL_THEME.userCardExpandDetailsAvatarWoman}`
+      : `${GLOBAL_THEME.userCardExpandDetailsAvatarMan}`;
 
   const userCardDetailsJSX = (
     <div
@@ -82,6 +85,7 @@ export default function UserCardExpandDetails({
             >
               <li className="cursor-pointer">
                 <MessageIcon
+                  className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
                     color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,
@@ -90,6 +94,7 @@ export default function UserCardExpandDetails({
               </li>
               <li className="cursor-pointer">
                 <PhoneIcon
+                  className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
                     color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,
@@ -98,6 +103,7 @@ export default function UserCardExpandDetails({
               </li>
               <li className="cursor-pointer">
                 <EmailIcon
+                  className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
                     color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,

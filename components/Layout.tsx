@@ -14,9 +14,11 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <header className="flex w-full">
-        <TopMenu />
         <SideMenu />
-        <Main>{children}</Main>
+        <Main>
+          <TopMenu />
+          {children}
+        </Main>
       </header>
     </>
   );

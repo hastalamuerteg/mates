@@ -27,7 +27,7 @@ export default function SearchInput({ onInputChange, id }: Props) {
         id={id}
         type="text"
         placeholder="Search"
-        className={`${GLOBAL_INPUTS.searchInput} p-2 pl-3 rounded-full  border transition-all focus:outline-none focus:${GLOBAL_INPUTS.searchInputFocus} focus:${GLOBAL_INPUTS.searchInputFocusPlaceholder}`}
+        className={`${GLOBAL_INPUTS.searchInput} p-2 pl-3 rounded-full  transition-all focus:outline-none focus:${GLOBAL_INPUTS.searchInputFocus} focus:${GLOBAL_INPUTS.searchInputFocusPlaceholder}`}
         onChange={handleInputChange}
       ></input>
       <span className="text-center h-auto -ml-10 w-full">
