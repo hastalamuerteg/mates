@@ -36,10 +36,10 @@ export default function UserCardExpandDetails({
 
   const userCardDetailsJSX = (
     <div
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-between text-center shadow-2xl ${GLOBAL_THEME.userCardExpandDetailsBackgroundColor}  h-auto w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer}  justify-between text-center shadow-2xl ${GLOBAL_THEME.userCardExpandDetailsBackgroundColor}  h-auto w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
     >
       <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-end w-full`}
+        className={`${GLOBAL_CONTAINERS.flexRowContainer}  justify-end w-full`}
       >
         <span
           className="flex justify-center items-center rounded-md mt-4 mr-4 cursor-pointer"
@@ -54,7 +54,7 @@ export default function UserCardExpandDetails({
       </div>
 
       <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center space-x-6 w-full flex-grow`}
+        className={`${GLOBAL_CONTAINERS.flexRowContainer} items-center justify-center space-x-6 w-full flex-grow`}
       >
         <picture
           className={`mx-6 mb-6 p-2 rounded-lg w-auto ${userGender} shadow-lg`}

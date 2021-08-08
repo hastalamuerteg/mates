@@ -29,4 +29,5 @@ a {
 
 ::-webkit-scrollbar-thumb {
   background: #4853ad;
+  border-radius: 50px;
 }

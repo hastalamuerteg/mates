@@ -24,7 +24,7 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-end items-center ${GLOBAL_THEME.topMenuBackgroundColor} w-full  h-14 fixed z-50`}
+      className={`flex justify-end items-center ${GLOBAL_THEME.topMenuBackgroundColor} w-full h-14 fixed z-50`}
     >
       {
         <ul className="flex space-x-8 mr-20 h-12 items-center">

@@ -21,7 +21,7 @@ export default function Page() {
             className={`flex flex-col justify-center items-center w-full p-2 mt-8 `}
           >
             <input
-              className={`p-2 w-80 ${GLOBAL_THEME.loginScreenWelcomeInput} border-2 m-4 rounded-lg focus:outline-none`}
+              className={`p-2 w-5/6 ${GLOBAL_THEME.loginScreenWelcomeInput} border-2 m-4 rounded-lg focus:outline-none`}
               type="email"
               placeholder="Email"
             />

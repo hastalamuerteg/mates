@@ -20,6 +20,7 @@ import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
 import { GLOBAL_CONTAINERS } from "../../helpers/helpers.styles";
 import { BASE_URL } from "../../services/httpService";
+import GoToTopButton from "../../components/GoToTopButton";
 
 export const getStaticProps: GetStaticProps = async () => {
   const { results: users } = await apiGetAllUsers();
@@ -78,6 +79,7 @@ export default function AllUsers({ users }: Props) {
           <UserCard key={user.login.uuid}>{user}</UserCard>
         ))}
       </UserCardContainer>
+      <GoToTopButton />
     </>
   );
 }

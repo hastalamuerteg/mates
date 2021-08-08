@@ -1,5 +1,7 @@
 import { GetStaticProps } from "next";
 import { ReactNode } from "react";
+import GoToTopButton from "../components/GoToTopButton";
+import HomeFeed from "../components/HomeFeed";
 import Layout from "../components/Layout";
 import Post from "../components/Post";
 import getCachedUsers from "../data/usersData";
@@ -14,15 +16,19 @@ export const getStaticProps: GetStaticProps = async () => {
 interface Props {
   users: IUsers[];
 }
-export default function Home({ users }: Props) {
-  console.log(users);
 
+export default function Home({ users }: Props) {
   return (
     <>
       <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center h-screen`}
+        className={`${GLOBAL_CONTAINERS.flexRowContainer} items-center justify-center`}
       >
-        {/* <Post>{}</Post> */}
+        <HomeFeed>
+          {users.map((user) => (
+            <Post user={user} key={user.login.uuid} />
+          ))}
+        </HomeFeed>
+        <GoToTopButton />
       </div>
     </>
   );

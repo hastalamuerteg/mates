@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       black: "#000",
       white: "#fff",
+      lightgray: "#f8f8fb",
 
       gradient: {
         from: "#A281F9",
