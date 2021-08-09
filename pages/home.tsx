@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { ReactNode } from "react";
+import { ReactNode, useRef, forwardRef } from "react";
 import GoToTopButton from "../components/GoToTopButton";
 import HomeFeed from "../components/HomeFeed";
 import Layout from "../components/Layout";
@@ -18,9 +18,11 @@ interface Props {
 }
 
 export default function Home({ users }: Props) {
+  const backToTopHomeRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <div
+        ref={backToTopHomeRef}
         className={`${GLOBAL_CONTAINERS.flexRowContainer} items-center justify-center`}
       >
         <HomeFeed>
@@ -28,7 +30,7 @@ export default function Home({ users }: Props) {
             <Post user={user} key={user.login.uuid} />
           ))}
         </HomeFeed>
-        <GoToTopButton />
+        <GoToTopButton onRef={backToTopHomeRef} />
       </div>
     </>
   );

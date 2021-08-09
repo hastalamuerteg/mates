@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import useSWR from "swr";
 
 //React
-import { ReactNode, useState } from "react";
+import { forwardRef, ReactNode, useRef, useState } from "react";
 
 //Types
 import { IUsers } from "../../types/users";
@@ -36,6 +36,7 @@ export default function AllUsers({ users }: Props) {
     initialData: users,
   });
   const [searchedUsers, setSearchedUsers] = useState<Array<IUsers>>(users);
+  const backToTopAllUsersRef = useRef<HTMLDivElement>(null);
 
   function handleFriendSearchInput(searchedUser: string): void {
     if (searchedUser.length > 1) {
@@ -67,7 +68,10 @@ export default function AllUsers({ users }: Props) {
 
   return (
     <>
-      <div className="flex flex-col justify-between items-center text-center px-6 py-4 my-14 w-full md:flex md:flex-row">
+      <div
+        ref={backToTopAllUsersRef}
+        className="flex flex-col justify-between items-center text-center px-6 py-4 my-14 w-full md:flex md:flex-row"
+      >
         <TopHeading message="Get in touch with your mates" />
         <SearchInput
           id={generateID()}
@@ -79,7 +83,7 @@ export default function AllUsers({ users }: Props) {
           <UserCard key={user.login.uuid}>{user}</UserCard>
         ))}
       </UserCardContainer>
-      <GoToTopButton />
+      <GoToTopButton onRef={backToTopAllUsersRef} />
     </>
   );
 }
