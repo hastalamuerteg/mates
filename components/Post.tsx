@@ -1,16 +1,34 @@
 import Image from "next/image";
+import { useState } from "react";
 import { GLOBAL_CONTAINERS, GLOBAL_THEME } from "../helpers/helpers.styles";
-import { CommentIcon, LikeIcon, SendIcon, ShareIcon } from "../icons/icons";
-import { IPost } from "../types/post";
+import {
+  CommentIcon,
+  LikeIcon,
+  LikeIconFilled,
+  SendIcon,
+  ShareIcon,
+} from "../icons/icons";
 import { IUsers } from "../types/users";
 
 interface Props {
   user: IUsers;
 }
 export default function Post({ user }: Props) {
+  const [postLiked, setPostLiked] = useState(false);
+  const [likesAmount, setLikesAmount] = useState(generateNumbers());
+  const [commentsAmount, setCommentsAmount] = useState(generateNumbers());
+
+  function generateNumbers() {
+    const number = Math.floor(Math.random() * 50 + 1);
+    return number;
+  }
+
+  function handlePostLiked() {
+    setPostLiked(!postLiked);
+  }
   return (
     <article
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md ${GLOBAL_THEME.postBackgroundColor}`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md ${GLOBAL_THEME.homePostBackgroundColor}`}
     >
       <div
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-start items-start w-full`}
@@ -28,7 +46,9 @@ export default function Post({ user }: Props) {
           className={`${GLOBAL_CONTAINERS.flexColumnContainer} items-start text-left`}
         >
           <h2 className="font-semibold">{`${user.name.first} ${user.name.last}`}</h2>
-          <span>1d &#8226; 🌍</span>
+          <span>
+            <small>15 hrs &#8226; 🌍</small>
+          </span>
         </div>
       </div>
       <div
@@ -48,34 +68,41 @@ export default function Post({ user }: Props) {
           className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-between w-full my-2`}
         >
           <span className="flex justify-center items-center cursor-pointer">
-            23 👍
+            {postLiked ? likesAmount + 1 : likesAmount} 👍
           </span>
-          <span className="cursor-pointer">7 comments</span>
+          <span className="cursor-pointer">{commentsAmount} comments</span>
         </div>
       </div>
       <ul
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-lightblue-light`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
+          onClick={handlePostLiked}
         >
-          <LikeIcon />
+          {postLiked ? (
+            <LikeIconFilled
+              style={{ color: `${GLOBAL_THEME.homePostLiked}` }}
+            />
+          ) : (
+            <LikeIcon />
+          )}
           Like
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-lightblue-light`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-lightblue-light`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-lightblue-light`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
         >
           <SendIcon />
           Send

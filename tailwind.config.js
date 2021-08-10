@@ -39,6 +39,9 @@ module.exports = {
         medium: "#825EF9",
         dark: "#440c58",
       },
+      red: {
+        light: "#ff0746",
+      },
     },
     extend: {
       fontFamily: {

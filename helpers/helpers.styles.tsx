@@ -42,7 +42,12 @@ const GLOBAL_THEME = {
   loginScreenWelcomeLoginButton: "border-purple-light text-purple-light",
   loginScreenWelcomeLoginButtonHover: "bg-purple-medium hover:text-white",
   homeFeedBackgroundColor: "bg-lightgray",
-  postBackgroundColor: "bg-white",
+  homePostBackgroundColor: "bg-white",
+  homePostIconsColorHover: "bg-lightgray",
+  homePostPlaceholderFocusColor: "placeholder-blue-medium",
+  homePostLiked: "#ff0746",
+  primaryButtonBackgroundColor: "bg-blue-medium",
+  primaryButtonFontColor: "text-white",
 };
 
 const GLOBAL_TYPOGRAPHY = {
