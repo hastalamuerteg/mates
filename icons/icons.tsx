@@ -19,6 +19,9 @@ import {
   PictureOutlined as PictureIcon,
   EnvironmentOutlined as MapIcon,
   UpCircleOutlined as GoUpButtonIcon,
+  LinkedinFilled as LinkedInIcon,
+  InstagramFilled as InstagramIcon,
+  TwitterCircleFilled as TwitterIcon,
 } from "@ant-design/icons";
 
 export {
@@ -42,4 +45,7 @@ export {
   PictureIcon,
   MapIcon,
   GoUpButtonIcon,
+  LinkedInIcon,
+  InstagramIcon,
+  TwitterIcon,
 };

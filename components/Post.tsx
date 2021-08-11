@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { GLOBAL_CONTAINERS, GLOBAL_THEME } from "../helpers/helpers.styles";
 import {
@@ -13,11 +14,17 @@ import { IUsers } from "../types/users";
 interface Props {
   user: IUsers;
 }
+
+const ROUTE_USER_ID = "users/[id]";
+
 export default function Post({ user }: Props) {
   const [postLiked, setPostLiked] = useState(false);
   const [likesAmount, setLikesAmount] = useState(generateNumbers());
   const [commentsAmount, setCommentsAmount] = useState(generateNumbers());
 
+  function handleUserClick() {
+    console.log(user.login.uuid);
+  }
   function generateNumbers() {
     const number = Math.floor(Math.random() * 50 + 1);
     return number;
@@ -39,13 +46,38 @@ export default function Post({ user }: Props) {
             src={user.picture.medium}
             width={75}
             height={75}
-            className="rounded-full"
+            className="rounded-full cursor-pointer"
+            onClick={handleUserClick}
           />
         </picture>
         <div
           className={`${GLOBAL_CONTAINERS.flexColumnContainer} items-start text-left`}
         >
-          <h2 className="font-semibold">{`${user.name.first} ${user.name.last}`}</h2>
+          <Link
+            href={{
+              pathname: ROUTE_USER_ID,
+              query: {
+                id: user.login.uuid,
+                username: user.login.username,
+                firstName: user.name.first,
+                lastName: user.name.last,
+                age: user.dob.age,
+                email: user.email,
+                country: user.location.country,
+                city: user.location.city,
+                state: user.location.state,
+                picture: user.picture.large,
+              },
+            }}
+            as={user.login.uuid}
+          >
+            <a>
+              <h2
+                className="font-semibold cursor-pointer"
+                onClick={handleUserClick}
+              >{`${user.name.first} ${user.name.last}`}</h2>
+            </a>
+          </Link>
           <span>
             <small>15 hrs &#8226; 🌍</small>
           </span>

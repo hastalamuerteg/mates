@@ -48,6 +48,8 @@ const GLOBAL_THEME = {
   homePostLiked: "#ff0746",
   primaryButtonBackgroundColor: "bg-blue-medium",
   primaryButtonFontColor: "text-white",
+  userPageBackgroundColor: "bg-white",
+  userPageHeaderBackgroundColor: "bg-blue-light",
 };
 
 const GLOBAL_TYPOGRAPHY = {
