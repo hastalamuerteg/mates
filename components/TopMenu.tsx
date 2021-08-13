@@ -5,7 +5,9 @@ import Link from "next/link";
 import MenuItems from "../components/MenuItems";
 
 //Helpers
-import { GLOBAL_ICONOGRAPHY, GLOBAL_THEME } from "../helpers/helpers.styles";
+import { GLOBAL_ICONOGRAPHY, THEME } from "../helpers/helpers.styles";
+
+//Authentication
 import { useAuth0 } from "@auth0/auth0-react";
 
 //Assets
@@ -24,22 +26,22 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-end items-center ${GLOBAL_THEME.topMenuBackgroundColor} w-full h-14 fixed z-50`}
+      className={`flex justify-around md:justify-end items-center bg-${THEME.primary} w-full h-14 fixed z-50`}
     >
       {
-        <ul className="flex space-x-8 mr-20 h-12 items-center">
+        <ul className="flex space-x-8 md:mr-20 h-12 items-center">
           {
             <MenuItems>
               <Link href="/users/all-users">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:bg-${THEME.secondary}`}
                 >
                   {
                     <AllUsersIcon
                       className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
-                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
+                        color: `${THEME.variants.primary_icons}`,
                       }}
                     />
                   }
@@ -49,16 +51,16 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              <Link href="/">
+              <Link href="">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:bg-${THEME.secondary}`}
                 >
                   {
                     <MessageIcon
                       className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
-                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
+                        color: `${THEME.variants.primary_icons}`,
                       }}
                     />
                   }
@@ -71,14 +73,14 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/actions/settings">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:bg-${THEME.secondary}`}
                 >
                   {
                     <SettingsIcon
                       className={GLOBAL_ICONOGRAPHY.menuIcons}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
-                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
+                        color: `${THEME.variants.primary_icons}`,
                       }}
                     />
                   }
@@ -88,9 +90,10 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              <Link href="/">
+              {/* to fix auth provider logout*/}
+              <Link href="">
                 <a
-                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:${GLOBAL_THEME.topMenuBackgroundIconsHover}`}
+                  className={`${GLOBAL_ICONOGRAPHY.topMenuLinks} transition-all hover:bg-${THEME.secondary}`}
                 >
                   {
                     <LogoutIcon
@@ -98,7 +101,7 @@ export default function TopMenu() {
                       onClick={handleLogoutSession}
                       style={{
                         fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
-                        color: `${GLOBAL_THEME.topMenuLinksColor}`,
+                        color: `${THEME.variants.primary_icons}`,
                       }}
                     />
                   }

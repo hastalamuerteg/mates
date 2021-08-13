@@ -5,6 +5,8 @@ import { ReactNode } from "react";
 import TopMenu from "./TopMenu";
 import SideMenu from "./SideMenu";
 import Main from "./Main";
+import MobileMenu from "./MobileMenu";
+import { THEME } from "../helpers/helpers.styles";
 
 interface Props {
   children: ReactNode;
@@ -13,12 +15,13 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <header className="flex w-full">
+      <header className={`flex w-full text-${THEME.text.secondary}`}>
         <SideMenu />
         <Main>
           <TopMenu />
           {children}
         </Main>
+        <MobileMenu />
       </header>
     </>
   );

@@ -1,11 +1,22 @@
+//Next
 import { GetStaticProps } from "next";
-import { ReactNode, useRef, forwardRef } from "react";
+
+//React
+import { ReactNode, useRef } from "react";
+
+//Components
 import GoToTopButton from "../components/GoToTopButton";
 import HomeFeed from "../components/HomeFeed";
 import Layout from "../components/Layout";
 import Post from "../components/Post";
+
+//Local Data
 import getCachedUsers from "../data/usersData";
+
+//Helpers
 import { GLOBAL_CONTAINERS } from "../helpers/helpers.styles";
+
+//Types
 import { IUsers } from "../types/users";
 
 export const getStaticProps: GetStaticProps = async () => {

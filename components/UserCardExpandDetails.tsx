@@ -8,8 +8,7 @@ import { IUsers } from "../types/users";
 import {
   GLOBAL_CONTAINERS,
   GLOBAL_ICONOGRAPHY,
-  GLOBAL_THEME,
-  GLOBAL_TYPOGRAPHY,
+  THEME,
 } from "../helpers/helpers.styles";
 
 //Assets
@@ -29,20 +28,15 @@ export default function UserCardExpandDetails({
     onUserCardClose(false);
   }
 
-  const userGender =
-    user.gender === "female"
-      ? `${GLOBAL_THEME.userCardExpandDetailsAvatarWoman}`
-      : `${GLOBAL_THEME.userCardExpandDetailsAvatarMan}`;
-
   const userCardDetailsJSX = (
     <div
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer}  justify-between text-center shadow-2xl ${GLOBAL_THEME.userCardExpandDetailsBackgroundColor}  h-auto w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-between text-center shadow-2xl bg-${THEME.white} h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
     >
       <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer}  justify-end w-full`}
+        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-end w-full`}
       >
         <span
-          className="flex justify-center items-center rounded-md mt-4 mr-4 cursor-pointer"
+          className={`flex justify-center items-center rounded-md mt-4 mr-4 cursor-pointer text-${THEME.primary}`}
           onClick={handleCloseWindow}
         >
           <CloseIcon
@@ -54,10 +48,10 @@ export default function UserCardExpandDetails({
       </div>
 
       <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} items-center justify-center space-x-6 w-full flex-grow`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center items-center text-left mt-4 md:justify-center w-full flex-grow md:flex md:flex-row md:items-start`}
       >
         <picture
-          className={`mx-6 mb-6 p-2 rounded-lg w-auto ${userGender} shadow-lg`}
+          className={`mx-6 mb-6 p-2 rounded-lg w-auto bg-${THEME.primary} shadow-lg`}
         >
           <Image
             alt={`${user.name.first}, ${user.name.last}`}
@@ -68,45 +62,50 @@ export default function UserCardExpandDetails({
           />
         </picture>
         <div
-          className={`flex flex-col justify-start items-start w-1/2 md:flex md:justify-start md:items-start flex-grow`}
+          className={`flex flex-col justify-center items-center w-full m-2 md:flex md:justify-start md:items-start`}
         >
           <h3
-            className={`text-2xl ${GLOBAL_TYPOGRAPHY.mainFontsColor} font-semibold`}
+            className={`text-2xl text-${THEME.primary} font-semibold`}
           >{`${user.name.first}, ${user.name.last}`}</h3>
           <ul
-            className={`flex flex-col items-start text-md ${GLOBAL_TYPOGRAPHY.userCardFontColor}`}
+            className={`flex flex-col items-center md:items-start w-full text-md text-${THEME.primary}`}
           >
-            <li>{user.login.username}</li>
-            <li>{`${user.dob.age} years old`}</li>
-            <li>{`${user.location.city}, ${user.location.state}`}</li>
-            <li>{user.location.country}</li>
+            <li className={`text-${THEME.text.secondary}`}>
+              {user.login.username}
+            </li>
+            <li
+              className={`text-${THEME.text.secondary}`}
+            >{`${user.dob.age} years old`}</li>
+            <li
+              className={`text-${THEME.text.secondary}`}
+            >{`${user.location.city}, ${user.location.state}`}</li>
+            <li className={`text-${THEME.text.secondary}`}>
+              {user.location.country}
+            </li>
             <ul
-              className={`flex items-start text-lg space-x-4 ${GLOBAL_TYPOGRAPHY.userCardFontColor}`}
+              className={`flex justify-around border-t border-${THEME.primary} md:border-0 my-2 md:m-0 md:justify-start text-lg w-full`}
             >
-              <li className="cursor-pointer">
+              <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <MessageIcon
                   className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
-                    color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,
                   }}
                 />
               </li>
-              <li className="cursor-pointer">
+              <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <PhoneIcon
                   className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
-                    color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,
                   }}
                 />
               </li>
-              <li className="cursor-pointer">
+              <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <EmailIcon
                   className={GLOBAL_ICONOGRAPHY.menuIcons}
                   style={{
                     fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
-                    color: `${GLOBAL_THEME.userCardExpandDetailsIcons}`,
                   }}
                 />
               </li>

@@ -1,7 +1,14 @@
+//Next
 import Image from "next/image";
 import Link from "next/link";
+
+//React
 import { useState } from "react";
-import { GLOBAL_CONTAINERS, GLOBAL_THEME } from "../helpers/helpers.styles";
+
+//Helpers
+import { GLOBAL_CONTAINERS, THEME } from "../helpers/helpers.styles";
+
+//Assets
 import {
   CommentIcon,
   LikeIcon,
@@ -9,6 +16,8 @@ import {
   SendIcon,
   ShareIcon,
 } from "../icons/icons";
+
+//Types
 import { IUsers } from "../types/users";
 
 interface Props {
@@ -17,39 +26,57 @@ interface Props {
 
 const ROUTE_USER_ID = "users/[id]";
 
+export function generateNumbers() {
+  const number = Math.floor(Math.random() * 50 + 1);
+  return number;
+}
+
 export default function Post({ user }: Props) {
   const [postLiked, setPostLiked] = useState(false);
   const [likesAmount, setLikesAmount] = useState(generateNumbers());
   const [commentsAmount, setCommentsAmount] = useState(generateNumbers());
 
-  function handleUserClick() {
-    console.log(user.login.uuid);
-  }
-  function generateNumbers() {
-    const number = Math.floor(Math.random() * 50 + 1);
-    return number;
-  }
-
   function handlePostLiked() {
     setPostLiked(!postLiked);
   }
+
   return (
     <article
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md ${GLOBAL_THEME.homePostBackgroundColor}`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.white}`}
     >
       <div
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-start items-start w-full`}
       >
-        <picture className={`mr-4`}>
-          <Image
-            alt={`${user.name.first}, ${user.name.last}`}
-            src={user.picture.medium}
-            width={75}
-            height={75}
-            className="rounded-full cursor-pointer"
-            onClick={handleUserClick}
-          />
-        </picture>
+        <Link
+          href={{
+            pathname: ROUTE_USER_ID,
+            query: {
+              id: user.login.uuid,
+              username: user.login.username,
+              firstName: user.name.first,
+              lastName: user.name.last,
+              age: user.dob.age,
+              email: user.email,
+              country: user.location.country,
+              city: user.location.city,
+              state: user.location.state,
+              picture: user.picture.large,
+            },
+          }}
+          as={user.login.uuid}
+        >
+          <a>
+            <picture className={`mr-4`}>
+              <Image
+                alt={`${user.name.first}, ${user.name.last}`}
+                src={user.picture.medium}
+                width={75}
+                height={75}
+                className="rounded-full cursor-pointer"
+              />
+            </picture>
+          </a>
+        </Link>
         <div
           className={`${GLOBAL_CONTAINERS.flexColumnContainer} items-start text-left`}
         >
@@ -72,10 +99,7 @@ export default function Post({ user }: Props) {
             as={user.login.uuid}
           >
             <a>
-              <h2
-                className="font-semibold cursor-pointer"
-                onClick={handleUserClick}
-              >{`${user.name.first} ${user.name.last}`}</h2>
+              <h2 className="font-semibold cursor-pointer">{`${user.name.first} ${user.name.last}`}</h2>
             </a>
           </Link>
           <span>
@@ -109,32 +133,30 @@ export default function Post({ user }: Props) {
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
-            <LikeIconFilled
-              style={{ color: `${GLOBAL_THEME.homePostLiked}` }}
-            />
+            <LikeIconFilled style={{ color: `${THEME.variants.likes}` }} />
           ) : (
             <LikeIcon />
           )}
           Like
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
         >
           <SendIcon />
           Send

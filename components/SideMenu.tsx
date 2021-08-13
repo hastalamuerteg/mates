@@ -9,7 +9,7 @@ import MenuItems from "./MenuItems";
 import {
   GLOBAL_ICONOGRAPHY,
   GLOBAL_CONTAINERS,
-  GLOBAL_THEME,
+  THEME,
 } from "../helpers/helpers.styles";
 
 //Assets
@@ -24,7 +24,7 @@ import logo from "../assets/logo.png";
 export default function SideMenu() {
   return (
     <nav
-      className={`flex flex-col justify-center items-center h-screen w-auto z-20 ${GLOBAL_THEME.sideMenuBackgroundColor} md:w-20`}
+      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${THEME.white} md:w-20`}
     >
       <div className="mt-2">
         <Link href="/home">
@@ -45,12 +45,12 @@ export default function SideMenu() {
       >
         <Link href="/home">
           <a
-            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
           >
             {
               <MenuItems>
                 <HomeIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} `}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -59,12 +59,12 @@ export default function SideMenu() {
         </Link>
         <Link href="/users/new-user">
           <a
-            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
           >
             {
               <MenuItems>
                 <NewUserIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -74,12 +74,12 @@ export default function SideMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
           >
             {
               <MenuItems>
                 <AllUsersIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>
@@ -89,12 +89,12 @@ export default function SideMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`${GLOBAL_THEME.sideMenuLinksColor} transition-all hover:${GLOBAL_THEME.sideMenuLinksColorHover} hover:${GLOBAL_THEME.sideMenuLinksBackgroundColorHover} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
           >
             {
               <MenuItems>
                 <SettingsIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} transition-all hover:${GLOBAL_THEME.sideMenuIconsHover} hover:${GLOBAL_THEME.sideMenuIconsColorHover} `}
+                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
                   style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
                 />
               </MenuItems>

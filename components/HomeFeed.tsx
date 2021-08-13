@@ -1,9 +1,17 @@
+//React
 import { ReactNode } from "react";
-import { GLOBAL_CONTAINERS, GLOBAL_THEME } from "../helpers/helpers.styles";
-import { IPost } from "../types/post";
-import { IUsers } from "../types/users";
+
+//Helpers
+import {
+  GLOBAL_ICONOGRAPHY,
+  GLOBAL_CONTAINERS,
+  THEME,
+} from "../helpers/helpers.styles";
+
+//Assets
 import { CameraIcon, VideoIcon, PictureIcon, MapIcon } from "../icons/icons";
-import { GLOBAL_ICONOGRAPHY } from "../helpers/helpers.styles";
+
+//Components
 import PrimaryButton from "./PrimaryButton";
 
 interface Props {
@@ -12,15 +20,17 @@ interface Props {
 
 export default function HomeFeed({ children: post }: Props) {
   return (
-    <section className={`flex flex-col justify-center mt-16 w-3/5 py-2`}>
+    <section
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center my-16 mx-2 w-full md:w-3/5 py-2`}
+    >
       <div
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md ${GLOBAL_THEME.homePostBackgroundColor}`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.white}`}
       >
         <fieldset className="w-full">
           <input
             type="text"
             placeholder="Nova publicação"
-            className={`py-2 h-full w-full transition-colors focus:outline-none focus:${GLOBAL_THEME.homePostPlaceholderFocusColor}`}
+            className={`py-2 px-2 h-full w-full transition-colors bg-${THEME.white} focus:placeholder-${THEME.primary} focus:outline-none `}
           />
         </fieldset>
         <div
@@ -30,28 +40,28 @@ export default function HomeFeed({ children: post }: Props) {
             className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center  w-full`}
           >
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}`}
             >
               <CameraIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
             >
               <VideoIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
             >
               <PictureIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:${GLOBAL_THEME.homePostIconsColorHover}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
             >
               <MapIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
@@ -66,8 +76,8 @@ export default function HomeFeed({ children: post }: Props) {
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center m-4`}
       >
         <PrimaryButton
-          fontColor={`${GLOBAL_THEME.primaryButtonBackgroundColor}`}
-          backgroundColor={`${GLOBAL_THEME.primaryButtonFontColor}`}
+          fontColor={`text-${THEME.white}`}
+          backgroundColor={`bg-${THEME.secondary}`}
         >
           Load more
         </PrimaryButton>

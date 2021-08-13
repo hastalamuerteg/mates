@@ -1,9 +1,9 @@
-//Next Components
+//Next
 import { GetStaticProps } from "next";
 import useSWR from "swr";
 
 //React
-import { forwardRef, ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
 //Types
 import { IUsers } from "../../types/users";
@@ -11,6 +11,7 @@ import { IUsers } from "../../types/users";
 //Services
 import { apiGetAllUsers } from "../../services/apiService";
 import { generateID } from "../../services/idService";
+import { BASE_URL } from "../../services/httpService";
 
 //Components
 import UserCard from "../../components/UserCard";
@@ -18,9 +19,10 @@ import TopHeading from "../../components/TopHeading";
 import UserCardContainer from "../../components/UserCardContainer";
 import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
-import { GLOBAL_CONTAINERS } from "../../helpers/helpers.styles";
-import { BASE_URL } from "../../services/httpService";
 import GoToTopButton from "../../components/GoToTopButton";
+
+//Helpers
+import { GLOBAL_CONTAINERS } from "../../helpers/helpers.styles";
 
 export const getStaticProps: GetStaticProps = async () => {
   const { results: users } = await apiGetAllUsers();

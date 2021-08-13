@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { apiGetAllUsers } from "../services/apiService";
 
-const USERS_CACHE_PATH = path.resolve(".usersData");
+const USERS_CACHE_PATH = path.resolve("usersData");
 export default async function getCachedUsers() {
   let cachedUsers;
   try {
@@ -21,7 +21,7 @@ export default async function getCachedUsers() {
         JSON.stringify(data),
         "utf8"
       );
-      console.log("users cached succesfully");
+      console.log("users cached successfully");
     } catch (error) {
       console.log("Error writing users to cache file" + error);
     }

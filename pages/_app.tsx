@@ -1,8 +1,15 @@
+//Styles
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
+
+//Next
 import { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
 import type { NextComponentType } from "next";
+
+//React
 import { ReactNode } from "react";
+
+//Authentication
 import { Auth0Provider } from "@auth0/auth0-react";
 import {
   AUTH0_DOMAIN,

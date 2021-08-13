@@ -2,7 +2,7 @@
 import React, { ChangeEvent } from "react";
 
 //Helpers
-import { GLOBAL_ICONOGRAPHY, GLOBAL_INPUTS } from "../helpers/helpers.styles";
+import { GLOBAL_ICONOGRAPHY, THEME } from "../helpers/helpers.styles";
 
 //Assets
 import { SearchIcon } from "../icons/icons";
@@ -27,7 +27,7 @@ export default function SearchInput({ onInputChange, id }: Props) {
         id={id}
         type="text"
         placeholder="Search"
-        className={`${GLOBAL_INPUTS.searchInput} p-2 pl-3 rounded-full  transition-all focus:outline-none focus:${GLOBAL_INPUTS.searchInputFocus} focus:${GLOBAL_INPUTS.searchInputFocusPlaceholder}`}
+        className={`bg-${THEME.primary} p-2 pl-3 rounded-full transition-all focus:outline-none focus:bg-${THEME.white} focus:placeholder-${THEME.primary}`}
         onChange={handleInputChange}
       ></input>
       <span className="text-center h-auto -ml-10 w-full">
