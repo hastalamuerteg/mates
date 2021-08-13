@@ -18,7 +18,7 @@ import {
 export default function MobileMenu() {
   return (
     <nav
-      className={`flex flex-row justify-center items-center fixed bottom-0 h-auto w-screen z-20 bg-${THEME.white} md:hidden`}
+      className={`flex flex-row justify-center items-center fixed bottom-0 h-auto w-screen z-20 bg-${THEME.tertiary} md:hidden`}
     >
       <ul
         className={`flex justify-around w-full border-t border-${THEME.primary}`}

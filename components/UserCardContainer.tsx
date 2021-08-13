@@ -21,7 +21,7 @@ export default function UserCardContainer({ children }: Props) {
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center m-4 mb-20`}
       >
         <PrimaryButton
-          fontColor={`text-${THEME.white}`}
+          fontColor={`text-${THEME.tertiary}`}
           backgroundColor={`bg-${THEME.primary}`}
         >
           Load more

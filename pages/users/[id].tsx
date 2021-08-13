@@ -54,18 +54,21 @@ export default function UserPage() {
 
   return (
     <>
-      <div className={`bg-${THEME.white} text-${THEME.text.secondary}`}>
+      <div className={`bg-${THEME.background} text-${THEME.text.primary}`}>
         <header className={`h-96 md:h-80`}>
           <div
             className={`${GLOBAL_CONTAINERS.flexColumnContainer} items-center md:${GLOBAL_CONTAINERS.flexRowContainer} md:items-start w-11/12 h-40 mx-auto rounded-lg shadow-lg bg-${THEME.primary} relative`}
           >
             <Link href="/home">
-              <a className={`text-${THEME.white} m-4`}>
+              <a className={`text-${THEME.variants.primary_icons} m-4`}>
                 {
                   <MenuItems>
                     <HomeIcon
-                      className={`${GLOBAL_ICONOGRAPHY.menuIcons}  `}
-                      style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
+                      className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
+                      style={{
+                        fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}`,
+                        color: `${THEME.variants.primary_icons}`,
+                      }}
                     />
                   </MenuItems>
                 }
@@ -90,7 +93,7 @@ export default function UserPage() {
                   <h2 className={`text-${THEME.primary} font-bold`}>
                     {firstName}
                   </h2>
-                  <p>{username}</p>
+                  <p className={`${THEME.text.primary}`}>{username}</p>
                 </div>
               </div>
               <div
@@ -154,7 +157,7 @@ export default function UserPage() {
             <h3 className={`text-4xl my-4 text-${THEME.primary} font-semibold`}>
               About {firstName}
             </h3>
-            <p>
+            <p className={`${THEME.text.primary}`}>
               {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
               }

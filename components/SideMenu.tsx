@@ -24,18 +24,12 @@ import logo from "../assets/logo.png";
 export default function SideMenu() {
   return (
     <nav
-      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${THEME.white} md:w-20`}
+      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${THEME.tertiary} md:w-auto`}
     >
-      <div className="mt-2">
+      <div>
         <Link href="/home">
           <a>
-            <Image
-              className="rounded-lg "
-              alt="mates logo"
-              src={logo}
-              height={85}
-              width={85}
-            />
+            <Image alt="mates logo" src={logo} height={67} width={67} />
           </a>
         </Link>
       </div>
@@ -45,7 +39,7 @@ export default function SideMenu() {
       >
         <Link href="/home">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
           >
             {
               <MenuItems>
@@ -59,7 +53,7 @@ export default function SideMenu() {
         </Link>
         <Link href="/users/new-user">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
           >
             {
               <MenuItems>
@@ -74,7 +68,7 @@ export default function SideMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
           >
             {
               <MenuItems>
@@ -89,7 +83,7 @@ export default function SideMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.white} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
           >
             {
               <MenuItems>

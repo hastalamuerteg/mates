@@ -24,13 +24,13 @@ export default function HomeFeed({ children: post }: Props) {
       className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center my-16 mx-2 w-full md:w-3/5 py-2`}
     >
       <div
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.white}`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.tertiary}`}
       >
         <fieldset className="w-full">
           <input
             type="text"
             placeholder="Nova publicação"
-            className={`py-2 px-2 h-full w-full transition-colors bg-${THEME.white} focus:placeholder-${THEME.primary} focus:outline-none `}
+            className={`py-2 px-2 h-full w-full transition-colors bg-${THEME.tertiary} focus:placeholder-${THEME.primary} focus:outline-none `}
           />
         </fieldset>
         <div
@@ -40,28 +40,28 @@ export default function HomeFeed({ children: post }: Props) {
             className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center  w-full`}
           >
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}`}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
             >
               <CameraIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}  `}
             >
               <VideoIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}  `}
             >
               <PictureIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
               />
             </button>
             <button
-              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.tertiary}  `}
+              className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 my-1 rounded-md transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}  `}
             >
               <MapIcon
                 style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
@@ -76,8 +76,8 @@ export default function HomeFeed({ children: post }: Props) {
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center m-4`}
       >
         <PrimaryButton
-          fontColor={`text-${THEME.white}`}
-          backgroundColor={`bg-${THEME.secondary}`}
+          fontColor={`text-${THEME.tertiary}`}
+          backgroundColor={`bg-${THEME.primary}`}
         >
           Load more
         </PrimaryButton>

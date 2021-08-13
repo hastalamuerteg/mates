@@ -3,23 +3,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      black: "#000",
-      white: "#fff",
+      black: "#000000",
+      white: "#FFFFFF",
       lightgray: "#f8f8fb",
 
-      gradient: {
-        from: "#A281F9",
-        via: "#8F6BF9",
-        to: "#4C59B9",
-      },
-
       blue: {
-        light: "#5E6AC1",
-        medium: "#4C59B9",
-        dark: "#4853AD",
+        light: "#4141d3",
+        medium: "#2d2dc5",
+        dark: "#1a1a72",
       },
       lightblue: {
-        light: "#eceff5",
+        light: "#3eeeee",
       },
       gray: {
         light: "#b3bbbe",
@@ -38,6 +32,11 @@ module.exports = {
         light: "#8F6BF9",
         medium: "#825EF9",
         dark: "#440c58",
+      },
+      pink: {
+        light: "#c7e",
+        medium: "#9419c4",
+        dark: "#671188",
       },
       red: {
         light: "#ff0746",

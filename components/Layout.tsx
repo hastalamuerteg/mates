@@ -15,7 +15,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <header className={`flex w-full text-${THEME.text.secondary}`}>
+      <header className={`flex w-full text-${THEME.text.primary}`}>
         <SideMenu />
         <Main>
           <TopMenu />

@@ -26,7 +26,7 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-around md:justify-end items-center bg-${THEME.primary} w-full h-14 fixed z-50`}
+      className={`flex justify-around md:justify-end items-center bg-${THEME.primary} w-full h-16 fixed z-50`}
     >
       {
         <ul className="flex space-x-8 md:mr-20 h-12 items-center">

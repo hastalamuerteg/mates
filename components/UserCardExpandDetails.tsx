@@ -30,7 +30,7 @@ export default function UserCardExpandDetails({
 
   const userCardDetailsJSX = (
     <div
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-between text-center shadow-2xl bg-${THEME.white} h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-between text-center shadow-2xl bg-${THEME.tertiary} h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
     >
       <div
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-end w-full`}
@@ -70,16 +70,16 @@ export default function UserCardExpandDetails({
           <ul
             className={`flex flex-col items-center md:items-start w-full text-md text-${THEME.primary}`}
           >
-            <li className={`text-${THEME.text.secondary}`}>
+            <li className={`text-${THEME.text.primary}`}>
               {user.login.username}
             </li>
             <li
-              className={`text-${THEME.text.secondary}`}
+              className={`text-${THEME.text.primary}`}
             >{`${user.dob.age} years old`}</li>
             <li
-              className={`text-${THEME.text.secondary}`}
+              className={`text-${THEME.text.primary}`}
             >{`${user.location.city}, ${user.location.state}`}</li>
-            <li className={`text-${THEME.text.secondary}`}>
+            <li className={`text-${THEME.text.primary}`}>
               {user.location.country}
             </li>
             <ul

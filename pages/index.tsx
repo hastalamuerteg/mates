@@ -17,7 +17,7 @@ export default function Page() {
         className={`flex flex-col justify-center items-center w-full md:w-1/2 text-center h-screen bg-${THEME.primary}`}
       >
         <div
-          className={`flex flex-col justify-center items-center px-4 h-5/6 w-auto m-4 bg-${THEME.white} text-${THEME.primary} rounded-2xl shadow-xl`}
+          className={`flex flex-col justify-center items-center px-4 h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
         >
           <picture className="md:hidden">
             <Image
@@ -42,7 +42,7 @@ export default function Page() {
               placeholder="Email"
             />
             <button
-              className={`bg-${THEME.white} text-${THEME.primary} border border-${THEME.primary} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold hover:bg-${THEME.primary} hover:text-${THEME.white}`}
+              className={`bg-${THEME.tertiary} text-${THEME.primary} border border-${THEME.primary} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-${THEME.primary} hover:text-${THEME.text.secondary}`}
             >
               Sign up
             </button>

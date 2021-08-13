@@ -34,7 +34,7 @@ export default function UserCard({ children: user }: Props) {
       />
       <div
         onClick={handleUserCardClick}
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-lg m-1 cursor-pointer relative bg-${THEME.white} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
+        className={`${GLOBAL_CONTAINERS.flexColumnContainer} ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-lg m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
       >
         <picture>
           <Image
@@ -49,13 +49,13 @@ export default function UserCard({ children: user }: Props) {
           className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start`}
         >
           <h3
-            className={`text-lg font-semibold text-${THEME.primary} transition-all group-hover:text-${THEME.white}`}
+            className={`text-lg font-semibold text-${THEME.primary} transition-all group-hover:text-${THEME.tertiary}`}
           >{`${name.first}, ${name.last}`}</h3>
-          <p className={`text-sm group-hover:text-${THEME.white}`}>
+          <p className={`text-sm group-hover:text-${THEME.tertiary}`}>
             {login.username}
           </p>
           <p
-            className={`text-sm group-hover:text-${THEME.white}`}
+            className={`text-sm group-hover:text-${THEME.tertiary}`}
           >{`${dob.age} years old`}</p>
         </div>
       </div>

@@ -18,12 +18,12 @@ const palette = {
   lightgray: "#f8f8fb",
 
   blue: {
-    light: "#5E6AC1",
-    medium: "#4C59B9",
-    dark: "#4853AD",
+    light: "#4141d3",
+    medium: "#2d2dc5",
+    dark: "#1a1a72",
   },
   lightblue: {
-    light: "#eceff5",
+    light: "#3eeeee",
   },
   gray: {
     light: "#b3bbbe",
@@ -43,19 +43,24 @@ const palette = {
     medium: "#825EF9",
     dark: "#440c58",
   },
+  pink: {
+    light: "#c7e",
+    medium: "#9419c4",
+    dark: "#671188",
+  },
   red: {
     light: "#ff0746",
   },
 };
 
 const THEME = {
-  primary: "purple-light",
-  secondary: "purple-medium",
-  tertiary: "gray-dark",
-  white: "white",
+  primary: "blue-light",
+  secondary: "blue-dark",
+  tertiary: "white",
+  background: "white",
   text: {
     primary: "gray-dark",
-    secondary: "gray-dark",
+    secondary: "white",
   },
   variants: {
     likes: palette.red.light,

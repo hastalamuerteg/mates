@@ -18,7 +18,7 @@ export default function GoToTopButton(props: Props) {
   return (
     <div className="hidden md:flex md:fixed bottom-20 right-4 md:bottom-8 md:right-12">
       <button
-        className={`text-${THEME.white} rounded-full shadow-xl`}
+        className={`text-${THEME.text.primary} rounded-full shadow-xl`}
         onClick={handleButtonClick}
       >
         <GoUpButtonIcon

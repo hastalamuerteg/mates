@@ -42,7 +42,7 @@ export default function Post({ user }: Props) {
 
   return (
     <article
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.white}`}
+      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.tertiary} text-${THEME.text.primary}`}
     >
       <div
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-start items-start w-full`}
@@ -133,7 +133,7 @@ export default function Post({ user }: Props) {
         className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
@@ -144,19 +144,19 @@ export default function Post({ user }: Props) {
           Like
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.tertiary}`}
+          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <SendIcon />
           Send

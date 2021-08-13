@@ -12,7 +12,7 @@ export default function LoginSession() {
   }
   return (
     <button
-      className={`w-full py-2 px-8 rounded-lg text-${THEME.white} border-2 bg-${THEME.primary} font-semibold transition-all hover:bg-${THEME.white} hover:text-${THEME.primary}`}
+      className={`w-full py-2 px-8 rounded-lg text-${THEME.text.secondary} border-2 bg-${THEME.primary} font-semibold transition-all hover:bg-${THEME.tertiary} hover:text-${THEME.primary}`}
       onClick={handleUserLogin}
     >
       Log in
