@@ -11,6 +11,7 @@ import {
   LogoutOutlined as LogoutIcon,
   SearchOutlined as SearchIcon,
   CloseCircleOutlined as CloseIcon,
+  CloseOutlined as CloseXIcon,
   PhoneOutlined as PhoneIcon,
   MailOutlined as EmailIcon,
   MailFilled as EmailIconFilled,
@@ -27,6 +28,7 @@ import {
   LinkedinFilled as LinkedInIcon,
   InstagramFilled as InstagramIcon,
   TwitterCircleFilled as TwitterIcon,
+  MenuOutlined as MobileMenuIcon,
 } from "@ant-design/icons";
 
 export {
@@ -41,6 +43,7 @@ export {
   LogoutIcon,
   SearchIcon,
   CloseIcon,
+  CloseXIcon,
   PhoneIcon,
   EmailIcon,
   EmailIconFilled,
@@ -58,4 +61,5 @@ export {
   LinkedInIcon,
   InstagramIcon,
   TwitterIcon,
+  MobileMenuIcon,
 };

@@ -23,7 +23,7 @@ export default function GoToTopButton(props: Props) {
       >
         <GoUpButtonIcon
           style={{ fontSize: "28px", color: "white" }}
-          className={`bg-${THEME.primary} p-2 rounded-full shadow-xl`}
+          className={`bg-${THEME.primary} p-2 rounded-full shadow-xl transform hover:scale-110`}
         />
       </button>
     </div>

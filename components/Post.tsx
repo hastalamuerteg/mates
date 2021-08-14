@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 //Helpers
-import { GLOBAL_CONTAINERS, THEME } from "../helpers/helpers.styles";
+import { THEME } from "../helpers/helpers.styles";
 
 //Assets
 import {
@@ -42,11 +42,9 @@ export default function Post({ user }: Props) {
 
   return (
     <article
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.tertiary} text-${THEME.text.primary}`}
+      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.tertiary} text-${THEME.text.primary}`}
     >
-      <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-start items-start w-full`}
-      >
+      <div className={`box-row justify-start items-start w-full`}>
         <Link
           href={{
             pathname: ROUTE_USER_ID,
@@ -77,9 +75,7 @@ export default function Post({ user }: Props) {
             </picture>
           </a>
         </Link>
-        <div
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} items-start text-left`}
-        >
+        <div className={`box-col items-start text-left`}>
           <Link
             href={{
               pathname: ROUTE_USER_ID,
@@ -107,9 +103,7 @@ export default function Post({ user }: Props) {
           </span>
         </div>
       </div>
-      <div
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-start items-start my-2`}
-      >
+      <div className={`box-col justify-start items-start my-2`}>
         <h3 className="my-2 font-semibold">{"Lorem ipsum"}</h3>
         <p>
           {
@@ -117,12 +111,8 @@ export default function Post({ user }: Props) {
           }
         </p>
       </div>
-      <div
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-around items-start w-full`}
-      >
-        <div
-          className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-between w-full my-2`}
-        >
+      <div className={`box-col justify-around items-start w-full`}>
+        <div className={`box-row justify-between w-full my-2`}>
           <span className="flex justify-center items-center cursor-pointer">
             {postLiked ? likesAmount + 1 : likesAmount} 👍
           </span>
@@ -130,10 +120,10 @@ export default function Post({ user }: Props) {
         </div>
       </div>
       <ul
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-around items-center pt-1 border-t w-full`}
+        className={`box-row justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
@@ -144,19 +134,19 @@ export default function Post({ user }: Props) {
           Like
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`${GLOBAL_CONTAINERS.flexColumnContainer} py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <SendIcon />
           Send

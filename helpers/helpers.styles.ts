@@ -1,21 +1,13 @@
-const GLOBAL_ICONOGRAPHY = {
-  iconsSize: "24px",
-  sideMenuLinks: "inline-block w-full my-2 py-6 rounded-r-lg",
-  menuIcons: "shadow-xl p-1 rounded-lg",
-  topMenuLinks: "flex justify-center items-center px-4 py-2 h-12 rounded-b-lg",
-  userCardExpandDetailsIcons: "22px",
-  userCardExpandDetailsCloseIcon: "26px",
-};
-
-const GLOBAL_CONTAINERS = {
-  flexColumnContainer: "flex flex-col",
-  flexRowContainer: "flex flex-row",
+const ICONS_FONT = {
+  icons: "24px",
+  userCardIcons: "22px",
+  closeIcon: "26px",
 };
 
 const palette = {
   black: "#000000",
   white: "#FFFFFF",
-  lightgray: "#f8f8fb",
+  lightgray: "#e3e6ee",
 
   blue: {
     light: "#4141d3",
@@ -28,7 +20,7 @@ const palette = {
   gray: {
     light: "#b3bbbe",
     medium: "#4c5659",
-    dark: "#222222",
+    dark: "#202024",
   },
   green: {
     light: "#ACFFAD",
@@ -36,12 +28,19 @@ const palette = {
     dark: "#50CB93",
   },
   yellow: {
-    light: "#f5f699",
+    light: "#ffff6f",
+    medium: "#ffff4d",
+    dark: "#ffff2b",
   },
   purple: {
     light: "#8F6BF9",
-    medium: "#825EF9",
+    medium: "#8257E6",
     dark: "#440c58",
+  },
+  darkpurple: {
+    light: "#3c3c71",
+    medium: "#2a2a50",
+    dark: "#121214",
   },
   pink: {
     light: "#c7e",
@@ -51,13 +50,18 @@ const palette = {
   red: {
     light: "#ff0746",
   },
+  orange: {
+    light: "#ff9862",
+    medium: "#ff772f",
+    dark: "#fb5700",
+  },
 };
 
 const THEME = {
-  primary: "blue-light",
-  secondary: "blue-dark",
+  primary: "darkpurple-light",
+  secondary: "darkpurple-medium",
   tertiary: "white",
-  background: "white",
+  background: "lightgray",
   text: {
     primary: "gray-dark",
     secondary: "white",
@@ -65,8 +69,64 @@ const THEME = {
   variants: {
     likes: palette.red.light,
     primary_icons: palette.white,
+    error: palette.red.light,
+    warning: "red-light",
   },
-  darkmode: "",
 };
 
-export { THEME, GLOBAL_ICONOGRAPHY, GLOBAL_CONTAINERS };
+const THEME_DARK = {
+  primary: "purple-medium",
+  secondary: "purple-light",
+  tertiary: "gray-dark",
+  background: "darkpurple-dark",
+  text: {
+    primary: "white",
+    secondary: "white",
+  },
+  variants: {
+    likes: palette.red.light,
+    primary_icons: palette.white,
+    error: palette.red.light,
+    warning: "red-light",
+  },
+};
+
+/*
+light theme
+const THEME = {
+  primary: "darkpurple-light",
+  secondary: "darkpurple-medium",
+  tertiary: "white",
+  background: "lightgray",
+  text: {
+    primary: "gray-dark",
+    secondary: "white",
+  },
+  variants: {
+    likes: palette.red.light,
+    primary_icons: palette.white,
+    error: palette.red.light,
+    warning: "red-light",
+  },
+};
+
+dark theme
+const THEME_DARK = {
+  primary: "purple-medium",
+  secondary: "purple-light",
+  tertiary: "gray-dark",
+  background: "darkpurple-dark",
+  text: {
+    primary: "white",
+    secondary: "white",
+  },
+  variants: {
+    likes: palette.red.light,
+    primary_icons: palette.white,
+    error: palette.red.light,
+    warning: "red-light",
+  },
+};
+*/
+
+export { THEME, ICONS_FONT };

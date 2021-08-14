@@ -1,17 +1,14 @@
+import { THEME } from "../helpers/helpers.styles";
+
 interface Props {
   backgroundColor: string;
-  fontColor: string;
   children: string;
 }
 
-export default function PrimaryButton({
-  fontColor,
-  backgroundColor,
-  children,
-}: Props) {
+export default function PrimaryButton({ backgroundColor, children }: Props) {
   return (
     <button
-      className={`${backgroundColor} py-2 px-6 ${fontColor} rounded-full shadow-md`}
+      className={`${backgroundColor} py-2 px-6 mx-1 text-${THEME.text.secondary} active:bg-${THEME.secondary} rounded-full shadow-md`}
     >
       {children}
     </button>

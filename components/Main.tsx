@@ -7,7 +7,7 @@ import { THEME } from "../helpers/helpers.styles";
 export default function Main({ children }: ILayout) {
   return (
     <main
-      className={`flex flex-col h-screen w-full overflow-y-scroll bg-${THEME.background}`}
+      className={`box-col h-screen w-full overflow-y-scroll bg-${THEME.background}`}
     >
       {children}
     </main>

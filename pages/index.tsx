@@ -14,10 +14,10 @@ export default function Page() {
   return (
     <header className="flex justify-center items-center h-screen ">
       <div
-        className={`flex flex-col justify-center items-center w-full md:w-1/2 text-center h-screen bg-${THEME.primary}`}
+        className={`box-col justify-center items-center w-full md:w-1/2 text-center h-screen bg-${THEME.primary}`}
       >
         <div
-          className={`flex flex-col justify-center items-center px-4 h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
+          className={`box-col justify-center items-center px-4 h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
         >
           <picture className="md:hidden">
             <Image
@@ -34,7 +34,7 @@ export default function Page() {
           </h1>
           <p>An online platform to get in touch with your buddies</p>
           <form
-            className={`flex flex-col justify-center items-center w-full p-2 mt-8 `}
+            className={`box-col justify-center items-center w-full p-2 mt-8 `}
           >
             <input
               className={`p-2 w-full md:w-5/6 border-${THEME.primary} border-2 m-4 rounded-lg focus:outline-none`}
@@ -42,7 +42,7 @@ export default function Page() {
               placeholder="Email"
             />
             <button
-              className={`bg-${THEME.tertiary} text-${THEME.primary} border border-${THEME.primary} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-${THEME.primary} hover:text-${THEME.text.secondary}`}
+              className={`bg-${THEME.tertiary} text-${THEME.primary} active:bg-${THEME.secondary} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-${THEME.primary} hover:text-${THEME.text.secondary}`}
             >
               Sign up
             </button>
@@ -52,8 +52,10 @@ export default function Page() {
           </form>
         </div>
       </div>
-      <div className="hidden md:flex flex-col justify-center items-center w-1/2 h-screen">
-        <div className="flex flex-col justify-center items-center h-5/6 w-4/6 ">
+      <div
+        className={`hidden md:flex justify-center items-center w-1/2 h-screen bg-${THEME.background}`}
+      >
+        <div className="box-col justify-center items-center h-5/6">
           <div className="p-2 mb-8">
             <Image
               className="rounded-full"

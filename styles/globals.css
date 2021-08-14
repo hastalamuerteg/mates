@@ -4,6 +4,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
 
+@layer components {
+  .box-col {
+    @apply flex flex-col;
+  }
+  .box-row {
+    @apply flex flex-row;
+  }
+  .menu-icons {
+    @apply shadow-xl p-1 rounded-lg;
+  }
+  .top-menu-links {
+    @apply flex justify-center items-center px-4 py-2 h-12 rounded-b-lg;
+  }
+  .side-menu-links {
+    @apply inline-block w-full my-2 py-6 rounded-r-lg;
+  }
+}
+
 html,
 body {
   padding: 0;

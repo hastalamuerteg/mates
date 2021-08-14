@@ -2,7 +2,7 @@
 import React, { ChangeEvent } from "react";
 
 //Helpers
-import { GLOBAL_ICONOGRAPHY, THEME } from "../helpers/helpers.styles";
+import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
 
 //Assets
 import { SearchIcon } from "../icons/icons";
@@ -31,7 +31,7 @@ export default function SearchInput({ onInputChange, id }: Props) {
         onChange={handleInputChange}
       ></input>
       <span className="text-center h-auto -ml-10 w-full">
-        <SearchIcon style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }} />
+        <SearchIcon style={{ fontSize: `${ICONS_FONT.icons}` }} />
       </span>
     </div>
   );

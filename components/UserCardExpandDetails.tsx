@@ -5,11 +5,7 @@ import Image from "next/image";
 import { IUsers } from "../types/users";
 
 //Helpers
-import {
-  GLOBAL_CONTAINERS,
-  GLOBAL_ICONOGRAPHY,
-  THEME,
-} from "../helpers/helpers.styles";
+import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
 
 //Assets
 import { CloseIcon, MessageIcon, PhoneIcon, EmailIcon } from "../icons/icons";
@@ -30,25 +26,23 @@ export default function UserCardExpandDetails({
 
   const userCardDetailsJSX = (
     <div
-      className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-between text-center shadow-2xl bg-${THEME.tertiary} h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
+      className={`box-col justify-between text-center shadow-2xl bg-${THEME.tertiary} animate-fade h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
     >
-      <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-end w-full`}
-      >
+      <div className={`box-row justify-end w-full`}>
         <span
           className={`flex justify-center items-center rounded-md mt-4 mr-4 cursor-pointer text-${THEME.primary}`}
           onClick={handleCloseWindow}
         >
           <CloseIcon
             style={{
-              fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsCloseIcon}`,
+              fontSize: `${ICONS_FONT.closeIcon}`,
             }}
           />
         </span>
       </div>
 
       <div
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center items-center text-left mt-4 md:justify-center w-full flex-grow md:flex md:flex-row md:items-start`}
+        className={`box-col justify-center items-center text-left mt-4 md:justify-center w-full flex-grow md:flex md:flex-row md:items-start`}
       >
         <picture
           className={`mx-6 mb-6 p-2 rounded-lg w-auto bg-${THEME.primary} shadow-lg`}
@@ -87,25 +81,25 @@ export default function UserCardExpandDetails({
             >
               <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <MessageIcon
-                  className={GLOBAL_ICONOGRAPHY.menuIcons}
+                  className="menu-icons"
                   style={{
-                    fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
+                    fontSize: `${ICONS_FONT.userCardIcons}`,
                   }}
                 />
               </li>
               <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <PhoneIcon
-                  className={GLOBAL_ICONOGRAPHY.menuIcons}
+                  className="menu-icons"
                   style={{
-                    fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
+                    fontSize: `${ICONS_FONT.userCardIcons}`,
                   }}
                 />
               </li>
               <li className="flex items-center cursor-pointer mt-4 md:mt-1 md:mr-3">
                 <EmailIcon
-                  className={GLOBAL_ICONOGRAPHY.menuIcons}
+                  className="menu-icons"
                   style={{
-                    fontSize: `${GLOBAL_ICONOGRAPHY.userCardExpandDetailsIcons}`,
+                    fontSize: `${ICONS_FONT.userCardIcons}`,
                   }}
                 />
               </li>

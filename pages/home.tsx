@@ -13,9 +13,6 @@ import Post from "../components/Post";
 //Local Data
 import getCachedUsers from "../data/usersData";
 
-//Helpers
-import { GLOBAL_CONTAINERS } from "../helpers/helpers.styles";
-
 //Types
 import { IUsers } from "../types/users";
 
@@ -34,7 +31,7 @@ export default function Home({ users }: Props) {
     <>
       <div
         ref={backToTopHomeRef}
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} items-center justify-center`}
+        className={`box-row items-center justify-center`}
       >
         <HomeFeed>
           {users.map((user) => (

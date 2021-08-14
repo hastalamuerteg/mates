@@ -10,15 +10,15 @@ import { THEME } from "../helpers/helpers.styles";
 //Assets
 import {
   HomeIcon,
-  NewUserIcon,
   AllUsersIcon,
   SettingsIcon,
+  MessageIcon,
 } from "../icons/icons";
 
 export default function MobileMenu() {
   return (
     <nav
-      className={`flex flex-row justify-center items-center fixed bottom-0 h-auto w-screen z-20 bg-${THEME.tertiary} md:hidden`}
+      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen z-20 bg-${THEME.tertiary} md:hidden`}
     >
       <ul
         className={`flex justify-around w-full border-t border-${THEME.primary}`}
@@ -40,7 +40,7 @@ export default function MobileMenu() {
           >
             {
               <MenuItems>
-                <NewUserIcon style={{ fontSize: "24px" }} />
+                <MessageIcon style={{ fontSize: "24px" }} />
               </MenuItems>
             }
           </a>

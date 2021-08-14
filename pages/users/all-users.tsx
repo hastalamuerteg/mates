@@ -21,9 +21,6 @@ import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
 import GoToTopButton from "../../components/GoToTopButton";
 
-//Helpers
-import { GLOBAL_CONTAINERS } from "../../helpers/helpers.styles";
-
 export const getStaticProps: GetStaticProps = async () => {
   const { results: users } = await apiGetAllUsers();
   return { props: { users } };
@@ -37,6 +34,7 @@ export default function AllUsers({ users }: Props) {
   const { data, error } = useSWR(BASE_URL, apiGetAllUsers, {
     initialData: users,
   });
+
   const [searchedUsers, setSearchedUsers] = useState<Array<IUsers>>(users);
   const backToTopAllUsersRef = useRef<HTMLDivElement>(null);
 
@@ -52,21 +50,11 @@ export default function AllUsers({ users }: Props) {
   }
 
   if (!error && !data) {
-    <div
-      className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center h-screen`}
-    >
-      Carregando
-    </div>;
+    <div className={`box-row justify-center h-screen`}>Carregando</div>;
   }
 
   if (error)
-    return (
-      <div
-        className={`${GLOBAL_CONTAINERS.flexRowContainer} justify-center h-screen`}
-      >
-        Erro
-      </div>
-    );
+    return <div className={`box-row justify-center h-screen`}>Erro</div>;
 
   return (
     <>

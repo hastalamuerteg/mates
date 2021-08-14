@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 //Helpers
-import { THEME, GLOBAL_CONTAINERS } from "../helpers/helpers.styles";
+import { THEME } from "../helpers/helpers.styles";
 
 //Types
 import { IUsers } from "../types/users";
@@ -34,7 +34,7 @@ export default function UserCard({ children: user }: Props) {
       />
       <div
         onClick={handleUserCardClick}
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-lg m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
+        className={`box-col ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-lg m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
       >
         <picture>
           <Image
@@ -46,7 +46,7 @@ export default function UserCard({ children: user }: Props) {
           />
         </picture>
         <div
-          className={`flex flex-col justify-around items-center md:flex md:justify-center md:items-start`}
+          className={`box-col justify-around items-center md:flex md:justify-center md:items-start`}
         >
           <h3
             className={`text-lg font-semibold text-${THEME.primary} transition-all group-hover:text-${THEME.tertiary}`}

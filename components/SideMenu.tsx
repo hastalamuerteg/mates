@@ -6,18 +6,14 @@ import Image from "next/image";
 import MenuItems from "./MenuItems";
 
 //Helpers
-import {
-  GLOBAL_ICONOGRAPHY,
-  GLOBAL_CONTAINERS,
-  THEME,
-} from "../helpers/helpers.styles";
+import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
 
 //Assets
 import {
   HomeIcon,
-  NewUserIcon,
   AllUsersIcon,
   SettingsIcon,
+  MessageIcon,
 } from "../icons/icons";
 import logo from "../assets/logo.png";
 
@@ -34,18 +30,16 @@ export default function SideMenu() {
         </Link>
       </div>
 
-      <ul
-        className={`${GLOBAL_CONTAINERS.flexColumnContainer} justify-center my-auto  w-full`}
-      >
+      <ul className={`box-col justify-center my-auto  w-full`}>
         <Link href="/home">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links `}
           >
             {
               <MenuItems>
                 <HomeIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons} `}
-                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
+                  className={`menu-icons `}
+                  style={{ fontSize: `${ICONS_FONT.icons}` }}
                 />
               </MenuItems>
             }
@@ -53,13 +47,13 @@ export default function SideMenu() {
         </Link>
         <Link href="/users/new-user">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks} `}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links `}
           >
             {
               <MenuItems>
-                <NewUserIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
-                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
+                <MessageIcon
+                  className={`menu-icons`}
+                  style={{ fontSize: `${ICONS_FONT.icons}` }}
                 />
               </MenuItems>
             }
@@ -68,13 +62,13 @@ export default function SideMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links`}
           >
             {
               <MenuItems>
                 <AllUsersIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
-                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
+                  className={`menu-icons`}
+                  style={{ fontSize: `${ICONS_FONT.icons}` }}
                 />
               </MenuItems>
             }
@@ -83,13 +77,13 @@ export default function SideMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} ${GLOBAL_ICONOGRAPHY.sideMenuLinks}`}
+            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links`}
           >
             {
               <MenuItems>
                 <SettingsIcon
-                  className={`${GLOBAL_ICONOGRAPHY.menuIcons}`}
-                  style={{ fontSize: `${GLOBAL_ICONOGRAPHY.iconsSize}` }}
+                  className={`menu-icons`}
+                  style={{ fontSize: `${ICONS_FONT.icons}` }}
                 />
               </MenuItems>
             }
