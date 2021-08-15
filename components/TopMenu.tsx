@@ -34,6 +34,10 @@ export default function TopMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  function handleMenuItemClick() {
+    setIsMenuOpen(false);
+  }
+
   function handleLogoutSession() {
     logout({ returnTo: window.location.origin });
   }
@@ -46,11 +50,14 @@ export default function TopMenu() {
 
       {isMenuOpen && (
         <div
-          className={`box-col justify-start items-start bg-${THEME.primary} text-${THEME.text.primary} animate-fade_in_down p-2 m-2 h-52 w-full top-14 absolute z-50 md:hidden`}
+          className={`box-col justify-start items-start bg-${THEME.primary} text-${THEME.text.primary} animate-fade_in_down rounded-b-xl p-2 m-2 h-52 w-full top-14 absolute z-50 md:hidden`}
         >
           <ul className={`w-full`}>
             <Link href="/users/all-users">
-              <a className={`transition-all hover:bg-${THEME.secondary}`}>
+              <a
+                className={`transition-all hover:bg-${THEME.secondary}`}
+                onClick={handleMenuItemClick}
+              >
                 <li
                   className={`box-row items-center my-2 p-1 text-${THEME.text.secondary}`}
                 >
@@ -64,8 +71,11 @@ export default function TopMenu() {
                 </li>
               </a>
             </Link>
-            <Link href="/users/all-users">
-              <a className={` transition-all hover:bg-${THEME.secondary}`}>
+            <Link href="/inbox/messages">
+              <a
+                className={` transition-all hover:bg-${THEME.secondary}`}
+                onClick={handleMenuItemClick}
+              >
                 <li
                   className={`box-row items-center my-2 p-1 text-${THEME.text.secondary}`}
                 >
@@ -79,8 +89,11 @@ export default function TopMenu() {
                 </li>
               </a>
             </Link>
-            <Link href="/users/all-users">
-              <a className={` transition-all hover:bg-${THEME.secondary}`}>
+            <Link href="/actions/settings">
+              <a
+                className={` transition-all hover:bg-${THEME.secondary}`}
+                onClick={handleMenuItemClick}
+              >
                 <li
                   className={`box-row items-center my-2 p-1 text-${THEME.text.secondary}`}
                 >
@@ -94,8 +107,11 @@ export default function TopMenu() {
                 </li>
               </a>
             </Link>
-            <Link href="/users/all-users">
-              <a className={` transition-all hover:bg-${THEME.secondary}`}>
+            <Link href="">
+              <a
+                className={` transition-all hover:bg-${THEME.secondary}`}
+                onClick={handleMenuItemClick}
+              >
                 <li
                   className={`box-row items-center my-2 p-1 text-${THEME.text.secondary}`}
                 >
@@ -125,6 +141,7 @@ export default function TopMenu() {
                 height={45}
                 width={45}
                 className="rounded-full"
+                onClick={handleMenuItemClick}
               />
             </a>
           </Link>
@@ -176,7 +193,7 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              <Link href="">
+              <Link href="/inbox/messages">
                 <a
                   className={`top-menu-links transition-all hover:bg-${THEME.secondary}`}
                 >

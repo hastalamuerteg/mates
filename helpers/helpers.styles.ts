@@ -7,7 +7,7 @@ const ICONS_FONT = {
 const palette = {
   black: "#000000",
   white: "#FFFFFF",
-  lightgray: "#e3e6ee",
+  lightgray: "#F3F5F6",
 
   blue: {
     light: "#4141d3",
@@ -58,8 +58,8 @@ const palette = {
 };
 
 const THEME = {
-  primary: "darkpurple-light",
-  secondary: "darkpurple-medium",
+  primary: "green-dark",
+  secondary: "gray-medium",
   tertiary: "white",
   background: "lightgray",
   text: {
@@ -94,8 +94,8 @@ const THEME_DARK = {
 /*
 light theme
 const THEME = {
-  primary: "darkpurple-light",
-  secondary: "darkpurple-medium",
+ primary: "green-dark",
+  secondary: "gray-medium",
   tertiary: "white",
   background: "lightgray",
   text: {
@@ -112,8 +112,8 @@ const THEME = {
 
 dark theme
 const THEME_DARK = {
-  primary: "purple-medium",
-  secondary: "purple-light",
+   primary: "green-dark",
+  secondary: "gray-medium",
   tertiary: "gray-dark",
   background: "darkpurple-dark",
   text: {

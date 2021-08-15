@@ -5,7 +5,7 @@ module.exports = {
     colors: {
       black: "#000000",
       white: "#FFFFFF",
-      lightgray: "#e3e6ee",
+      lightgray: "#F3F5F6",
 
       blue: {
         light: "#4141d3",
@@ -62,6 +62,7 @@ module.exports = {
         fade_in_down: "fade_in_down .3s ease-in-out",
         spin_button: "spin_button .2s ease-in-out",
         fade: "fade .2s ease-in-out",
+        fade_in_up: "fade_in_up .4s ease-in-out",
       },
       keyframes: {
         fade_in_down: {
@@ -91,6 +92,20 @@ module.exports = {
           },
           "100%": {
             opacity: "1",
+          },
+        },
+        fade_in_up: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(40px)",
+          },
+          "60%": {
+            opacity: "0.5",
+            transform: "translateY(15px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px)",
           },
         },
       },

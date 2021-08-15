@@ -26,7 +26,7 @@ export default function UserCardExpandDetails({
 
   const userCardDetailsJSX = (
     <div
-      className={`box-col justify-between text-center shadow-2xl bg-${THEME.tertiary} animate-fade h-auto w-4/5 sm:w-4/6 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
+      className={`box-col justify-between text-center shadow-2xl bg-${THEME.tertiary} animate-fade h-auto w-4/5 sm:w-4/6 lg:w-2/6 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-all`}
     >
       <div className={`box-row justify-end w-full`}>
         <span

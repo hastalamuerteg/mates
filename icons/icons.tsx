@@ -29,6 +29,7 @@ import {
   InstagramFilled as InstagramIcon,
   TwitterCircleFilled as TwitterIcon,
   MenuOutlined as MobileMenuIcon,
+  EditOutlined as EditIcon,
 } from "@ant-design/icons";
 
 export {
@@ -62,4 +63,5 @@ export {
   InstagramIcon,
   TwitterIcon,
   MobileMenuIcon,
+  EditIcon,
 };

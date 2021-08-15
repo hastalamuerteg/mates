@@ -27,6 +27,7 @@ interface Props {
 
 export default function Home({ users }: Props) {
   const backToTopHomeRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <div

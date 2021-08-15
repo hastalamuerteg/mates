@@ -23,7 +23,6 @@ import { IStates } from "../../types/states";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await apiGetBrazilStates();
-
   return {
     props: {
       data,
@@ -36,6 +35,9 @@ export default function Settings({ data }: { data: IStates[] }) {
     initialData: data,
   });
 
+  if (error) {
+    return <div className={`box-col justify-center items-center`}>error</div>;
+  }
   return (
     <div
       className={`box-col justify-start items-start md:flex md:flex-row md:justify-center md:items-center h-screen w-full mx-auto`}
@@ -103,9 +105,9 @@ export default function Settings({ data }: { data: IStates[] }) {
         </div>
       </div>
       <div
-        className={`box-col justify-start items-center p-4 mx-2 mt-16 w-full h-auto md:w-1/2 md:h-5/6 md:overflow-y-scroll bg-${THEME.tertiary} shadow-lg rounded-lg`}
+        className={`box-col justify-start items-center p-4 mx-2 mt-16 w-full h-auto md:w-1/2 md:h-5/6 md:overflow-y-scroll bg-${THEME.tertiary} shadow-lg rounded-xl`}
       >
-        <div className={`box-col w-full h-auto mb-16 md:mb-0`}>
+        <div className={`box-col w-full h-auto mb-16 md:mb-0 `}>
           <div className={`block text-left w-full my-4 text-${THEME.primary}`}>
             <h2 className={`font-semibold`}>Account settings</h2>
           </div>

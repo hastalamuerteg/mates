@@ -14,12 +14,12 @@ export default function Page() {
   return (
     <header className="flex justify-center items-center h-screen ">
       <div
-        className={`box-col justify-center items-center w-full md:w-1/2 text-center h-screen bg-${THEME.primary}`}
+        className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-${THEME.primary}`}
       >
         <div
-          className={`box-col justify-center items-center px-4 h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
+          className={`box-col justify-center items-center px-4 md:h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
         >
-          <picture className="md:hidden">
+          <picture className="md:hidden mt-4">
             <Image
               className="rounded-full"
               alt="mates logo"

@@ -42,9 +42,9 @@ export default function Post({ user }: Props) {
 
   return (
     <article
-      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-md shadow-md bg-${THEME.tertiary} text-${THEME.text.primary}`}
+      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl bg-${THEME.tertiary} text-${THEME.text.primary}`}
     >
-      <div className={`box-row justify-start items-start w-full`}>
+      <div className={`box-row justify-start items-start w-full mt-2`}>
         <Link
           href={{
             pathname: ROUTE_USER_ID,
@@ -123,7 +123,7 @@ export default function Post({ user }: Props) {
         className={`box-row justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
@@ -134,19 +134,19 @@ export default function Post({ user }: Props) {
           Like
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-md cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
         >
           <SendIcon />
           Send

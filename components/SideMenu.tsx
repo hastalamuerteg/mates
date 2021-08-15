@@ -45,7 +45,7 @@ export default function SideMenu() {
             }
           </a>
         </Link>
-        <Link href="/users/new-user">
+        <Link href="/inbox/messages">
           <a
             className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links `}
           >

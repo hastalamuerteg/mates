@@ -18,7 +18,7 @@ import {
 export default function MobileMenu() {
   return (
     <nav
-      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen z-20 bg-${THEME.tertiary} md:hidden`}
+      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 bg-${THEME.tertiary} md:hidden`}
     >
       <ul
         className={`flex justify-around w-full border-t border-${THEME.primary}`}
@@ -34,7 +34,7 @@ export default function MobileMenu() {
             }
           </a>
         </Link>
-        <Link href="/users/new-user">
+        <Link href="/inbox/messages">
           <a
             className={`flex justify-center items-center py-4 my-1 text-${THEME.primary} font-semibold`}
           >

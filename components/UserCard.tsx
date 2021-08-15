@@ -34,7 +34,7 @@ export default function UserCard({ children: user }: Props) {
       />
       <div
         onClick={handleUserCardClick}
-        className={`box-col ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-lg m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
+        className={`box-col ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-xl m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
       >
         <picture>
           <Image

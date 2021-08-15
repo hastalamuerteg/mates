@@ -50,10 +50,12 @@ export default function UserPage() {
 
   return (
     <>
-      <div className={`bg-${THEME.background} text-${THEME.text.primary}`}>
+      <div
+        className={`bg-${THEME.background} text-${THEME.text.primary} h-auto lg:h-screen`}
+      >
         <header className={`h-96 md:h-80`}>
           <div
-            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-lg shadow-lg bg-${THEME.primary} relative`}
+            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-b-xl shadow-lg bg-${THEME.primary} relative`}
           >
             <Link href="/home">
               <a className={`text-${THEME.variants.primary_icons} m-4`}>
@@ -154,23 +156,23 @@ export default function UserPage() {
             </p>
             <ul className={`box-row items-center flex-wrap w-auto my-2`}>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-lg`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-xl`}
               >
                 <strong>Age: </strong>
                 {age}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-lg`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-xl`}
               >
                 <strong>Country: </strong> {country}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-lg`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-xl`}
               >
                 <strong>State: </strong> {state}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-lg`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-${THEME.primary} border-${THEME.primary} border rounded-xl`}
               >
                 <strong>City: </strong> {city}
               </li>
@@ -182,7 +184,7 @@ export default function UserPage() {
             >{`${firstName}'s stats`}</h3>
             <ul className={`box-row items-center flex-wrap w-auto py-4`}>
               <li
-                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-lg shadow-lg`}
+                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <AllUsersIcon
@@ -192,7 +194,7 @@ export default function UserPage() {
                 Followers
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-lg shadow-lg`}
+                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl `}>{generateNumbers()}</span>
                 <FollowingIcon
@@ -202,7 +204,7 @@ export default function UserPage() {
                 Following
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-lg shadow-lg`}
+                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <PostsIcons
@@ -212,7 +214,7 @@ export default function UserPage() {
                 Posts
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-lg shadow-lg`}
+                className={`box-row justify-start items-center  bg-${THEME.primary} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <SmileFaceIcon
