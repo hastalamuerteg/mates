@@ -60,10 +60,10 @@ const palette = {
 const THEME = {
   primary: "green-dark",
   secondary: "gray-medium",
-  tertiary: "white",
-  background: "lightgray",
+  tertiary: "gray-dark",
+  background: "darkpurple-dark",
   text: {
-    primary: "gray-dark",
+    primary: "white",
     secondary: "white",
   },
   variants: {

@@ -12,7 +12,6 @@ import MenuItems from "../components/MenuItems";
 import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
 
 //Authentication
-import { useAuth0 } from "@auth0/auth0-react";
 
 //Assets
 import {
@@ -27,7 +26,6 @@ import {
 import logo from "../assets/logo.png";
 
 export default function TopMenu() {
-  const { logout } = useAuth0();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleToggleMenu() {
@@ -36,10 +34,6 @@ export default function TopMenu() {
 
   function handleMenuItemClick() {
     setIsMenuOpen(false);
-  }
-
-  function handleLogoutSession() {
-    logout({ returnTo: window.location.origin });
   }
 
   return (
@@ -232,7 +226,6 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              {/* to fix auth provider logout*/}
               <Link href="">
                 <a
                   className={`top-menu-links transition-all hover:bg-${THEME.secondary}`}
@@ -240,7 +233,6 @@ export default function TopMenu() {
                   {
                     <LogoutIcon
                       className="menu-icons"
-                      onClick={handleLogoutSession}
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
                         color: `${THEME.variants.primary_icons}`,
