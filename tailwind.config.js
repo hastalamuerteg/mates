@@ -114,7 +114,8 @@ module.exports = {
   plugins: [],
   variants: {
     extend: {
-      backgroundColor: ["active"],
+      backgroundColor: ["active", "checked"],
+      borderColor: ["checked"],
     },
   },
 };

@@ -16,6 +16,7 @@ import {
   MessageIcon,
 } from "../icons/icons";
 import logo from "../assets/logo.png";
+import SwitchButton from "./SwitchButton";
 
 export default function SideMenu() {
   return (
@@ -89,6 +90,9 @@ export default function SideMenu() {
             }
           </a>
         </Link>
+        <div>
+          <SwitchButton />
+        </div>
       </ul>
     </nav>
   );

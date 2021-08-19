@@ -20,6 +20,7 @@ import { IBGE_STATES } from "../../services/httpService";
 
 //Types
 import { IStates } from "../../types/states";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await apiGetBrazilStates();
@@ -189,5 +190,4 @@ export default function Settings({ data }: { data: IStates[] }) {
     </div>
   );
 }
-
 Settings.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;

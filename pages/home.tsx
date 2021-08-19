@@ -16,6 +16,9 @@ import getCachedUsers from "../data/usersData";
 //Types
 import { IUsers } from "../types/users";
 
+//Authentication
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+
 export const getStaticProps: GetStaticProps = async () => {
   const { results: users } = await getCachedUsers();
   return { props: { users } };

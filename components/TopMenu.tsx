@@ -20,7 +20,6 @@ import {
   SettingsIcon,
   LogoutIcon,
   MobileMenuIcon,
-  CloseIcon,
   CloseXIcon,
 } from "../icons/icons";
 import logo from "../assets/logo.png";
@@ -101,7 +100,7 @@ export default function TopMenu() {
                 </li>
               </a>
             </Link>
-            <Link href="">
+            <Link href="/api/auth/logout">
               <a
                 className={` transition-all hover:bg-${THEME.secondary}`}
                 onClick={handleMenuItemClick}
@@ -144,7 +143,7 @@ export default function TopMenu() {
           <div>
             <CloseXIcon
               onClick={handleToggleMenu}
-              className="menu-icons cursor-pointer animate-spin_button"
+              className="cursor-pointer animate-spin_button"
               style={{
                 fontSize: `${ICONS_FONT.icons}`,
                 color: `${THEME.variants.primary_icons}`,
@@ -155,7 +154,7 @@ export default function TopMenu() {
           <div>
             <MobileMenuIcon
               onClick={handleToggleMenu}
-              className="menu-icons cursor-pointer animate-spin_button"
+              className="cursor-pointer animate-spin_button"
               style={{
                 fontSize: `${ICONS_FONT.icons}`,
                 color: `${THEME.variants.primary_icons}`,
@@ -226,7 +225,7 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              <Link href="">
+              <Link href="/api/auth/logout">
                 <a
                   className={`top-menu-links transition-all hover:bg-${THEME.secondary}`}
                 >

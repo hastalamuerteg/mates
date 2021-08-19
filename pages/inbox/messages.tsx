@@ -9,6 +9,8 @@ import { EditIcon } from "../../icons/icons";
 
 import Image from "next/image";
 import start_messaging from "../../assets/start_messaging.png";
+//Authentication
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export default function Messages() {
   function handleMessageSearch() {}
@@ -69,4 +71,5 @@ export default function Messages() {
   );
 }
 
+export const getServerSideProps = withPageAuthRequired();
 Messages.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;

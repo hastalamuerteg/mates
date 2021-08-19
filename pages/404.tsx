@@ -23,7 +23,7 @@ export default function Page404() {
         >
           We couldn&apos;t find the page you are looking for.
         </p>
-        <Link href="/home">
+        <Link href="/">
           <a
             className={`$ px-6 py-4 rounded-xl shadow-md bg-${THEME.primary} font-semibold m-4 text-${THEME.text.secondary} transition-all animate-fade_in_up`}
           >
