@@ -1,11 +1,11 @@
 //React
-import React, { ChangeEvent } from "react";
-
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
+import React, { ChangeEvent, useContext } from "react";
 
 //Assets
 import { SearchIcon } from "../icons/icons";
+
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
 
 type Props = {
   onInputChange: (args: string) => void;
@@ -13,6 +13,17 @@ type Props = {
 };
 
 export default function SearchInput({ onInputChange, id }: Props) {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textPrimary,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     if (onInputChange) {
@@ -27,7 +38,7 @@ export default function SearchInput({ onInputChange, id }: Props) {
         id={id}
         type="text"
         placeholder="Search"
-        className={`py-2 px-3 w-full rounded-xl bg-${THEME.background} border-2 border-${THEME.tertiary} focus:bg-${THEME.tertiary} active:bg-${THEME.background} transition-colors focus:placeholder-${THEME.primary} focus:outline-none`}
+        className={`py-2 px-3 w-full rounded-xl bg-${background} border-2 border-${tertiaryColor} focus:bg-${tertiaryColor} active:bg-${background} transition-colors focus:placeholder-${primaryColor} focus:outline-none`}
         onChange={handleInputChange}
       ></input>
       <span className="h-full -ml-10">

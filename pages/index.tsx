@@ -7,17 +7,28 @@ import logo from "../assets/logo.png";
 //Auth Login
 import LoginSession from "./session/login-session";
 
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
+//Components
+import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useContext } from "react";
 
 export default function Page() {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   return (
     <header className="flex justify-center items-center h-screen ">
       <div
-        className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-${THEME.primary}`}
+        className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-${primaryColor}`}
       >
         <div
-          className={`box-col justify-center items-center px-4 md:h-5/6 w-auto m-4 bg-${THEME.background} text-${THEME.primary} rounded-2xl shadow-xl`}
+          className={`box-col justify-center items-center px-4 md:h-5/6 w-auto m-4 bg-${background} text-${primaryColor} rounded-2xl shadow-xl`}
         >
           <picture className="md:hidden mt-4">
             <Image
@@ -37,12 +48,12 @@ export default function Page() {
             className={`box-col justify-center items-center w-full p-2 mt-8 `}
           >
             <input
-              className={`p-2 w-full md:w-5/6 border-${THEME.primary} border-2 m-4 rounded-lg focus:outline-none`}
+              className={`p-2 w-full md:w-5/6 border-${primaryColor} border-2 m-4 rounded-lg focus:outline-none`}
               type="email"
               placeholder="Email"
             />
             <button
-              className={`bg-${THEME.tertiary} text-${THEME.primary} active:bg-${THEME.secondary} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-${THEME.primary} hover:text-${THEME.text.secondary}`}
+              className={`bg-${tertiaryColor} text-${primaryColor} active:bg-${secondaryColor} w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-${primaryColor} hover:text-${textSecondary}`}
             >
               Sign up
             </button>
@@ -53,7 +64,7 @@ export default function Page() {
         </div>
       </div>
       <div
-        className={`hidden md:flex justify-center items-center w-1/2 h-screen bg-${THEME.background}`}
+        className={`hidden md:flex justify-center items-center w-1/2 h-screen bg-${background}`}
       >
         <div className="box-col justify-center items-center h-5/6">
           <div className="p-2 mb-8">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 //React
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 //Helpers
 import { THEME } from "../helpers/helpers.styles";
@@ -20,6 +20,9 @@ import {
 //Types
 import { IUsers } from "../types/users";
 
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
+
 interface Props {
   user: IUsers;
 }
@@ -32,6 +35,16 @@ export function generateNumbers() {
 }
 
 export default function Post({ user }: Props) {
+  const {
+    background,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textPrimary,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   const [postLiked, setPostLiked] = useState(false);
   const [likesAmount, setLikesAmount] = useState(generateNumbers());
   const [commentsAmount, setCommentsAmount] = useState(generateNumbers());
@@ -42,7 +55,7 @@ export default function Post({ user }: Props) {
 
   return (
     <article
-      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl bg-${THEME.tertiary} text-${THEME.text.primary}`}
+      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl bg-${tertiaryColor} text-${textPrimary}`}
     >
       <div className={`box-row justify-start items-start w-full mt-2`}>
         <Link
@@ -123,30 +136,32 @@ export default function Post({ user }: Props) {
         className={`box-row justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
-            <LikeIconFilled style={{ color: `${THEME.variants.likes}` }} />
+            <LikeIconFilled
+              style={{ color: `${THEME.light.variants.likes}` }}
+            />
           ) : (
             <LikeIcon />
           )}
           Like
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${THEME.secondary} hover:text-${THEME.tertiary}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
         >
           <SendIcon />
           Send

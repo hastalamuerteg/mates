@@ -4,9 +4,6 @@ import Link from "next/link";
 //Components
 import MenuItems from "./MenuItems";
 
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
-
 //Assets
 import {
   HomeIcon,
@@ -15,17 +12,32 @@ import {
   MessageIcon,
 } from "../icons/icons";
 
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useContext } from "react";
+
 export default function MobileMenu() {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textPrimary,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   return (
     <nav
-      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 bg-${THEME.tertiary} md:hidden`}
+      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 bg-${tertiaryColor} md:hidden`}
     >
       <ul
-        className={`flex justify-around w-full border-t border-${THEME.primary}`}
+        className={`flex justify-around w-full border-t border-${primaryColor}`}
       >
         <Link href="/home">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${THEME.primary} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
           >
             {
               <MenuItems>
@@ -36,7 +48,7 @@ export default function MobileMenu() {
         </Link>
         <Link href="/inbox/messages">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${THEME.primary} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
           >
             {
               <MenuItems>
@@ -48,7 +60,7 @@ export default function MobileMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${THEME.primary} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
           >
             {
               <MenuItems>
@@ -60,7 +72,7 @@ export default function MobileMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${THEME.primary} font-semibold `}
+            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold `}
           >
             {
               <MenuItems>

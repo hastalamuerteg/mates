@@ -2,10 +2,7 @@
 import Image from "next/image";
 
 //React
-import { useState } from "react";
-
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
+import { useContext, useState } from "react";
 
 //Types
 import { IUsers } from "../types/users";
@@ -13,11 +10,25 @@ import { IUsers } from "../types/users";
 //Components
 import UserCardExpandDetails from "./UserCardExpandDetails";
 
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
+
 interface Props {
   children: IUsers;
 }
 
 export default function UserCard({ children: user }: Props) {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textPrimary,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   const [showUserDetails, setShowUserDetails] = useState(false);
   const { name, picture, login, dob } = user;
 
@@ -34,7 +45,7 @@ export default function UserCard({ children: user }: Props) {
       />
       <div
         onClick={handleUserCardClick}
-        className={`box-col ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-xl m-1 cursor-pointer relative bg-${THEME.tertiary} transition-all group hover:bg-${THEME.primary} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
+        className={`box-col ${showUserDetails} justify-around text-center w-40 h-52 p-2 shadow-2xl rounded-xl m-1 cursor-pointer relative bg-${tertiaryColor} transition-all group hover:bg-${primaryColor} md:flex md:flex-row md:justify-around md:text-left md:w-96 md:h-auto`}
       >
         <picture>
           <Image
@@ -49,13 +60,13 @@ export default function UserCard({ children: user }: Props) {
           className={`box-col justify-around items-center md:flex md:justify-center md:items-start`}
         >
           <h3
-            className={`text-lg font-semibold text-${THEME.primary} transition-all group-hover:text-${THEME.tertiary}`}
+            className={`text-lg font-semibold text-${primaryColor} transition-all group-hover:text-${tertiaryColor}`}
           >{`${name.first}, ${name.last}`}</h3>
-          <p className={`text-sm group-hover:text-${THEME.tertiary}`}>
+          <p className={`text-sm group-hover:text-${tertiaryColor}`}>
             {login.username}
           </p>
           <p
-            className={`text-sm group-hover:text-${THEME.tertiary}`}
+            className={`text-sm group-hover:text-${tertiaryColor}`}
           >{`${dob.age} years old`}</p>
         </div>
       </div>

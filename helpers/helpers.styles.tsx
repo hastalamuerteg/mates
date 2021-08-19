@@ -60,19 +60,21 @@ const palette = {
 };
 
 const THEME = {
-  primary: "green-dark",
-  secondary: "gray-medium",
-  tertiary: "white",
-  background: "lightgray",
-  text: {
-    primary: "gray-dark",
-    secondary: "white",
-  },
-  variants: {
-    likes: palette.red.light,
-    primary_icons: palette.white,
-    error: palette.red.light,
-    warning: "red-light",
+  light: {
+    primary: "green-dark",
+    secondary: "gray-medium",
+    tertiary: "white",
+    background: "lightgray",
+    text: {
+      primary: "gray-dark",
+      secondary: "white",
+    },
+    variants: {
+      likes: palette.red.light,
+      primary_icons: palette.white,
+      error: palette.red.light,
+      warning: "red-light",
+    },
   },
   dark: {
     primary: "green-dark",
@@ -127,6 +129,4 @@ const THEME = {
 //   },
 // };
 
-const themeContext = React.createContext(THEME);
-
-export { THEME, ICONS_FONT, themeContext };
+export { THEME, ICONS_FONT };

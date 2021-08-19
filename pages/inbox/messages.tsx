@@ -4,7 +4,6 @@ import Layout from "../../components/Layout";
 
 //Assets
 import SearchInput from "../../components/SearchInput";
-import { THEME } from "../../helpers/helpers.styles";
 import { EditIcon } from "../../icons/icons";
 
 import Image from "next/image";
@@ -12,7 +11,21 @@ import start_messaging from "../../assets/start_messaging.png";
 //Authentication
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
+import { ThemeContext } from "../../Contexts/ThemeProvider";
+import { useContext } from "react";
+
 export default function Messages() {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    toggleTheme,
+    textPrimary,
+  } = useContext(ThemeContext);
+
   function handleMessageSearch() {}
   return (
     <>
@@ -20,10 +33,10 @@ export default function Messages() {
         className={`box-col justify-between items-start md:flex md:flex-row md:justify-center md:items-center h-screen w-full`}
       >
         <div
-          className={`box-col justify-start items-center p-4 pb-16 md:pb-1 w-full h-auto md:w-2/5 md:h-screen md:overflow-x-hidden bg-${THEME.tertiary}`}
+          className={`box-col justify-start items-center p-4 pb-16 md:pb-1 w-full h-auto md:w-2/5 md:h-screen md:overflow-x-hidden bg-${tertiaryColor}`}
         >
           <div
-            className={`box-row justify-between items-center pt-16 px-2 my-2 w-full text-${THEME.text.primary}`}
+            className={`box-row justify-between items-center pt-16 px-2 my-2 w-full text-${textPrimary}`}
           >
             <button className="font-semibold">Edit</button>
             <EditIcon className="cursor-pointer" style={{ fontSize: `20px` }} />
@@ -51,7 +64,7 @@ export default function Messages() {
           <ContactMessageBox />
         </div>
         <div
-          className={`hidden md:flex md:flex-col items-center justify-center h-full w-3/5 bg-${THEME.background}`}
+          className={`hidden md:flex md:flex-col items-center justify-center h-full w-3/5 bg-${background}`}
         >
           <picture>
             <Image

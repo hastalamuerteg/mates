@@ -5,6 +5,10 @@ import { THEME } from "../helpers/helpers.styles";
 import PrimaryButton from "./PrimaryButton";
 import WarningButton from "./WarningButton";
 
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useContext } from "react";
+
 interface Props {
   title: string;
   actionType?: string;
@@ -18,9 +22,20 @@ export default function AccountSettingsOptionEdition({
   actionType = " can be 'Warning' or 'Default. It renders a button for that action either delete or edit",
   buttonTitle = "button",
 }: Props) {
+  const {
+    background,
+    color,
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    theme,
+    textPrimary,
+    textSecondary,
+    toggleTheme,
+  } = useContext(ThemeContext);
   return (
     <div
-      className={`box-row justify-between items-center my-2 px-2 pb-2 border-b border-opacity-25 border-${THEME.primary} text-${THEME.text.primary}`}
+      className={`box-row justify-between items-center my-2 px-2 pb-2 border-b border-opacity-25 border-${primaryColor} text-${textPrimary}`}
     >
       <div>
         <h3 className={`font-semibold`}>{title}</h3>
@@ -28,11 +43,11 @@ export default function AccountSettingsOptionEdition({
       </div>
       <div>
         {actionType === "Default" ? (
-          <PrimaryButton backgroundColor={`bg-${THEME.primary}`}>
+          <PrimaryButton backgroundColor={`bg-${primaryColor}`}>
             {buttonTitle}
           </PrimaryButton>
         ) : (
-          <WarningButton backgroundColor={`bg-${THEME.variants.warning}`}>
+          <WarningButton backgroundColor={`bg-${THEME.light.variants.warning}`}>
             {buttonTitle}
           </WarningButton>
         )}

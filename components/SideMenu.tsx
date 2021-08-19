@@ -4,9 +4,10 @@ import Image from "next/image";
 
 //Components
 import MenuItems from "./MenuItems";
+import SwitchButton from "./SwitchButton";
 
 //Helpers
-import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
+import { ICONS_FONT } from "../helpers/helpers.styles";
 
 //Assets
 import {
@@ -16,12 +17,18 @@ import {
   MessageIcon,
 } from "../icons/icons";
 import logo from "../assets/logo.png";
-import SwitchButton from "./SwitchButton";
+
+//Context
+import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useContext } from "react";
 
 export default function SideMenu() {
+  const { background, secondaryColor, tertiaryColor, textPrimary } =
+    useContext(ThemeContext);
+
   return (
     <nav
-      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${THEME.tertiary} md:w-auto`}
+      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${tertiaryColor} md:w-auto`}
     >
       <div>
         <Link href="/home">
@@ -34,7 +41,7 @@ export default function SideMenu() {
       <ul className={`box-col justify-center my-auto  w-full`}>
         <Link href="/home">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links `}
+            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links `}
           >
             {
               <MenuItems>
@@ -48,7 +55,7 @@ export default function SideMenu() {
         </Link>
         <Link href="/inbox/messages">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links `}
+            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links `}
           >
             {
               <MenuItems>
@@ -63,7 +70,7 @@ export default function SideMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links`}
+            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links`}
           >
             {
               <MenuItems>
@@ -78,7 +85,7 @@ export default function SideMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`text-${THEME.primary} transition-all hover:text-${THEME.tertiary} hover:bg-${THEME.secondary} side-menu-links`}
+            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links`}
           >
             {
               <MenuItems>
