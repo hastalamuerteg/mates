@@ -33,7 +33,7 @@ interface Props {
   users: IUsers[];
 }
 
-export default withPageAuthRequired(function AllUsers({ users }: Props) {
+export default function AllUsers({ users }: Props) {
   const { data, error } = useSWR(BASE_URL, apiGetAllUsers, {
     initialData: users,
   });
@@ -81,4 +81,4 @@ export default withPageAuthRequired(function AllUsers({ users }: Props) {
       </Layout>
     </>
   );
-});
+}

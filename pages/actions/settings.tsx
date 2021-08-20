@@ -31,11 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default withPageAuthRequired(function Settings({
-  data,
-}: {
-  data: IStates[];
-}) {
+export default function Settings({ data }: { data: IStates[] }) {
   const { background, primaryColor, tertiaryColor } = useThemeContext();
 
   const { data: states, error } = useSWR(IBGE_STATES, apiGetBrazilStates, {
@@ -197,4 +193,4 @@ export default withPageAuthRequired(function Settings({
       </div>
     </Layout>
   );
-});
+}

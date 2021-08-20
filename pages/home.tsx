@@ -28,7 +28,7 @@ interface Props {
   users: IUsers[];
 }
 
-export default withPageAuthRequired(function Home({ users }: Props) {
+export default function Home({ users }: Props) {
   const backToTopHomeRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -46,4 +46,4 @@ export default withPageAuthRequired(function Home({ users }: Props) {
       </div>
     </Layout>
   );
-});
+}
