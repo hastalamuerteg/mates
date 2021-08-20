@@ -30,6 +30,7 @@ import {
   TwitterCircleFilled as TwitterIcon,
   MenuOutlined as MobileMenuIcon,
   EditOutlined as EditIcon,
+  SlidersOutlined as ChangeTheme,
 } from "@ant-design/icons";
 
 export {
@@ -64,4 +65,5 @@ export {
   TwitterIcon,
   MobileMenuIcon,
   EditIcon,
+  ChangeTheme,
 };

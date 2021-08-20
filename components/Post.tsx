@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 //React
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 //Helpers
 import { THEME } from "../helpers/helpers.styles";
@@ -21,7 +21,7 @@ import {
 import { IUsers } from "../types/users";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { ThemeProvider, useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   user: IUsers;
@@ -35,16 +35,6 @@ export function generateNumbers() {
 }
 
 export default function Post({ user }: Props) {
-  const {
-    background,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
   const [postLiked, setPostLiked] = useState(false);
   const [likesAmount, setLikesAmount] = useState(generateNumbers());
   const [commentsAmount, setCommentsAmount] = useState(generateNumbers());
@@ -53,6 +43,7 @@ export default function Post({ user }: Props) {
     setPostLiked(!postLiked);
   }
 
+  const { secondaryColor, tertiaryColor, textPrimary } = useThemeContext();
   return (
     <article
       className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl bg-${tertiaryColor} text-${textPrimary}`}

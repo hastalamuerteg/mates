@@ -5,24 +5,14 @@ import { ReactPropTypes, RefObject, useContext } from "react";
 import { GoUpButtonIcon } from "../icons/icons";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   props?: ReactPropTypes;
   onRef: RefObject<HTMLElement>;
 }
 export default function GoToTopButton(props: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor, textPrimary } = useThemeContext();
   function handleButtonClick() {
     props.onRef.current!.scrollIntoView({ behavior: "smooth" });
   }

@@ -19,21 +19,24 @@ import {
 import logo from "../assets/logo.png";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { ThemeProvider, useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function SideMenu() {
-  const { background, secondaryColor, tertiaryColor, textPrimary } =
-    useContext(ThemeContext);
-
+  const { secondaryColor, tertiaryColor, textPrimary } = useThemeContext();
   return (
     <nav
-      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen w-auto z-20 bg-${tertiaryColor} md:w-auto`}
+      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen z-20 bg-${tertiaryColor} md:w-auto`}
     >
-      <div>
+      <div className="m-2">
         <Link href="/home">
           <a>
-            <Image alt="mates logo" src={logo} height={67} width={67} />
+            <Image
+              alt="mates logo"
+              src={logo}
+              height={67}
+              width={67}
+              className="rounded-full"
+            />
           </a>
         </Link>
       </div>

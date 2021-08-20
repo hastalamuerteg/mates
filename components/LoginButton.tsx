@@ -2,21 +2,16 @@
 import Link from "next/link";
 
 //Context
-import { ThemeContext } from "../../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
-export default function LoginSession() {
+export default function LoginButton() {
   const {
-    background,
-    color,
     primaryColor,
     secondaryColor,
     tertiaryColor,
     textPrimary,
     textSecondary,
-    theme,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  } = useThemeContext();
   return (
     <Link href="/api/auth/login">
       <a

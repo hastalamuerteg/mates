@@ -1,9 +1,9 @@
-import React, { Dispatch, ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useContext, useState } from "react";
 import { THEME } from "../helpers/helpers.styles";
 
-type Theme = "light" | "dark";
+type Theme = true | false;
 type ThemeContext = {
-  theme: Theme;
+  darkmode: Theme;
   background: string;
   primaryColor: string;
   secondaryColor: string;
@@ -20,28 +20,27 @@ interface Props {
   children: ReactNode;
 }
 export function ThemeProvider({ children }: Props) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [darkmode, setDarkmode] = useState<Theme>(false);
   function toggleTheme() {
-    setTheme(theme === "light" ? "dark" : "light");
+    setDarkmode(!darkmode);
   }
 
-  const background =
-    theme === "light" ? THEME.light.background : THEME.dark.background;
-  const primaryColor =
-    theme === "light" ? THEME.light.primary : THEME.dark.primary;
-  const secondaryColor =
-    theme === "light" ? THEME.light.secondary : THEME.dark.secondary;
-  const tertiaryColor =
-    theme === "light" ? THEME.light.tertiary : THEME.dark.tertiary;
-  const textPrimary =
-    theme === "light" ? THEME.light.text.primary : THEME.dark.text.primary;
-  const textSecondary =
-    theme === "light" ? THEME.light.text.secondary : THEME.dark.text.secondary;
-
+  const background = darkmode ? THEME.dark.background : THEME.light.background;
+  const primaryColor = darkmode ? THEME.dark.primary : THEME.light.primary;
+  const secondaryColor = darkmode
+    ? THEME.dark.secondary
+    : THEME.light.secondary;
+  const tertiaryColor = darkmode ? THEME.dark.tertiary : THEME.light.tertiary;
+  const textPrimary = darkmode
+    ? THEME.dark.text.primary
+    : THEME.light.text.primary;
+  const textSecondary = darkmode
+    ? THEME.dark.text.secondary
+    : THEME.light.text.secondary;
   return (
     <ThemeContext.Provider
       value={{
-        theme,
+        darkmode,
         background,
         primaryColor,
         secondaryColor,
@@ -54,4 +53,8 @@ export function ThemeProvider({ children }: Props) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+export function useThemeContext() {
+  return useContext(ThemeContext);
 }

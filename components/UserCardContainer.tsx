@@ -1,28 +1,18 @@
 //React
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 
 //Components
 import PrimaryButton from "./PrimaryButton";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   children: ReactNode;
 }
 
 export default function UserCardContainer({ children }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor } = useThemeContext();
   return (
     <>
       <div className="flex justify-center items-center flex-wrap md:px-12 mx-auto  md:flex">

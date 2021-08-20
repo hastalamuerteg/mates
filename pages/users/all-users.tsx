@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import useSWR from "swr";
 
 //React
-import { ReactNode, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 //Types
 import { IUsers } from "../../types/users";
@@ -21,6 +21,9 @@ import SearchInput from "../../components/SearchInput";
 import Layout from "../../components/Layout";
 import GoToTopButton from "../../components/GoToTopButton";
 
+//Authentication
+import { withPageAuthRequired } from "@auth0/nextjs-auth0/dist/frontend";
+
 export const getStaticProps: GetStaticProps = async () => {
   const { results: users } = await apiGetAllUsers();
   return { props: { users } };
@@ -30,7 +33,7 @@ interface Props {
   users: IUsers[];
 }
 
-export default function AllUsers({ users }: Props) {
+export default withPageAuthRequired(function AllUsers({ users }: Props) {
   const { data, error } = useSWR(BASE_URL, apiGetAllUsers, {
     initialData: users,
   });
@@ -58,24 +61,24 @@ export default function AllUsers({ users }: Props) {
 
   return (
     <>
-      <div
-        ref={backToTopAllUsersRef}
-        className="flex flex-col justify-between items-center text-center px-6 py-4 my-14 w-full md:flex md:flex-row"
-      >
-        <TopHeading message="Get in touch with your mates" />
-        <SearchInput
-          id={generateID()}
-          onInputChange={handleFriendSearchInput}
-        />
-      </div>
-      <UserCardContainer>
-        {searchedUsers.map((user: IUsers) => (
-          <UserCard key={user.login.uuid}>{user}</UserCard>
-        ))}
-      </UserCardContainer>
-      <GoToTopButton onRef={backToTopAllUsersRef} />
+      <Layout>
+        <div
+          ref={backToTopAllUsersRef}
+          className="flex flex-col justify-between items-center text-center px-6 py-4 my-14 w-full md:flex md:flex-row"
+        >
+          <TopHeading message="Get in touch with your mates" />
+          <SearchInput
+            id={generateID()}
+            onInputChange={handleFriendSearchInput}
+          />
+        </div>
+        <UserCardContainer>
+          {searchedUsers.map((user: IUsers) => (
+            <UserCard key={user.login.uuid}>{user}</UserCard>
+          ))}
+        </UserCardContainer>
+        <GoToTopButton onRef={backToTopAllUsersRef} />
+      </Layout>
     </>
   );
-}
-
-AllUsers.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;
+});

@@ -6,21 +6,11 @@ import Image from "next/image";
 import error_404 from "../assets/error_404.png";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function Page404() {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { background, primaryColor, textPrimary, textSecondary } =
+    useThemeContext();
   return (
     <>
       <div

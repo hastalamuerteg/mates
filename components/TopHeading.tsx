@@ -1,26 +1,12 @@
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
-
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   message: string;
 }
 
 export default function TopHeading({ message }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor } = useThemeContext();
   return (
     <div className="flex flex-grow p-4">
       <h1

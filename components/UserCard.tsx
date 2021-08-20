@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 //React
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 //Types
 import { IUsers } from "../types/users";
@@ -11,24 +11,14 @@ import { IUsers } from "../types/users";
 import UserCardExpandDetails from "./UserCardExpandDetails";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   children: IUsers;
 }
 
 export default function UserCard({ children: user }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor, tertiaryColor } = useThemeContext();
   const [showUserDetails, setShowUserDetails] = useState(false);
   const { name, picture, login, dob } = user;
 

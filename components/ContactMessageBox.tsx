@@ -5,21 +5,10 @@ import Image from "next/image";
 import profile from "../assets/profile.jpg";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function ContactMessageBox() {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { secondaryColor, textPrimary } = useThemeContext();
   return (
     <div
       className={`box-row justify-start items-start w-full h-18 p-2 m-1 cursor-pointer`}

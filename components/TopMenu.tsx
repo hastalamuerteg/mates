@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 //React
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 //Components
 import MenuItems from "../components/MenuItems";
@@ -12,7 +12,7 @@ import MenuItems from "../components/MenuItems";
 import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 //Assets
 import {
@@ -22,21 +22,19 @@ import {
   LogoutIcon,
   MobileMenuIcon,
   CloseXIcon,
+  ChangeTheme,
 } from "../icons/icons";
 import logo from "../assets/logo.png";
 
 export default function TopMenu() {
   const {
-    background,
-    color,
     primaryColor,
     secondaryColor,
-    tertiaryColor,
-    theme,
     textPrimary,
     textSecondary,
     toggleTheme,
-  } = useContext(ThemeContext);
+    darkmode,
+  } = useThemeContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleToggleMenu() {
@@ -47,6 +45,11 @@ export default function TopMenu() {
     setIsMenuOpen(false);
   }
 
+  function handleDarkmode() {
+    toggleTheme();
+    handleMenuItemClick();
+  }
+
   return (
     <header
       className={`flex justify-around md:justify-end items-center bg-${primaryColor} h-16 w-full fixed z-50`}
@@ -55,7 +58,7 @@ export default function TopMenu() {
 
       {isMenuOpen && (
         <div
-          className={`box-col justify-start items-start bg-${primaryColor} text-${textPrimary} animate-fade_in_down rounded-b-xl p-2 m-2 h-52 w-full top-14 absolute z-50 md:hidden`}
+          className={`box-col justify-start items-start bg-${primaryColor} text-${textPrimary} animate-fade_in_down rounded-b-xl p-2 m-2 h-60 w-full top-14 absolute z-50 md:hidden`}
         >
           <ul className={`w-full`}>
             <Link href="/users/all-users">
@@ -109,6 +112,24 @@ export default function TopMenu() {
                     }}
                   />
                   Settings
+                </li>
+              </a>
+            </Link>
+            <Link href="">
+              <a
+                className={`transition-all hover:bg-${secondaryColor}`}
+                onClick={handleDarkmode}
+              >
+                <li
+                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
+                >
+                  <ChangeTheme
+                    className="mx-2"
+                    style={{
+                      color: `${THEME.light.variants.primary_icons}`,
+                    }}
+                  />
+                  {darkmode ? "Light Theme" : "Dark Theme"}
                 </li>
               </a>
             </Link>

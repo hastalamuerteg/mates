@@ -11,26 +11,18 @@ import { CameraIcon, VideoIcon, PictureIcon, MapIcon } from "../icons/icons";
 import PrimaryButton from "./PrimaryButton";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   children: ReactNode;
 }
 
 export default function HomeFeed({ children: post }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor, secondaryColor, tertiaryColor } = useThemeContext();
 
   return (
     <section
-      className={`box-col justify-center my-16 mx-2 w-full md:w-3/5 py-2`}
+      className={`box-col justify-center my-16 mx-2 w-full md:w-3/5 py-2 2xl:w-3/6`}
     >
       <div
         className={`box-col justify-start items-start w-full px-3 py-2 my-1 rounded-md shadow-md bg-${tertiaryColor}`}

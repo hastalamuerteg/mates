@@ -20,6 +20,15 @@
   .side-menu-links {
     @apply inline-block w-full my-2 py-6 rounded-r-lg;
   }
+  .toggle-checkbox:checked {
+    @apply: right-0;
+    right: 0;
+    border-color: #b3bbbe;
+  }
+  .toggle-checkbox:checked + .toggle-label {
+    @apply: bg-green-400;
+    background-color: #50cb93;
+  }
 }
 
 html,

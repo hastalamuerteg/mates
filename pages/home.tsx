@@ -2,7 +2,7 @@
 import { GetStaticProps } from "next";
 
 //React
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 
 //Components
 import GoToTopButton from "../components/GoToTopButton";
@@ -28,11 +28,11 @@ interface Props {
   users: IUsers[];
 }
 
-export default function Home({ users }: Props) {
+export default withPageAuthRequired(function Home({ users }: Props) {
   const backToTopHomeRef = useRef<HTMLDivElement>(null);
 
   return (
-    <>
+    <Layout>
       <div
         ref={backToTopHomeRef}
         className={`box-row items-center justify-center`}
@@ -44,8 +44,6 @@ export default function Home({ users }: Props) {
         </HomeFeed>
         <GoToTopButton onRef={backToTopHomeRef} />
       </div>
-    </>
+    </Layout>
   );
-}
-
-Home.getLayout = (page: ReactNode) => <Layout>{page}</Layout>;
+});

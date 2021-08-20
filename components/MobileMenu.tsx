@@ -13,21 +13,10 @@ import {
 } from "../icons/icons";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function MobileMenu() {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { primaryColor, tertiaryColor } = useThemeContext();
   return (
     <nav
       className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 bg-${tertiaryColor} md:hidden`}

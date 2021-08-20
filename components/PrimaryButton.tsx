@@ -1,6 +1,5 @@
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
-import { useContext } from "react";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 interface Props {
   backgroundColor: string;
@@ -8,20 +7,10 @@ interface Props {
 }
 
 export default function PrimaryButton({ backgroundColor, children }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { secondaryColor, textSecondary } = useThemeContext();
   return (
     <button
-      className={`${backgroundColor} py-2 px-6 mx-1 text-${textSecondary} active:bg-${secondaryColor} rounded-full shadow-md`}
+      className={`${backgroundColor} py-2 px-8 mx-1 text-${textSecondary} active:bg-${secondaryColor} rounded-full shadow-md`}
     >
       {children}
     </button>

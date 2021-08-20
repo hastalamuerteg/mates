@@ -1,11 +1,11 @@
 //React
-import React, { ChangeEvent, useContext } from "react";
+import React, { ChangeEvent } from "react";
 
 //Assets
 import { SearchIcon } from "../icons/icons";
 
 //Context
-import { ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 type Props = {
   onInputChange: (args: string) => void;
@@ -13,17 +13,7 @@ type Props = {
 };
 
 export default function SearchInput({ onInputChange, id }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { background, primaryColor, tertiaryColor } = useThemeContext();
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     if (onInputChange) {

@@ -1,5 +1,5 @@
 //React
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 
 //Components
 import TopMenu from "./TopMenu";
@@ -8,36 +8,31 @@ import Main from "./Main";
 import MobileMenu from "./MobileMenu";
 
 //Context
-import { ThemeProvider, ThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
+
+//Next
+import Head from "next/head";
 
 interface Props {
   children: ReactNode;
 }
 
 export default function Layout({ children }: Props) {
-  const {
-    background,
-    color,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    theme,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-  } = useContext(ThemeContext);
+  const { textPrimary } = useThemeContext();
   return (
     <>
-      <ThemeProvider>
-        <header className={`flex w-full text-${textPrimary}`}>
-          <SideMenu />
-          <Main>
-            <TopMenu />
-            {children}
-          </Main>
-          <MobileMenu />
-        </header>
-      </ThemeProvider>
+      <Head>
+        <title>{`Mates`}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <header className={`flex w-full text-${textPrimary}`}>
+        <SideMenu />
+        <Main>
+          <TopMenu />
+          {children}
+        </Main>
+        <MobileMenu />
+      </header>
     </>
   );
 }
