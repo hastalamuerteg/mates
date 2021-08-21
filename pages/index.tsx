@@ -50,14 +50,14 @@ export default function Homepage() {
           <div className={`box-col md:flex md:flex-row mt-4`}>
             <Link href="./session/login">
               <a
-                className={`bg-${primaryColor} py-3 px-8 m-2 text-${textSecondary} active:bg-${background} rounded-full shadow-md`}
+                className={`bg-green-dark py-3 px-8 m-2 text-white active:bg-gray-medium rounded-full shadow-md`}
               >
                 Login
               </a>
             </Link>
             <Link href="./session/login">
               <a
-                className={`bg-${primaryColor} py-3 px-8 m-2 text-${textSecondary} active:bg-${background} rounded-full shadow-md`}
+                className={`bg-green-dark py-3 px-8 m-2 text-white active:bg-gray-medium rounded-full shadow-md`}
               >
                 Sign up
               </a>
