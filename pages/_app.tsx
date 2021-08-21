@@ -1,6 +1,6 @@
 //Styles
-import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 
 //Next
 import { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
