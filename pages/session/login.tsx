@@ -28,7 +28,7 @@ export default function Page() {
           className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-${primaryColor}`}
         >
           <div
-            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-green-dark text-green-dark rounded-2xl shadow-xl`}
+            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-${background} text-${primaryColor} rounded-2xl shadow-xl`}
           >
             <picture className="md:hidden mt-4">
               <Image

@@ -1,5 +1,4 @@
 import React, { ReactNode, useContext, useState } from "react";
-import { THEME } from "../helpers/helpers.styles";
 
 type Theme = true | false;
 type ThemeContext = {
@@ -25,18 +24,12 @@ export function ThemeProvider({ children }: Props) {
     setDarkmode(!darkmode);
   }
 
-  const background = darkmode ? THEME.dark.background : THEME.light.background;
-  const primaryColor = darkmode ? THEME.dark.primary : THEME.light.primary;
-  const secondaryColor = darkmode
-    ? THEME.dark.secondary
-    : THEME.light.secondary;
-  const tertiaryColor = darkmode ? THEME.dark.tertiary : THEME.light.tertiary;
-  const textPrimary = darkmode
-    ? THEME.dark.text.primary
-    : THEME.light.text.primary;
-  const textSecondary = darkmode
-    ? THEME.dark.text.secondary
-    : THEME.light.text.secondary;
+  const background = darkmode ? "darkpurple-dark" : "lightgray";
+  const primaryColor = darkmode ? "green-dark" : "green-dark";
+  const secondaryColor = darkmode ? "gray-medium" : "gray-medium";
+  const tertiaryColor = darkmode ? "gray-dark" : "white";
+  const textPrimary = darkmode ? "white" : "gray-dark";
+  const textSecondary = darkmode ? "white" : "white";
   return (
     <ThemeContext.Provider
       value={{
