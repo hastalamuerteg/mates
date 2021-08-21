@@ -102,10 +102,6 @@ This project makes use of concepts such as:
 
 ![alt](/screenshots_mobile/mates.png)
 
-### Menu
-
-![alt](/screenshots_mobile/menu.png)
-
 ### Login
 
 ![alt](/screenshots_mobile/login.png)
@@ -113,6 +109,10 @@ This project makes use of concepts such as:
 ### In-App Home
 
 ![alt](/screenshots_mobile/home.png)
+
+### Menu
+
+![alt](/screenshots_mobile/menu.png)
 
 ### Message
 
