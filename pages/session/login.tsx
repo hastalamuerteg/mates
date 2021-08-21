@@ -6,17 +6,9 @@ import Head from "next/head";
 import logo from "../../assets/logo.png";
 
 //Components
-import { useThemeContext } from "../../Contexts/ThemeProvider";
 import LoginButton from "../../components/LoginButton";
 
 export default function Page() {
-  const {
-    background,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    textSecondary,
-  } = useThemeContext();
   return (
     <>
       <Head>
@@ -28,7 +20,7 @@ export default function Page() {
           className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-green-dark`}
         >
           <div
-            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-lightgray text-gray-dark rounded-2xl shadow-xl`}
+            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-lightgray text-green-dark rounded-2xl shadow-xl`}
           >
             <picture className="md:hidden mt-4">
               <Image
