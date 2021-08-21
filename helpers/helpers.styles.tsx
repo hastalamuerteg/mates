@@ -1,5 +1,3 @@
-import React from "react";
-
 const ICONS_FONT = {
   icons: "24px",
   userCardIcons: "22px",
