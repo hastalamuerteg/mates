@@ -17,10 +17,10 @@ export default function Page() {
       </Head>
       <header className="flex justify-center items-center h-screen ">
         <div
-          className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-green-dark`}
+          className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-light-primary`}
         >
           <div
-            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-lightgray text-green-dark rounded-2xl shadow-xl`}
+            className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-light-tertiary text-light-primary rounded-2xl shadow-xl`}
           >
             <picture className="md:hidden mt-4">
               <Image
@@ -40,12 +40,12 @@ export default function Page() {
               className={`box-col justify-center items-center w-full p-2 mt-8 `}
             >
               <input
-                className={`p-2 w-full md:w-5/6 border-green-dark border-2 m-4 rounded-lg focus:outline-none`}
+                className={`p-2 w-full md:w-5/6 border-light-primary border-b m-4 focus:outline-none`}
                 type="email"
                 placeholder="Email"
               />
               <button
-                className={`bg-white text-green-dark active:bg-gray-medium w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-green-dark hover:text-white`}
+                className={`border-light-primary border-2 text-light-primary w-full md:w-3/6 py-2 px-8 rounded-lg font-semibold transition-all hover:bg-light-primary hover:text-light-text-primary`}
               >
                 Sign up
               </button>
@@ -56,7 +56,7 @@ export default function Page() {
           </div>
         </div>
         <div
-          className={`hidden md:flex justify-center items-center w-1/2 h-screen bg-lightgray`}
+          className={`hidden md:flex justify-center items-center w-1/2 h-screen bg-light-tertiary`}
         >
           <div className="box-col justify-center items-center h-5/6">
             <div className="p-2 mb-8">

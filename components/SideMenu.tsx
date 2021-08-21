@@ -19,13 +19,15 @@ import {
 import logo from "../assets/logo.png";
 
 //Context
-import { ThemeProvider, useThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function SideMenu() {
-  const { secondaryColor, tertiaryColor, textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <nav
-      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen z-20 bg-${tertiaryColor} md:w-auto`}
+      className={`hidden md:flex md:flex-col md:justify-center md:items-center h-screen z-20 ${
+        darkmode ? "bg-dark-tertiary" : "bg-light-tertiary"
+      } md:w-auto`}
     >
       <div className="m-2">
         <Link href="/home">
@@ -44,7 +46,11 @@ export default function SideMenu() {
       <ul className={`box-col justify-center my-auto  w-full`}>
         <Link href="/home">
           <a
-            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links `}
+            className={`${
+              darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+            } transition-all hover:${
+              darkmode ? "text-light-tertiary" : "text-light-tertiary"
+            } hover:bg-light-secondary side-menu-links `}
           >
             {
               <MenuItems>
@@ -58,7 +64,11 @@ export default function SideMenu() {
         </Link>
         <Link href="/inbox/messages">
           <a
-            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links `}
+            className={`${
+              darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+            } transition-all hover:${
+              darkmode ? "text-light-tertiary" : "text-light-tertiary"
+            } hover:bg-light-secondary side-menu-links `}
           >
             {
               <MenuItems>
@@ -73,7 +83,11 @@ export default function SideMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links`}
+            className={`${
+              darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+            } transition-all hover:${
+              darkmode ? "text-light-tertiary" : "text-light-tertiary"
+            } hover:bg-light-secondary side-menu-links `}
           >
             {
               <MenuItems>
@@ -88,7 +102,11 @@ export default function SideMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`text-${textPrimary} transition-all hover:text-${tertiaryColor} hover:bg-${secondaryColor} side-menu-links`}
+            className={`${
+              darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+            } transition-all hover:${
+              darkmode ? "text-light-tertiary" : "text-light-tertiary"
+            } hover:bg-light-secondary side-menu-links `}
           >
             {
               <MenuItems>

@@ -16,17 +16,19 @@ import {
 import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function MobileMenu() {
-  const { primaryColor, tertiaryColor } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <nav
-      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 bg-${tertiaryColor} md:hidden`}
+      className={`box-row justify-center items-center fixed bottom-0 h-auto w-screen  z-20 ${
+        darkmode ? "bg-dark-tertiary" : "bg-light-tertiary"
+      } md:hidden`}
     >
       <ul
-        className={`flex justify-around w-full border-t border-${primaryColor}`}
+        className={`flex justify-around w-full border-t border-light-primary`}
       >
         <Link href="/home">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-light-primary font-semibold`}
           >
             {
               <MenuItems>
@@ -37,7 +39,7 @@ export default function MobileMenu() {
         </Link>
         <Link href="/inbox/messages">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-light-primary font-semibold`}
           >
             {
               <MenuItems>
@@ -49,7 +51,7 @@ export default function MobileMenu() {
 
         <Link href="/users/all-users">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold`}
+            className={`flex justify-center items-center py-4 my-1 text-light-primary font-semibold`}
           >
             {
               <MenuItems>
@@ -61,7 +63,7 @@ export default function MobileMenu() {
 
         <Link href="/actions/settings">
           <a
-            className={`flex justify-center items-center py-4 my-1 text-${primaryColor} font-semibold `}
+            className={`flex justify-center items-center py-4 my-1 text-light-primary font-semibold `}
           >
             {
               <MenuItems>

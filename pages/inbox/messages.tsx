@@ -16,8 +16,8 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 //Context
 import { useThemeContext } from "../../Contexts/ThemeProvider";
 
-export default withPageAuthRequired(function Messages() {
-  const { background, tertiaryColor, textPrimary } = useThemeContext();
+export default function Messages() {
+  const { darkmode } = useThemeContext();
 
   function handleMessageSearch() {}
   return (
@@ -27,10 +27,16 @@ export default withPageAuthRequired(function Messages() {
           className={`box-col justify-between items-start md:flex md:flex-row md:justify-center md:items-center h-screen w-full`}
         >
           <div
-            className={`box-col justify-start items-center p-4 pb-16 md:pb-1 w-full h-auto md:w-2/5 md:h-screen md:overflow-x-hidden bg-${tertiaryColor}`}
+            className={`box-col justify-start items-center p-4 pb-16 md:pb-1 w-full h-auto md:w-2/5 md:h-screen md:overflow-x-hidden ${
+              darkmode ? "bg-dark-tertiary" : "bg-light-tertiary"
+            }`}
           >
             <div
-              className={`box-row justify-between items-center pt-16 px-2 my-2 w-full text-${textPrimary}`}
+              className={`box-row justify-between items-center pt-16 px-2 my-2 w-full ${
+                darkmode
+                  ? "text-dark-text-primary"
+                  : "text-light-text-secondary"
+              }`}
             >
               <button className="font-semibold">Edit</button>
               <EditIcon
@@ -61,7 +67,9 @@ export default withPageAuthRequired(function Messages() {
             <ContactMessageBox />
           </div>
           <div
-            className={`hidden md:flex md:flex-col items-center justify-center h-full w-3/5 bg-${background}`}
+            className={`hidden md:flex md:flex-col items-center justify-center h-full w-3/5 ${
+              darkmode ? "bg-dark-background" : "bg-light-background"
+            }`}
           >
             <picture>
               <Image
@@ -72,7 +80,13 @@ export default withPageAuthRequired(function Messages() {
                 className={`transition-all animate-fade_in_up`}
               />
             </picture>
-            <p className={`inline-block font-bold text-${textPrimary}`}>
+            <p
+              className={`inline-block font-bold ${
+                darkmode
+                  ? "text-dark-text-primary"
+                  : "text-light-text-secondary"
+              }`}
+            >
               Search for a friend and start talking.
             </p>
           </div>
@@ -80,4 +94,4 @@ export default withPageAuthRequired(function Messages() {
       </Layout>
     </>
   );
-});
+}

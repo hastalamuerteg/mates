@@ -1,6 +1,3 @@
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
-
 //Components
 import PrimaryButton from "./PrimaryButton";
 import WarningButton from "./WarningButton";
@@ -21,10 +18,12 @@ export default function AccountSettingsOptionEdition({
   actionType = " can be 'Warning' or 'Default. It renders a button for that action either delete or edit",
   buttonTitle = "button",
 }: Props) {
-  const { primaryColor, textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <div
-      className={`box-row justify-between items-center my-2 px-2 pb-2 border-b border-opacity-25 border-${primaryColor} text-${textPrimary}`}
+      className={`box-row justify-between items-center my-2 px-2 pb-2 border-b border-opacity-25 border-light-primary ${
+        darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+      }`}
     >
       <div>
         <h3 className={`font-semibold`}>{title}</h3>
@@ -32,13 +31,9 @@ export default function AccountSettingsOptionEdition({
       </div>
       <div>
         {actionType === "Default" ? (
-          <PrimaryButton backgroundColor={`bg-${primaryColor}`}>
-            {buttonTitle}
-          </PrimaryButton>
+          <PrimaryButton>{buttonTitle}</PrimaryButton>
         ) : (
-          <WarningButton backgroundColor={`bg-${THEME.light.variants.warning}`}>
-            {buttonTitle}
-          </WarningButton>
+          <WarningButton>{buttonTitle}</WarningButton>
         )}
       </div>
     </div>

@@ -1,16 +1,11 @@
-//Context
-import { useThemeContext } from "../Contexts/ThemeProvider";
-
 interface Props {
-  backgroundColor: string;
   children: string;
 }
 
-export default function WarningButton({ backgroundColor, children }: Props) {
-  const { textSecondary } = useThemeContext();
+export default function WarningButton({ children }: Props) {
   return (
     <button
-      className={`${backgroundColor} py-2 px-6 mx-1 text-${textSecondary} rounded-full shadow-md`}
+      className={`bg-warning py-2 px-6 mx-1 text-light-text-primary rounded-full shadow-md`}
     >
       {children}
     </button>

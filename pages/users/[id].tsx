@@ -23,7 +23,7 @@ import MenuItems from "../../components/MenuItems";
 import { generateNumbers } from "../../components/Post";
 
 //Helpers
-import { ICONS_FONT, THEME } from "../../helpers/helpers.styles";
+import { colors_variants, ICONS_FONT } from "../../helpers/helpers.styles";
 
 //Context
 import { useThemeContext } from "../../Contexts/ThemeProvider";
@@ -33,27 +33,33 @@ export default function UserPage() {
   const { firstName, lastName, age, picture, username, country, state, city } =
     router.query;
 
-  const { background, primaryColor, textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <>
       <Head>
         <title>{`Mates | ${firstName} ${lastName}`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className={`bg-${background} text-${textPrimary} min-h-screen`}>
+      <div
+        className={`${
+          darkmode ? "bg-dark-background" : "bg-light-background"
+        } ${
+          darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+        } min-h-screen`}
+      >
         <header className={`h-96 md:h-80`}>
           <div
-            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-b-xl shadow-lg bg-${primaryColor} relative`}
+            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-b-xl shadow-lg bg-light-primary relative`}
           >
             <Link href="/home">
-              <a className={`text-${THEME.light.variants.primary_icons} m-4`}>
+              <a className={`text-${colors_variants.icons} m-4`}>
                 {
                   <MenuItems>
                     <HomeIcon
                       className={`menu-icons`}
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
-                        color: `${THEME.light.variants.primary_icons}`,
+                        color: `${colors_variants.icons}`,
                       }}
                     />
                   </MenuItems>
@@ -76,17 +82,25 @@ export default function UserPage() {
                 <div
                   className={`box-col justify-center items-center md:items-start md:text-left md:ml-4`}
                 >
-                  <h2 className={`text-${primaryColor} font-bold`}>
+                  <h2 className={`text-light-primary font-bold`}>
                     {firstName}
                   </h2>
-                  <p className={`${textPrimary}`}>{username}</p>
+                  <p
+                    className={`${
+                      darkmode
+                        ? "text-dark-text-primary"
+                        : "text-light-text-secondary"
+                    }`}
+                  >
+                    {username}
+                  </p>
                 </div>
               </div>
               <div className={`box-row justify-center items-center my-2`}>
                 {/* turn into a component */}
 
                 <ul
-                  className={`flex items-start text-lg space-x-4 text-${primaryColor}`}
+                  className={`flex items-start text-lg space-x-4 text-light-primary`}
                 >
                   <li className="cursor-pointer">
                     <LinkedInIcon
@@ -136,33 +150,39 @@ export default function UserPage() {
 
         <main className={`box-col w-11/12 p-6 mx-auto `}>
           <div className={`box-col justify-start w-auto `}>
-            <h3 className={`text-4xl my-4 text-${primaryColor} font-semibold`}>
+            <h3 className={`text-4xl my-4 text-light-primary font-semibold`}>
               About {firstName}
             </h3>
-            <p className={`${textPrimary}`}>
+            <p
+              className={`${
+                darkmode
+                  ? "text-dark-text-primary"
+                  : "text-light-text-secondary"
+              }`}
+            >
               {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
               }
             </p>
             <ul className={`box-row items-center flex-wrap w-auto my-2`}>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${primaryColor} border-${primaryColor} border rounded-xl`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-light-primary border-light-primary border rounded-xl`}
               >
                 <strong>Age: </strong>
                 {age}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${primaryColor} border-${primaryColor} border rounded-xl`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-light-primary border-light-primary border rounded-xl`}
               >
                 <strong>Country: </strong> {country}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${primaryColor} border-${primaryColor} border rounded-xl`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-light-primary border-light-primary border rounded-xl`}
               >
                 <strong>State: </strong> {state}
               </li>
               <li
-                className={`mr-2 my-4 py-1 px-4 w-72  text-${primaryColor} border-${primaryColor} border rounded-xl`}
+                className={`mr-2 my-4 py-1 px-4 w-72  text-light-primary border-light-primary border rounded-xl`}
               >
                 <strong>City: </strong> {city}
               </li>
@@ -170,11 +190,15 @@ export default function UserPage() {
           </div>
           <div className={`box-col justify-start w-auto my-4`}>
             <h3
-              className={`text-4xl my-4 text-${primaryColor}`}
+              className={`text-4xl my-4 text-light-primary`}
             >{`${firstName}'s stats`}</h3>
-            <ul className={`box-row items-center flex-wrap w-auto py-4`}>
+            <ul
+              className={`box-row items-center flex-wrap w-auto py-4 ${
+                darkmode ? "text-dark-text-primary" : "text-light-text-primary"
+              }`}
+            >
               <li
-                className={`box-row justify-start items-center  bg-${primaryColor} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <AllUsersIcon
@@ -184,7 +208,7 @@ export default function UserPage() {
                 Followers
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${primaryColor} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl `}>{generateNumbers()}</span>
                 <FollowingIcon
@@ -194,7 +218,7 @@ export default function UserPage() {
                 Following
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${primaryColor} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <PostsIcons
@@ -204,7 +228,7 @@ export default function UserPage() {
                 Posts
               </li>
               <li
-                className={`box-row justify-start items-center  bg-${primaryColor} text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <SmileFaceIcon

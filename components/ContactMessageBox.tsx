@@ -8,7 +8,7 @@ import profile from "../assets/profile.jpg";
 import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function ContactMessageBox() {
-  const { secondaryColor, textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <div
       className={`box-row justify-start items-start w-full h-18 p-2 m-1 cursor-pointer`}
@@ -23,7 +23,9 @@ export default function ContactMessageBox() {
         />
       </picture>
       <div
-        className={`box-col items-start w-full h-full px-2 border-b border-opacity-25 border-${secondaryColor} text-${textPrimary}`}
+        className={`box-col items-start w-full h-full px-2 border-b border-opacity-25 border-light-secondary ${
+          darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
+        }`}
       >
         <div className={`box-row justify-between items-start w-full h-auto`}>
           <h6 className="text-sm font-semibold cursor-pointer">Gabriel</h6>

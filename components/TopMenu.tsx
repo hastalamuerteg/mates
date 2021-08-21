@@ -9,7 +9,7 @@ import { useState } from "react";
 import MenuItems from "../components/MenuItems";
 
 //Helpers
-import { ICONS_FONT, THEME } from "../helpers/helpers.styles";
+import { colors_variants, ICONS_FONT } from "../helpers/helpers.styles";
 
 //Context
 import { useThemeContext } from "../Contexts/ThemeProvider";
@@ -27,14 +27,7 @@ import {
 import logo from "../assets/logo.png";
 
 export default function TopMenu() {
-  const {
-    primaryColor,
-    secondaryColor,
-    textPrimary,
-    textSecondary,
-    toggleTheme,
-    darkmode,
-  } = useThemeContext();
+  const { toggleTheme, darkmode } = useThemeContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleToggleMenu() {
@@ -52,27 +45,25 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-around md:justify-end items-center bg-${primaryColor} h-16 w-full fixed z-50`}
+      className={`flex justify-around md:justify-end items-center bg-light-primary h-16 w-full fixed z-50`}
     >
       {/* Mobile menu*/}
 
       {isMenuOpen && (
         <div
-          className={`box-col justify-start items-start bg-${primaryColor} text-${textPrimary} animate-fade_in_down rounded-b-xl p-2 m-2 h-60 w-full top-14 absolute z-50 md:hidden`}
+          className={`box-col justify-start items-start bg-light-primary text-light-text-primary animate-fade_in_down rounded-b-xl p-2 m-2 h-60 w-full top-14 absolute z-50 md:hidden`}
         >
           <ul className={`w-full`}>
             <Link href="/users/all-users">
               <a
-                className={`transition-all hover:bg-${secondaryColor}`}
+                className={`transition-all hover:bg-light-secondary`}
                 onClick={handleMenuItemClick}
               >
-                <li
-                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
-                >
+                <li className={`box-row items-center my-2 p-1 `}>
                   <AllUsersIcon
                     className="mx-2"
                     style={{
-                      color: `${THEME.light.variants.primary_icons}`,
+                      color: `${colors_variants.icons}`,
                     }}
                   />
                   Friends
@@ -81,16 +72,14 @@ export default function TopMenu() {
             </Link>
             <Link href="/inbox/messages">
               <a
-                className={` transition-all hover:bg-${secondaryColor}`}
+                className={` transition-all hover:bg-light-secondary`}
                 onClick={handleMenuItemClick}
               >
-                <li
-                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
-                >
+                <li className={`box-row items-center my-2 p-1 `}>
                   <MessageIcon
                     className="mx-2"
                     style={{
-                      color: `${THEME.light.variants.primary_icons}`,
+                      color: `${colors_variants.icons}`,
                     }}
                   />
                   Message
@@ -99,16 +88,14 @@ export default function TopMenu() {
             </Link>
             <Link href="/actions/settings">
               <a
-                className={` transition-all hover:bg-${secondaryColor}`}
+                className={` transition-all hover:bg-light-secondary`}
                 onClick={handleMenuItemClick}
               >
-                <li
-                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
-                >
+                <li className={`box-row items-center my-2 p-1 `}>
                   <SettingsIcon
                     className="mx-2"
                     style={{
-                      color: `${THEME.light.variants.primary_icons}`,
+                      color: `${colors_variants.icons}`,
                     }}
                   />
                   Settings
@@ -117,34 +104,30 @@ export default function TopMenu() {
             </Link>
             <Link href="">
               <a
-                className={`transition-all hover:bg-${secondaryColor}`}
+                className={`transition-all hover:bg-light-secondary`}
                 onClick={handleDarkmode}
               >
-                <li
-                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
-                >
+                <li className={`box-row items-center my-2 p-1 `}>
                   <ChangeTheme
                     className="mx-2"
                     style={{
-                      color: `${THEME.light.variants.primary_icons}`,
+                      color: `${colors_variants.icons}`,
                     }}
                   />
                   {darkmode ? "Light Theme" : "Dark Theme"}
                 </li>
               </a>
             </Link>
-            <Link href="/api/auth/logout">
+            <Link href="/session/login">
               <a
-                className={` transition-all hover:bg-${secondaryColor}`}
+                className={` transition-all hover:bg-light-secondary`}
                 onClick={handleMenuItemClick}
               >
-                <li
-                  className={`box-row items-center my-2 p-1 text-${textSecondary}`}
-                >
+                <li className={`box-row items-center my-2 p-1 `}>
                   <LogoutIcon
                     className="mx-2"
                     style={{
-                      color: `${THEME.light.variants.primary_icons}`,
+                      color: `${colors_variants.icons}`,
                     }}
                   />
                   Logout
@@ -179,7 +162,7 @@ export default function TopMenu() {
               className="cursor-pointer animate-spin_button"
               style={{
                 fontSize: `${ICONS_FONT.icons}`,
-                color: `${THEME.light.variants.primary_icons}`,
+                color: `${colors_variants.icons}`,
               }}
             />
           </div>
@@ -190,7 +173,7 @@ export default function TopMenu() {
               className="cursor-pointer animate-spin_button"
               style={{
                 fontSize: `${ICONS_FONT.icons}`,
-                color: `${THEME.light.variants.primary_icons}`,
+                color: `${colors_variants.icons}`,
               }}
             />
           </div>
@@ -202,14 +185,14 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/users/all-users">
                 <a
-                  className={`top-menu-links transition-all hover:bg-${secondaryColor}`}
+                  className={`top-menu-links transition-all hover:bg-light-secondary`}
                 >
                   {
                     <AllUsersIcon
                       className="menu-icons"
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
-                        color: `${THEME.light.variants.primary_icons}`,
+                        color: `${colors_variants.icons}`,
                       }}
                     />
                   }
@@ -221,14 +204,14 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/inbox/messages">
                 <a
-                  className={`top-menu-links transition-all hover:bg-${secondaryColor}`}
+                  className={`top-menu-links transition-all hover:bg-light-secondary`}
                 >
                   {
                     <MessageIcon
                       className="menu-icons"
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
-                        color: `${THEME.light.variants.primary_icons}`,
+                        color: `${colors_variants.icons}`,
                       }}
                     />
                   }
@@ -241,14 +224,14 @@ export default function TopMenu() {
             <MenuItems>
               <Link href="/actions/settings">
                 <a
-                  className={`top-menu-links transition-all hover:bg-${secondaryColor}`}
+                  className={`top-menu-links transition-all hover:bg-light-secondary`}
                 >
                   {
                     <SettingsIcon
                       className="menu-icons"
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
-                        color: `${THEME.light.variants.primary_icons}`,
+                        color: `${colors_variants.icons}`,
                       }}
                     />
                   }
@@ -258,16 +241,16 @@ export default function TopMenu() {
           }
           {
             <MenuItems>
-              <Link href="/api/auth/logout">
+              <Link href="/session/login">
                 <a
-                  className={`top-menu-links transition-all hover:bg-${secondaryColor}`}
+                  className={`top-menu-links transition-all hover:bg-light-secondary`}
                 >
                   {
                     <LogoutIcon
                       className="menu-icons"
                       style={{
                         fontSize: `${ICONS_FONT.icons}`,
-                        color: `${THEME.light.variants.primary_icons}`,
+                        color: `${colors_variants.icons}`,
                       }}
                     />
                   }

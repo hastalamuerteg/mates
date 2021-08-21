@@ -9,12 +9,13 @@ import error_404 from "../assets/error_404.png";
 import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function Page404() {
-  const { background, primaryColor, textPrimary, textSecondary } =
-    useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <>
       <div
-        className={`box-col justify-center items-center text-center h-screen p-2 bg-${background}`}
+        className={`box-col justify-center items-center text-center h-screen p-2 ${
+          darkmode ? "bg-light-background" : "bg-dark-background"
+        }`}
       >
         <picture>
           <Image
@@ -26,13 +27,15 @@ export default function Page404() {
           />
         </picture>
         <p
-          className={`inline-block font-bold transition-all animate-fade_in_up text-${textPrimary}`}
+          className={`inline-block font-bold transition-all animate-fade_in_up ${
+            darkmode ? "text-dark-text-primary" : "text-light-text-primary"
+          }`}
         >
           We couldn&apos;t find the page you are looking for.
         </p>
         <Link href="/">
           <a
-            className={`$ px-6 py-4 rounded-xl shadow-md bg-${primaryColor} font-semibold m-4 text-${textSecondary} transition-all animate-fade_in_up`}
+            className={`$ px-6 py-4 rounded-xl shadow-md bg-light-primary font-semibold m-4 text-light-text-primary transition-all animate-fade_in_up`}
           >
             ← Get back home
           </a>

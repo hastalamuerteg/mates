@@ -2,13 +2,15 @@
 import { ILayout } from "../types/layout";
 
 //Context
-import { ThemeProvider, useThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
 
 export default function Main({ children }: ILayout) {
-  const { background } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <main
-      className={`box-col h-screen w-full overflow-y-scroll bg-${background}`}
+      className={`box-col h-screen w-full overflow-y-scroll ${
+        darkmode ? "bg-dark-background" : "bg-light-background"
+      }`}
     >
       {children}
     </main>

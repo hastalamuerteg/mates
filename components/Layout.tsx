@@ -18,14 +18,18 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  const { textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <>
       <Head>
         <title>{`Mates`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header className={`flex w-full text-${textPrimary}`}>
+      <header
+        className={`flex w-full ${
+          darkmode ? "text-dark-tertiary" : "text-light-tertiary"
+        }`}
+      >
         <SideMenu />
         <Main>
           <TopMenu />

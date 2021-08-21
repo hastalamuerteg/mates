@@ -5,9 +5,6 @@ import Link from "next/link";
 //React
 import { useState } from "react";
 
-//Helpers
-import { THEME } from "../helpers/helpers.styles";
-
 //Assets
 import {
   CommentIcon,
@@ -21,7 +18,8 @@ import {
 import { IUsers } from "../types/users";
 
 //Context
-import { ThemeProvider, useThemeContext } from "../Contexts/ThemeProvider";
+import { useThemeContext } from "../Contexts/ThemeProvider";
+import { colors_variants } from "../helpers/helpers.styles";
 
 interface Props {
   user: IUsers;
@@ -43,10 +41,12 @@ export default function Post({ user }: Props) {
     setPostLiked(!postLiked);
   }
 
-  const { secondaryColor, tertiaryColor, textPrimary } = useThemeContext();
+  const { darkmode } = useThemeContext();
   return (
     <article
-      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl bg-${tertiaryColor} text-${textPrimary}`}
+      className={`box-col justify-start items-start  px-3 py-2 my-1 rounded-xl shadow-xl ${
+        darkmode ? "bg-dark-tertiary" : "bg-light-tertiary"
+      } ${darkmode ? "text-dark-text-primary" : "text-light-text-secondary"}`}
     >
       <div className={`box-row justify-start items-start w-full mt-2`}>
         <Link
@@ -127,32 +127,30 @@ export default function Post({ user }: Props) {
         className={`box-row justify-around items-center pt-1 border-t w-full`}
       >
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-light-secondary hover:text-light-text-primary`}
           onClick={handlePostLiked}
         >
           {postLiked ? (
-            <LikeIconFilled
-              style={{ color: `${THEME.light.variants.likes}` }}
-            />
+            <LikeIconFilled style={{ color: `${colors_variants.likes}` }} />
           ) : (
             <LikeIcon />
           )}
           Like
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-light-secondary hover:text-light-text-primary`}
         >
           <CommentIcon />
           Comment
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-light-secondary hover:text-light-text-primary`}
         >
           <ShareIcon />
           Share
         </li>
         <li
-          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-${secondaryColor} hover:text-${tertiaryColor}`}
+          className={`box-col py-2 px-4 rounded-xl cursor-pointer transition-all hover:bg-light-secondary hover:text-light-text-primary`}
         >
           <SendIcon />
           Send

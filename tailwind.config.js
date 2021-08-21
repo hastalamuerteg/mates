@@ -3,56 +3,28 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      black: "#000000",
-      white: "#FFFFFF",
-      lightgray: "#F3F5F6",
+      light: {
+        primary: "#50CB93",
+        secondary: "#4c5659",
+        tertiary: "#FFFFFF",
+        background: "#F3F5F6",
+        text: {
+          primary: "#FFFFFF",
+          secondary: "#202024",
+        },
+      },
 
-      blue: {
-        light: "#4141d3",
-        medium: "#2d2dc5",
-        dark: "#1a1a72",
+      dark: {
+        primary: "#50CB93",
+        secondary: "#4c5659",
+        tertiary: "#202024",
+        background: "#121214",
+        text: {
+          primary: "#FFFFFF",
+          secondary: "#FFFFFF",
+        },
       },
-      lightblue: {
-        light: "#3eeeee",
-      },
-      gray: {
-        light: "#b3bbbe",
-        medium: "#4c5659",
-        dark: "#202024",
-      },
-      green: {
-        light: "#ACFFAD",
-        medium: "#71EFA3",
-        dark: "#50CB93",
-      },
-      yellow: {
-        light: "#ffff6f",
-        medium: "#ffff4d",
-        dark: "#ffff2b",
-      },
-      purple: {
-        light: "#8F6BF9",
-        medium: "#8257E6",
-        dark: "#440c58",
-      },
-      darkpurple: {
-        light: "#3c3c71",
-        medium: "#2a2a50",
-        dark: "#121214",
-      },
-      pink: {
-        light: "#c7e",
-        medium: "#9419c4",
-        dark: "#671188",
-      },
-      red: {
-        light: "#ff0746",
-      },
-      orange: {
-        light: "#ff9862",
-        medium: "#ff772f",
-        dark: "#fb5700",
-      },
+      warning: "#ff0746",
     },
     extend: {
       fontFamily: {

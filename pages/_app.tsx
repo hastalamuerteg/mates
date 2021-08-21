@@ -36,10 +36,8 @@ import { AppProps } from "next/dist/next-server/lib/router/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UserProvider>
-      <ThemeProvider>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </UserProvider>
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
   );
 }

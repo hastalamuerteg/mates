@@ -7,11 +7,7 @@ import Head from "next/head";
 import MatesIndex from "../assets/mates_lp.png";
 import logo from "../assets/logo.png";
 
-//context
-import { useThemeContext } from "../Contexts/ThemeProvider";
-
 export default function Homepage() {
-  const { primaryColor, background, textSecondary } = useThemeContext();
   return (
     <>
       <Head>
@@ -42,7 +38,7 @@ export default function Homepage() {
         </picture>
         <div className="box-col justify-center md:items-start md:w-1/2 text-center md:text-left">
           <h1
-            className={`text-${primaryColor} text-5xl md:text-7xl 2xl:text-8xl font-semibold tracking-wide mb-4`}
+            className={`text-light-primary text-5xl md:text-7xl 2xl:text-8xl font-semibold tracking-wide mb-4`}
           >
             Welcome to Mates
           </h1>
@@ -50,14 +46,14 @@ export default function Homepage() {
           <div className={`box-col md:flex md:flex-row mt-4`}>
             <Link href="./session/login">
               <a
-                className={`bg-green-dark py-3 px-8 m-2 text-white active:bg-gray-medium rounded-full shadow-md`}
+                className={`bg-light-primary text-light-text-primary py-3 px-8 m-2 text-white active:bg-light-secondary rounded-full shadow-md`}
               >
                 Login
               </a>
             </Link>
             <Link href="./session/login">
               <a
-                className={`bg-green-dark py-3 px-8 m-2 text-white active:bg-gray-medium rounded-full shadow-md`}
+                className={`bg-light-primary text-light-text-primary py-3 px-8 m-2 text-white active:bg-light-secondary rounded-full shadow-md`}
               >
                 Sign up
               </a>
