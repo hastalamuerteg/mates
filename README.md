@@ -1,3 +1,165 @@
+# Mates | Social Media 🌎 <-> 🌎
+
+## Project 🚀🚀
+
+This project is a fictional online social media created to study next.js, typescript and auth0 authentication.
+Created consuming randomuser api.
+
+## Technologies 🧰🧰
+
+This project was created with
+
+- ReactJs
+- NextJs
+- Typescript
+- Tailwind CSS
+- Auth0
+- Axios
+- UUID
+
+## Concepts 💭💭
+
+This project makes use of concepts such as:
+
+- Function Components
+- React Hooks
+- Context State Management
+- Static Site Generation
+- Asynchronous Javascript
+- Dynamic Routes
+- Routing
+- Stale While Revalidate - SWR
+- Authentication
+- Dynamic CSS Styles
+- CSS Layouts
+- Dark Mode
+
+## Layout 💅🏼💅🏼
+
+## Desktop Light Mode
+
+### Home
+
+![alt](/screenshots/mates.png)
+
+### Login
+
+![alt](/screenshots/login.png)
+
+### In-App Home
+
+![alt](/screenshots/home.png)
+
+### Message
+
+![alt](/screenshots/messages.png)
+
+### Friends
+
+![alt](/screenshots/friends.png)
+
+### Friend Card
+
+![alt](/screenshots/friend_card.png)
+
+### Settings
+
+![alt](/screenshots/settings.png)
+
+### Profile
+
+![alt](/screenshots/profile.png)
+
+## Desktop Dark Mode
+
+### In-App Home
+
+![alt](/screenshots/home_dark.png)
+
+### Message
+
+![alt](/screenshots/messages_dark.png)
+
+### Friends
+
+![alt](/screenshots/friends_dark.png)
+
+### Friend Card
+
+![alt](/screenshots/friend_card_dark.png)
+
+### Settings
+
+![alt](/screenshots/settings_dark.png)
+
+### Profile
+
+![alt](/screenshots/profile_dark.png)
+
+## Mobile Light Mode
+
+### Home
+
+![alt](/screenshots_mobile/mates.png)
+
+### Menu
+
+![alt](/screenshots_mobile/menu.png)
+
+### Login
+
+![alt](/screenshots_mobile/login.png)
+
+### In-App Home
+
+![alt](/screenshots_mobile/home.png)
+
+### Message
+
+![alt](/screenshots_mobile/messages.png)
+
+### Friends
+
+![alt](/screenshots_mobile/friends.png)
+
+### Settings
+
+![alt](/screenshots_mobile/settings.png)
+
+### Profile
+
+![alt](/screenshots_mobile/profile.png)
+
+## Mobile Dark Mode
+
+### In-App Home
+
+![alt](/screenshots_mobile/home_dark.png)
+
+### Message
+
+![alt](/screenshots_mobile/messages_dark.png)
+
+### Friends
+
+![alt](/screenshots_mobile/friends_dark.png)
+
+### Settings
+
+![alt](/screenshots_mobile/settings_dark.png)
+
+### Profile
+
+![alt](/screenshots_mobile/profile_dark.png)
+
+Thank you!
+
+###### This project may still suffer changes.
+
+###### Developed by Gabriel Vicente
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
