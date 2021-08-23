@@ -52,8 +52,7 @@ export default function UserCard({ children: user }: Props) {
           className={`box-col justify-around items-center md:flex md:justify-center md:items-start`}
         >
           <h3
-            className={`text-lg font-semibold text-light-primary
-            } transition-all group-hover:${
+            className={`text-lg font-semibold text-light-primary transition-all group-hover:${
               darkmode ? "text-dark-tertiary" : "text-light-text-primary"
             }`}
           >{`${name.first}, ${name.last}`}</h3>
