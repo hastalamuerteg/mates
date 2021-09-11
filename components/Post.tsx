@@ -99,7 +99,7 @@ export default function Post({ user }: Props) {
             as={user.login.uuid}
           >
             <a>
-              <h2 className="font-semibold cursor-pointer">{`${user.name.first} ${user.name.last}`}</h2>
+              <h2 className="font-semibold cursor-pointer text-light-primary">{`${user.name.first} ${user.name.last}`}</h2>
             </a>
           </Link>
           <span>

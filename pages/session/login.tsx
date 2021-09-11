@@ -17,7 +17,7 @@ export default function Page() {
       </Head>
       <header className="flex justify-center items-center h-screen ">
         <div
-          className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-light-primary`}
+          className={`box-col justify-center items-center w-full md:w-1/2 text-center p-2 h-full md:h-screen bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary`}
         >
           <div
             className={`box-col justify-center items-center px-4 md:h-5/6 w-auto xl:w-4/6 m-4 bg-light-tertiary text-light-primary rounded-2xl shadow-xl`}

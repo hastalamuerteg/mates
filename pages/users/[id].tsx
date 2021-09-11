@@ -49,7 +49,7 @@ export default function UserPage() {
       >
         <header className={`h-96 md:h-80`}>
           <div
-            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-b-xl shadow-lg bg-light-primary relative`}
+            className={`box-col items-center md:box-row md:items-start w-11/12 h-40 mx-auto rounded-b-xl shadow-lg bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary relative`}
           >
             <Link href="/home">
               <a className={`text-${colors_variants.icons} m-4`}>
@@ -198,7 +198,7 @@ export default function UserPage() {
               }`}
             >
               <li
-                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <AllUsersIcon
@@ -208,7 +208,7 @@ export default function UserPage() {
                 Followers
               </li>
               <li
-                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl `}>{generateNumbers()}</span>
                 <FollowingIcon
@@ -218,7 +218,7 @@ export default function UserPage() {
                 Following
               </li>
               <li
-                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <PostsIcons
@@ -228,7 +228,7 @@ export default function UserPage() {
                 Posts
               </li>
               <li
-                className={`box-row justify-start items-center  bg-light-primary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
+                className={`box-row justify-start items-center  bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary text-white my-2 mx-1 px-2 py-4 w-72 rounded-xl shadow-lg`}
               >
                 <span className={`text-5xl`}>{generateNumbers()}</span>
                 <SmileFaceIcon

@@ -27,7 +27,7 @@
   }
   .toggle-checkbox:checked + .toggle-label {
     @apply: bg-green-400;
-    background-color: #50cb93;
+    background-color: #820ad1;
   }
 }
 

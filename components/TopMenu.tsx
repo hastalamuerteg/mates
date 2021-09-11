@@ -45,13 +45,13 @@ export default function TopMenu() {
 
   return (
     <header
-      className={`flex justify-around md:justify-end items-center bg-light-primary h-16 w-full fixed z-50`}
+      className={`flex justify-around md:justify-end items-center bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary h-16 w-full fixed z-50`}
     >
       {/* Mobile menu*/}
 
       {isMenuOpen && (
         <div
-          className={`box-col justify-start items-start bg-light-primary text-light-text-primary animate-fade_in_down rounded-b-xl p-2 m-2 h-60 w-full top-14 absolute z-50 md:hidden`}
+          className={`box-col justify-start items-start bg-gradient-to-r from-light-primary via-light-secondary to-light-secondary text-light-text-primary animate-fade_in_down rounded-b-xl p-2 h-60 w-full top-14 absolute z-50 md:hidden`}
         >
           <ul className={`w-full`}>
             <Link href="/users/all-users">

@@ -53,14 +53,14 @@ export default function UserCard({ children: user }: Props) {
         >
           <h3
             className={`text-lg font-semibold text-light-primary transition-all group-hover:${
-              darkmode ? "text-dark-tertiary" : "text-light-text-primary"
+              darkmode ? "text-light-text-primary" : "text-light-text-primary"
             }`}
           >{`${name.first}, ${name.last}`}</h3>
           <p
             className={`text-sm ${
               darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
             } group-hover:${
-              darkmode ? "text-dark-tertiary" : "text-light-tertiary"
+              darkmode ? "text-light-text-primary" : "text-light-tertiary"
             }`}
           >
             {login.username}
@@ -69,7 +69,7 @@ export default function UserCard({ children: user }: Props) {
             className={`text-sm ${
               darkmode ? "text-dark-text-primary" : "text-light-text-secondary"
             } group-hover:${
-              darkmode ? "text-dark-tertiary" : "text-light-tertiary"
+              darkmode ? "text-light-text-primary" : "text-light-tertiary"
             }`}
           >{`${dob.age} years old`}</p>
         </div>

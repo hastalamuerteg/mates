@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     colors: {
       light: {
-        primary: "#50CB93",
-        secondary: "#4c5659",
+        primary: "#820AD1",
+        secondary: "#960cf1",
         tertiary: "#FFFFFF",
-        background: "#F3F5F6",
+        background: "#f7f7f7",
         text: {
           primary: "#FFFFFF",
           secondary: "#202024",
@@ -15,8 +15,8 @@ module.exports = {
       },
 
       dark: {
-        primary: "#50CB93",
-        secondary: "#4c5659",
+        primary: "#820AD1",
+        secondary: "#960cf1",
         tertiary: "#202024",
         background: "#121214",
         text: {
